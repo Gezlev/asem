@@ -1,0 +1,26 @@
+$theme: #304156;
+$theme-light: rgba(#080c42, .4);
+
+$red: #ff4a7a;
+$orange: #ff974a;
+$blue: #4694ff;
+$blue-light: rgba(#4694ff, .3);
+$green: #8cd31a;
+
+$text: rgba(#080c42, .6);
+
+$bg: #fafbfb;
+$bg-gray-1: #d9dbe6;
+
+
+// Default (ligth) theme
+:root {
+  --font-d: #304156;
+  --font-r: rgba(8,12,66, 0.6);
+  --font-l: rgba(8,12,66, 0.4);
+  --bg: #fafbfb;
+  --bg-1: #d9dbe6;
+  --green: #8cd31a;
+  --green-d: #679932;
+  --blue: #4694ff;
+}

@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+    <div class="login--wrapper">
+        <header class="login--header">
+            <div class="login--header__logo">
+                <svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg>
+            </div>
+            <h1 class="login--header__title">Автоматизована Система Енергетичного Моніторингу</h1>
+        </header>
+
+        <main class="login--content">
+            <header class="login--content__header">
+                <h2 class="login--content__title">Увійти</h2>
+                <p class="login--content__text">Привіт, приємно бачити Вас знову!</p>
+            </header>
+            <div class="login--form">
+                <div class="fieldset">
+                    <label for="loginmail">Email</label>
+                    <input type="email" id="loginmail" name="loginmail" />
+                </div>
+
+                <div class="fieldset">
+                    <label for="loginpass">Пароль</label>
+                    <input type="password" id="loginpass" name="loginpass" />
+                    <div class="loginpass__eye"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#passEye"></use></svg></div>
+                    <script type="module">((eye, inp) => {let btn = document.querySelector(eye);let input = document.querySelector(inp);btn.addEventListener('click', () => {btn.classList.toggle('active');input.type=btn.classList.contains('active')?'text':'password'}, false)})('.loginpass__eye', '#loginpass')</script>
+                </div>
+
+                <div class="fieldset">
+                    <label for="loginremember" class="input-switcher">
+                        <input type="checkbox" id="loginremember" name="loginremember" />
+                        <span><small></small></span>
+                    </label>
+                    <span>Запам'ятати мене</span>
+                </div>
+
+                <div class="btn btn_green">Увійти</div>
+
+                <div class="login--form__links">
+                    <a href="">Забули пароль?</a>
+                    <a href="">Зареєструватись</a>
+                </div>
+            </div>
+            <div class="login--content__copy">&copy; Copyright 2021 asem.escoua.com</div>
+        </main>
+    </div>
+{% endblock %}
