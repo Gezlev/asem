@@ -1,0 +1,40 @@
+.informer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search,
+.messages {
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin-left: 8px;
+
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: var(--font-d);
+  }
+}
+
+.user {
+  flex: 0 0 40px;
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 50%;
+  background: var(--bg-1);
+
+  img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}

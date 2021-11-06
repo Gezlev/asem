@@ -1,0 +1,107 @@
+.pagination {
+  position: relative;
+  height: 24px;
+  margin: 28px 0 0;
+
+  &__info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    line-height: 1;
+    font-size: 12px;
+    color: var(--font-l);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    margin: 0 116px;
+    padding: 0;
+  }
+
+  &__item {
+    flex: 0 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--font-r);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color .3s ease-out;
+
+    &:hover {
+      background-color: var(--bg-1);
+    }
+
+    &_ellipsis {
+      cursor: default;
+      background-color: initial!important;
+    }
+
+    &.current {
+      background-color: var(--font-d);
+    }
+  }
+  &__item + &__item {
+    margin-left: 2px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 22px;
+    margin-top: 2px;
+    color: var(--font-r);
+    text-decoration: none;
+    transition: color .3s ease-out;
+  }
+  &__item.current &__link {
+    color: var(--bg);
+    cursor: default;
+  }
+
+  &__prev,
+  &__next {
+    position: relative;
+    display: block;
+    height: 24px;
+    width: 24px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-bottom: 1px solid var(--font-r);
+    }
+  }
+
+  &__prev:before {
+    left: 50%;
+    margin-left: -3px;
+    border-left: 1px solid var(--font-r);
+    transform-origin: 0 0;
+    transform: rotate(45deg) translate3d(2px,-5px,0);
+  }
+
+  &__next:before {
+    right: 50%;
+    margin-right: -3px;
+    border-right: 1px solid var(--font-r);
+    transform: rotate(-45deg) translate3d(0,-1px,0);
+  }
+}

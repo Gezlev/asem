@@ -1,11 +1,11 @@
 {% extends 'layouts/base.html'%}
 
-{% block content %}
+{% block container %}
     <div class="login--wrapper">
         <header class="login--header">
-            <div class="login--header__logo">
+            <a class="login--header__logo" href="/">
                 <svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg>
-            </div>
+            </a>
             <h1 class="login--header__title">Автоматизована Система Енергетичного Моніторингу</h1>
         </header>
 
@@ -24,7 +24,6 @@
                     <label for="loginpass">Пароль</label>
                     <input type="password" id="loginpass" name="loginpass" />
                     <div class="loginpass__eye"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#passEye"></use></svg></div>
-                    <script type="module">((eye, inp) => {let btn = document.querySelector(eye);let input = document.querySelector(inp);btn.addEventListener('click', () => {btn.classList.toggle('active');input.type=btn.classList.contains('active')?'text':'password'}, false)})('.loginpass__eye', '#loginpass')</script>
                 </div>
 
                 <div class="fieldset">

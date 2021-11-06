@@ -1,0 +1,54 @@
+<div class="sidebar">
+    <div class="sidebar--header">
+        <a class="sidebar--logo" href="/"><svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg></a>
+        <div class="sidebar--expand"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconExpand"></use></svg></div>
+    </div>
+    <nav class="sidebar--nav">
+        <ul class="menu">
+            <li class="menu__item">
+                <a class="menu__link {% if page == 'dashboard' %}current{% endif %}" href="">
+                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconDashboard"></use></svg></span>
+                    <span class="menu__text">Огляд</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link {% if page == 'organizations' %}current{% endif %}" href="/organizations.php">
+                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconOrgs"></use></svg></span>
+                    <span class="menu__text">Організації</span>
+                </a>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link  {% if page == 'blocks' %}current{% endif %}" href="">
+                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconDashboard"></use></svg></span>
+                    <span class="menu__text">Блоки</span>
+                </a>
+            </li>
+            <li class="menu__item has-child">
+                <a class="menu__link {% if page == 'reports' %}current{% endif %}" href="">
+                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconReports"></use></svg></span>
+                    <span class="menu__text">Звіти</span>
+                </a>
+                <ul class="child-menu">
+                    <li class="child-menu__item"><a class="child-menu__link" href="">Доступні</a></li>
+                    <li class="child-menu__item"><a class="child-menu__link {# current #}" href="">На розгляді</a></li>
+                    <li class="child-menu__item"><a class="child-menu__link" href="">На порівнянні</a></li>
+                </ul>
+            </li>
+            <li class="menu__item">
+                <a class="menu__link {% if page == 'services' %}current{% endif %}" href="">
+                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconServices"></use></svg></span>
+                    <span class="menu__text">Сервіси</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="sidebar--theme">
+        <label for="themeSwitcher" class="input-switcher">
+            <input type="checkbox" id="themeSwitcher" name="themeSwitcher" />
+            <span><small></small></span>
+        </label>
+        <div class="sidebar--theme__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconSun"></use></svg></div>
+        <div class="sidebar--theme__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconMoon"></use></svg></div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+.welcome {
+  position: relative;
+  padding: 48px 60px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #304156;
+  background-repeat: no-repeat;
+  background-position: calc(100% + 100px) 52%;
+  background-size: 650px 610px;
+  background-image: url(/static/build/img/asem-pattern.svg);
+
+  &__title {
+    padding: 0;
+    margin: 0 0 10px;
+    line-height: 36px;
+    font-size: 32px;
+    color: #FFF;
+  }
+
+  &__text {
+    line-height: 24px;
+    font-size: 15px;
+    color: rgba(#FFF, .5);
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FFF;
+    cursor: pointer;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 2px;
+      height: 16px;
+      margin: -8px 0 0 -1px;
+      background: rgba(#304156, 0.6);
+      transition: transform .3s ease-out;
+    }
+    &:before {
+      transform: rotate(-45deg);
+    }
+    &:after {
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      &:before {
+        transform: rotate(-135deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 36px;
+    margin: 20px 0 0;
+    color: #FFF;
+    line-height: 22px;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid #FFF;
+
+    &:hover {
+      color: #304156;
+      background-color: #FFF;
+    }
+  }
+}
+
+.darktheme .welcome {
+  background-color: rgba(#FFF, 0.04);
+}

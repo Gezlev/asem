@@ -1,4 +1,5 @@
 .login {
+
   &--wrapper {
     display: flex;
     flex-direction: column;
@@ -6,12 +7,12 @@
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
+    background-color: #FFF;
 
     @media (min-width: 992px) {
       flex-direction: row;
     }
   }
-
 
   &--header {
     flex: 0 0 128px;
@@ -25,7 +26,7 @@
     background-size: auto 400px;
 
     @media (max-width: 359px) {
-      flex: 0 0 96px;
+      flex: 0 0 80px;
     }
     @media (min-width: 768px) {
       flex: 0 0 182px;
@@ -56,6 +57,7 @@
     }
 
     &__logo {
+      display: block;
       margin: 0 0 18px 24px;
 
       @media (min-width: 768px) {
@@ -125,10 +127,13 @@
     }
 
     &__header {
-      margin-top: 10%;
+      margin-top: 32px;
 
       @media (max-width: 359px) {
         margin-top: 24px;
+      }
+      @media (min-width: 400px) {
+        margin-top: 10%;
       }
       @media (min-width: 768px) {
         margin-top: 96px;
@@ -159,13 +164,16 @@
     }
 
     &__text {
-      margin: 12px 0 32px;
+      margin: 6px 0 24px;
       line-height: 24px;
       font-size: 16px;
       color: var(--font-l);
 
       @media (max-width: 359px) {
         margin: 6px 0 16px;
+      }
+      @media (min-width: 400px) {
+        margin: 12px 0 32px;
       }
     }
 

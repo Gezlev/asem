@@ -2,6 +2,8 @@
 <html lang="uk">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 	<title>{{ title |default('ASEM — Автоматизована Система Енергетичного Моніторингу')  }}</title>
 	<link rel="preload" href="/static/build/fonts/MuseoSansCyrl-300.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="preload" href="/static/build/fonts/MuseoSansCyrl-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -10,17 +12,32 @@
 	<link rel="preload" href="/static/build/css/style.css" as="style">
 	<link rel="stylesheet" href="/static/build/css/style.css">
 
-
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	<meta name="msapplication-TileColor" content="#304156">
 	<meta name="theme-color" content="#304156">
+
 </head>
 <body>
-	{% block header %}{% endblock %}
+	{% block container %}
+		<script>(b=>{let t=localStorage.getItem('theme');t&&(t==='dark')&&b.classList.add('darktheme');})(document.body);</script>
+		<div class="site--wrapper">
 
-	{% block content %}{% endblock %}
+			{% include 'layouts/sidebar.html' %}
 
-	{% block footer %}{% endblock %}
+			<div class="site--content">
+
+				{% include 'layouts/header.html' %}
+
+				<main>
+					{% block content %}{% endblock %}
+				</main>
+
+				<footer class="site--footer">&copy; Copyright 2007-2021 asem.escoua.com</footer>
+
+			</div>
+
+		</div>
+	{% endblock %}
 
 	<script src="/static/build/js/app.js"></script>
 </body>

@@ -16,11 +16,33 @@ $bg-gray-1: #d9dbe6;
 // Default (ligth) theme
 :root {
   --font-d: #304156;
-  --font-r: rgba(8,12,66, 0.6);
-  --font-l: rgba(8,12,66, 0.4);
+  --font-r: rgba(8,12,66, 0.5);
+  --font-l: rgba(8,12,66, 0.35);
   --bg: #fafbfb;
   --bg-1: #d9dbe6;
   --green: #8cd31a;
+  --green-sl: rgba(140,211,26,0.04);
   --green-d: #679932;
   --blue: #4694ff;
+  --white-inverse: #FFF;
+  --light-inverse: rgba(217,219,230,0.3);
+  --wbox-bg: #FFF;
+  --white-t: rgba(255,255,255,.06);
+  --red: #ff4a7a;
+}
+
+
+.darktheme {
+  --font-d: #FFF;
+  --font-r: rgba(255,255,255, 0.6);
+  --font-l: rgba(255,255,255, 0.4);
+  --bg: #304156;
+  --bg-1: rgba(255,255,255, 0.1);
+  --green: #8cd31a;
+  --green-d: #679932;
+  --blue: #4694ff;
+  --wbox-bg: rgba(255,255,255,0.04);
+  --white-inverse: #304156;
+  --light-inverse: rgba(255,255,255,0.06);
+  --white-t: rgba(8,12,66,.06);
 }

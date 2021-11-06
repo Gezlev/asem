@@ -1,0 +1,35 @@
+.breadcrumb {
+  display: flex;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    margin: 0;
+    padding: 0;
+    line-height: 20px;
+    font-size: 12px;
+  }
+
+  &__link {
+    color: var(--font-r);
+    text-decoration: none;
+    transition: .3s ease-out;
+
+    &:hover {
+      color: var(--font-d);
+    }
+
+    &:after {
+      content: '/';
+      display: inline-block;
+      padding: 0 8px;
+      color: var(--font-r);
+    }
+  }
+
+  &__current {
+    color: var(--font-d);
+    font-weight: 500;
+  }
+}

@@ -2,6 +2,11 @@
 //import '../scss/style.scss';
 
 // SCRIPTS
-import sayhi from "./sayhi";
+import loginPassEye from "./modules/login-pass-eye";
+loginPassEye('.loginpass__eye', '#loginpass');
 
-sayhi.say('Hello there!');
+import SidebarMenu from "./modules/sidebar-menu";
+SidebarMenu();
+
+import PageOrganizations from "./components/page-organizations";
+PageOrganizations();

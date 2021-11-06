@@ -31,7 +31,14 @@ body {
   font-weight: 300;
   line-height: 24px;
   color: var(--font-r);
+  background-color: var(--bg);
 }
 h1 {
   color: var(--font-d);
+}
+
+.title {
+  line-height: 26px;
+  font-size: 18px;
+  font-weight: 700;
 }
