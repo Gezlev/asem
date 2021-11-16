@@ -5,13 +5,17 @@
 
 @use 'modules/form/elems';
 @use 'modules/form/switcher';
+@use 'modules/form/checkbox-and-radio';
+@use 'modules/form/select';
 
 @use 'modules/navigations';
 @use 'modules/breadcrumb';
 @use 'modules/pagination';
 @use 'modules/informer';
+@use 'modules/list';
 
 @use 'modules/welcome';
 
 @use './components/page-login';
 @use './components/page-orglist';
+@use './components/page-blocklist';

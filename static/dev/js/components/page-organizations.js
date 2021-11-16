@@ -1,13 +1,13 @@
 const PageOrganizations = () => {
 
     const OrglistView = () => {
-        let viewBtns = document.querySelector('.orglist--header__view');
-        let container = document.querySelector('.orglist__container');
+        let viewBtns = document.querySelector('.list--header__view');
+        let container = document.querySelector('.list__container');
 
         if (!container || !viewBtns) return;
 
-        let listBtn = viewBtns.querySelector('.orglist--header__list');
-        let gridBtn = viewBtns.querySelector('.orglist--header__grid');
+        let listBtn = viewBtns.querySelector('.list--header__list');
+        let gridBtn = viewBtns.querySelector('.list--header__grid');
 
 
         let orglistMode = localStorage.getItem('orglist');

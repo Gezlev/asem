@@ -10,3 +10,6 @@ SidebarMenu();
 
 import PageOrganizations from "./components/page-organizations";
 PageOrganizations();
+
+import Select from "./modules/select";
+document.querySelectorAll('.select').forEach( el => Select.init(el));

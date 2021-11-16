@@ -2,83 +2,83 @@
 
 {% block content %}
 
-    <div class="white-box orglist">
-        <header class="orglist--header">
+    <div class="white-box list list_orgs">
+        <header class="list--header">
             <h1 class="title">Доступні організації (3)</h1>
-            <ul class="orglist--header__tabs">
+            <ul class="list--header__tabs">
                 <li>Очікують</li>
                 <li>Видалені</li>
             </ul>
-            <div class="orglist--header__view">
-                <div class="orglist--header__list active"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconList"></use></svg></div>
-                <div class="orglist--header__grid"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconGrid"></use></svg></div>
+            <div class="list--header__view">
+                <div class="list--header__list active"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconList"></use></svg></div>
+                <div class="list--header__grid"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconGrid"></use></svg></div>
             </div>
         </header>
 
-        <div class="orglist__container">
+        <div class="list__container">
 
-            <div class="orglist--filters">
-                <div class="orglist--filters__name sort-up active">Назва</div>
-                <div class="orglist--filters__empty"></div>
-                <div class="orglist--filters__address">Адреса</div>
-                <div class="orglist--filters__blocks">Блоки</div>
-                <div class="orglist--filters__role">Роль</div>
-                <div class="orglist--filters__empty"></div>
+            <div class="list--filters">
+                <div class="list--filters__name filtered sort-up active">Назва</div>
+                <div class="list--filters__empty"></div>
+                <div class="list--filters__address filtered">Адреса</div>
+                <div class="list--filters__blocks filtered">Блоки</div>
+                <div class="list--filters__role filtered">Роль</div>
+                <div class="list--filters__empty"></div>
             </div>
 
-            <div class="orglist__item">
-                <div class="orglist__img"><img src="static/build/img/organizations/org1.webp" decoding="async" loading="lazy" alt="" /></div>
-                <div class="orglist__name">ОСББ Петровський</div>
-                <div class="orglist__address">Київ, blvd Perova 10a</div>
-                <div class="orglist__blocks">3</div>
-                <div class="orglist__role">Aдміністратор закладу</div>
-                <a href="" class="btn btn_green orglist__btn">Деталі</a>
-                <div class="orglist--menu">
-                    <div class="orglist--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
-                    <ul class="orglist--menu__list">
-                        <li class="orglist--menu__item"><a href="">Деталі</a></li>
-                        <li class="orglist--menu__item"><a href="">В сравнение</a></li>
-                        <li class="orglist--menu__item"><a href="">Додати блок</a></li>
-                        <li class="orglist--menu__item"><a href="">Редагувати</a></li>
-                        <li class="orglist--menu__item orglist--menu__item_del"><a href="">Видалити</a></li>
+            <div class="list__item">
+                <div class="list__img"><img src="static/build/img/organizations/org1.webp" decoding="async" loading="lazy" alt="" /></div>
+                <div class="list__name">ОСББ Петровський</div>
+                <div class="list__address">Київ, blvd Perova 10a</div>
+                <div class="list__blocks">3</div>
+                <div class="list__role">Aдміністратор закладу</div>
+                <a href="" class="btn btn_green list__btn">Деталі</a>
+                <div class="list--menu">
+                    <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                    <ul class="list--menu__list">
+                        <li class="list--menu__item"><a href="">Деталі</a></li>
+                        <li class="list--menu__item"><a href="">В сравнение</a></li>
+                        <li class="list--menu__item"><a href="">Додати блок</a></li>
+                        <li class="list--menu__item"><a href="">Редагувати</a></li>
+                        <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="orglist__item">
-                <div class="orglist__img"><img src="static/build/img/organizations/org2.webp" decoding="async" loading="lazy" alt="" /></div>
-                <div class="orglist__name">ОСББ «Мотор» Мотор</div>
-                <div class="orglist__address">Київ, prosp Navoi 69</div>
-                <div class="orglist__blocks">155</div>
-                <div class="orglist__role">Користувач</div>
-                <a href="" class="btn btn_green orglist__btn">Деталі</a>
-                <div class="orglist--menu">
-                    <div class="orglist--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
-                    <ul class="orglist--menu__list">
-                        <li class="orglist--menu__item"><a href="">Деталі</a></li>
-                        <li class="orglist--menu__item"><a href="">В сравнение</a></li>
-                        <li class="orglist--menu__item"><a href="">Додати блок</a></li>
-                        <li class="orglist--menu__item"><a href="">Редагувати</a></li>
-                        <li class="orglist--menu__item orglist--menu__item_del"><a href="">Видалити</a></li>
+            <div class="list__item">
+                <div class="list__img"><img src="static/build/img/organizations/org2.webp" decoding="async" loading="lazy" alt="" /></div>
+                <div class="list__name">ОСББ «Мотор» Мотор</div>
+                <div class="list__address">Київ, prosp Navoi 69</div>
+                <div class="list__blocks">155</div>
+                <div class="list__role">Користувач</div>
+                <a href="" class="btn btn_green list__btn">Деталі</a>
+                <div class="list--menu">
+                    <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                    <ul class="list--menu__list">
+                        <li class="list--menu__item"><a href="">Деталі</a></li>
+                        <li class="list--menu__item"><a href="">В сравнение</a></li>
+                        <li class="list--menu__item"><a href="">Додати блок</a></li>
+                        <li class="list--menu__item"><a href="">Редагувати</a></li>
+                        <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="orglist__item">
-                <div class="orglist__img"><img src="static/build/img/organizations/org3.webp" decoding="async" loading="lazy" alt="" /></div>
-                <div class="orglist__name">ОСББ «Aртемівский»</div>
-                <div class="orglist__address">Київ, вул. Бакінська 37-д</div>
-                <div class="orglist__blocks">145</div>
-                <div class="orglist__role">Aдміністратор закладу</div>
-                <a href="" class="btn btn_green orglist__btn">Деталі</a>
-                <div class="orglist--menu">
-                    <div class="orglist--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
-                    <ul class="orglist--menu__list">
-                        <li class="orglist--menu__item"><a href="">Деталі</a></li>
-                        <li class="orglist--menu__item"><a href="">В сравнение</a></li>
-                        <li class="orglist--menu__item"><a href="">Додати блок</a></li>
-                        <li class="orglist--menu__item"><a href="">Редагувати</a></li>
-                        <li class="orglist--menu__item orglist--menu__item_del"><a href="">Видалити</a></li>
+            <div class="list__item">
+                <div class="list__img"><img src="static/build/img/organizations/org3.webp" decoding="async" loading="lazy" alt="" /></div>
+                <div class="list__name">ОСББ «Aртемівский»</div>
+                <div class="list__address">Київ, вул. Бакінська 37-д</div>
+                <div class="list__blocks">145</div>
+                <div class="list__role">Aдміністратор закладу</div>
+                <a href="" class="btn btn_green list__btn">Деталі</a>
+                <div class="list--menu">
+                    <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                    <ul class="list--menu__list">
+                        <li class="list--menu__item"><a href="">Деталі</a></li>
+                        <li class="list--menu__item"><a href="">В сравнение</a></li>
+                        <li class="list--menu__item"><a href="">Додати блок</a></li>
+                        <li class="list--menu__item"><a href="">Редагувати</a></li>
+                        <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
                     </ul>
                 </div>
             </div>
