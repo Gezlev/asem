@@ -13,3 +13,6 @@ PageOrganizations();
 
 import Select from "./modules/select";
 document.querySelectorAll('.select').forEach( el => Select.init(el));
+
+import BlockAnalysis from "./components/page-block-analysis";
+BlockAnalysis();

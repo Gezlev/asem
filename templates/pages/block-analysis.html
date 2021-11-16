@@ -1,0 +1,89 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    <div class="block-analysis--header">
+        <h1 class="block-analysis--header__title">Аналіз блока</h1>
+        <a href="/blocks.php" class="block-analysis--header__back"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#arrowBack"></use></svg></a>
+    </div>
+
+    <div class="block-analysis--top">
+        <div class="block-analysis--filters">
+            <div class="block-analysis--filters__range">
+                <input type="text" name="start">
+                <span>—</span>
+                <input type="text" name="end">
+                <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#rangeIcon"></use></svg>
+            </div>
+
+            <div class="select">
+                <div class="select__header"></div>
+                <ul class="select__opts">
+                    <li class="select__opt" data-value="12">12 годин</li>
+                    <li class="select__opt" data-value="24">24 години</li>
+                    <li class="select__opt" data-value="48">48 годин</li>
+                </ul>
+                <input type="hidden" value="" name="" />
+            </div>
+
+            <div class="btn">Розрахувати</div>
+        </div>
+
+        <div class="select block-analysis--top__variants">
+            <div class="select__header"></div>
+            <ul class="select__opts">
+                <li class="select__opt" data-value="v1">Варіант аналізу №1</li>
+                <li class="select__opt" data-value="v2">Варіант аналізу №2</li>
+            </ul>
+            <input type="hidden" value="" name="" />
+        </div>
+    </div>
+
+    <div class="white-box block-analysis--container">
+        <header class="block-analysis--container__header">
+            <div class="block-analysis__title">
+                <h2 class="title">Загальне енергоспоживання</h2>
+                <p class="subtitle">ОСББ «Aртемівский», корпус №1, кв. 123</p>
+            </div>
+
+            <div class="block-analysis--exports">
+                <span>Експорт:</span>
+                <a href="" class="block-analysis--exports__item export-exel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconExel"></use></svg></a>
+                <a href="" class="block-analysis--exports__item export-pdf"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPdf"></use></svg></a>
+                <a href="" class="block-analysis--exports__item export-csv"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCsv"></use></svg></a>
+                <a href="" class="block-analysis--exports__item export-copy"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCopy"></use></svg></a>
+                <a href="" class="block-analysis--exports__item export-print"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPrint"></use></svg></a>
+            </div>
+        </header>
+
+        <div class="block-analysis--chart"></div>
+
+        <div class="pagination">
+            <div class="pagination__info">10 записів(a) із 5435</div>
+            <ul class="pagination__list">
+                <li class="pagination__item">
+                    <a class="pagination__prev" href=""></a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="">1</a>
+                </li>
+                <li class="pagination__item current">
+                    <a class="pagination__link" href="">2</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="">3</a>
+                </li>
+                <li class="pagination__item pagination__item_ellipsis">
+                    &hellip;
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="">58</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__next" href=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
