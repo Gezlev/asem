@@ -255,5 +255,47 @@
     width: 100%;
     height: 332px;
     margin: 32px 0 0;
+
+    &__tooltip {
+      padding: 12px 20px!important;
+      border-radius: 6px!important;
+      border: 0!important;
+      box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.16);
+      background-color: rgba(#304156, .95) !important;
+
+      strong {
+        display: block;
+        padding: 0 0 6px;
+        line-height: 20px!important;
+        font-size: 14px!important;
+        font-weight: 500!important;
+        color: #FFF;
+      }
+
+      div {
+        white-space: nowrap;
+        padding: 2px 0;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: 500;
+        font-family: 'MuseoSans', sans-serif;
+        color: #d9dbe6;
+
+        span {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          margin-right: 6px;
+          box-sizing: border-box;
+          border-radius: 50%;
+          border: 2px solid currentColor;
+          background-color: currentColor;
+
+          &.emptyCircle {
+            background-color: #FFF;
+          }
+        }
+      }
+    }
   }
 }
