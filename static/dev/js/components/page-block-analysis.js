@@ -11,10 +11,7 @@ const BlockAnalysis = () => {
     var myChart = echarts.init(chartDom);
     var option;
 
-    const colors = ['#5470C6', '#91CC75', '#EE6666'];
-
     option = {
-        color: colors,
         tooltip: {
             trigger: 'axis',
             renderMode: 'html',
@@ -60,7 +57,7 @@ const BlockAnalysis = () => {
                 axisTick: {
                     show: false
                 },
-                data: ['11-11-2021', '12-11-2021', '13-11-2021', '14-11-2021', '15-11-2021', '16-11-2021', '17-11-2021', '18-11-2021', '19-11-2021', '20-11-2021', '21-11-2021', '22-11-2021', '23-11-2021', '24-11-2021'],
+                data: ['11-11-2021', '12-11-2021', '13-11-2021', '14-11-2021', '15-11-2021', '16-11-2021', '17-11-2021', '18-11-2021', '19-11-2021', '20-11-2021', '21-11-2021', '22-11-2021', '23-11-2021', '24-11-2021']
             }
         ],
         yAxis: [
@@ -258,7 +255,7 @@ const BlockAnalysis = () => {
             {
                 name: 'p',
                 type: 'line',
-                data: [0.011, 0.013, 0.014, 0.015, 0.017, 0.013, 0.012, 0.016, 0.017, 0.018, 0.019, 0.023, 0.021, 0.016],
+                data: [0.016, 0.015, 0.017, 0.019, 0.018, 0.016, 0.014, 0.015, 0.017, 0.018, 0.019, 0.019, 0.021, 0.026],
                 yAxisIndex: 1,
                 smooth: true,
                 lineStyle: {
@@ -292,7 +289,7 @@ const BlockAnalysis = () => {
                 barWidth: 4,
                 barMaxWidth: 6,
                 barMinWidth: 2,
-                barGap: '100%',
+                barGap: '150%',
                 itemStyle: {
                     color: '#ff974a',
                     borderRadius: [3, 3, 0, 0]
@@ -301,12 +298,12 @@ const BlockAnalysis = () => {
             {
                 name: 'Теплова енергія',
                 type: 'bar',
-                data: [3.22, 3.28, 3.2, 3.16, 2.9, 3.03, 4.6, 0.9, 2.4, 2.5, 2.8, 3.3, 3.6, 3.1],
+                data: [3.22, 3.28, 3.2, 3.56, 2.9, 3.03, 4.6, 0.9, 2.4, 2.5, 2.8, 3.3, 3.6, 3.1],
                 yAxisIndex: 3,
                 barWidth: 6,
                 barMaxWidth: 4,
                 barMinWidth: 2,
-                barGap: '100%',
+                barGap: '150%',
                 itemStyle: {
                     color: '#679932',
                     borderRadius: [3, 3, 0, 0]
@@ -320,7 +317,7 @@ const BlockAnalysis = () => {
                 barWidth: 6,
                 barMaxWidth: 4,
                 barMinWidth: 2,
-                barGap: '100%',
+                barGap: '150%',
                 itemStyle: {
                     color: '#4694ff',
                     borderRadius: [3, 3, 0, 0]
@@ -334,7 +331,7 @@ const BlockAnalysis = () => {
                 barWidth: 6,
                 barMaxWidth: 4,
                 barMinWidth: 2,
-                barGap: '100%',
+                barGap: '150%',
                 itemStyle: {
                     color: '#ff4a7a',
                     borderRadius: [3, 3, 0, 0]
@@ -343,7 +340,7 @@ const BlockAnalysis = () => {
             {
                 name: 'T1',
                 type: 'line',
-                data: [189, 154, 170, 136, 148, 190, 145, 178, 112, 137, 179, 121, 192, 160],
+                data: [189, 154, 170, 186, 190, 178, 165, 158, 152, 157, 171, 175, 162, 140],
                 yAxisIndex: 4,
                 smooth: true,
                 lineStyle: {
@@ -373,7 +370,7 @@ const BlockAnalysis = () => {
             {
                 name: 'T2',
                 type: 'line',
-                data: [53, 46, 49, 51, 48, 52, 49, 52, 48, 53, 52, 46, 47, 49],
+                data: [53, 46, 49, 59, 78, 52, 49, 52, 48, 53, 52, 46, 47, 49],
                 yAxisIndex: 4,
                 smooth: true,
                 lineStyle: {

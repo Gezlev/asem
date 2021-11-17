@@ -253,7 +253,7 @@
 
   &--chart {
     width: 100%;
-    height: 332px;
+    height: 360px;
     margin: 32px 0 0;
 
     &__tooltip {
@@ -297,5 +297,51 @@
         }
       }
     }
+
+    &__labels {
+      display: block;
+      padding: 12px 0;
+      margin: 0;
+      list-style: none;
+      border-top: 1px solid var(--bg-1);
+      border-bottom: 1px solid var(--bg-1);
+    }
+    &__label {
+      display: inline-block;
+      margin: 0 24px 0 0;
+      padding: 8px 0;
+      white-space: nowrap;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--font-d);
+
+      span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 6px;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 2px solid currentColor;
+        background-color: currentColor;
+
+        &.emptyCircle {
+          background-color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+.darktheme .block-analysis--chart__tooltip {
+  background-color: rgba(#FFF, .97) !important;
+
+  strong {
+    color: #304156!important;
+  }
+
+  div {
+    color: rgba(#304156, 0.8)!important;
   }
 }
