@@ -192,6 +192,60 @@
     & > tr {
       & > td, & > th {
         vertical-align: top;
+      }
+    }
+  }
+
+  > thead {
+    & > tr {
+      &:first-child {
+        & > th, & > td {
+          padding: 12px 10px;
+          text-align: right;
+          white-space: normal;
+          max-width: 80px;
+          line-height: 13px;
+          font-size: 10px;
+          font-weight: 300;
+          text-transform: uppercase;
+          letter-spacing: .25px;
+          color: var(--font-l);
+
+          &.dt-sorter {
+            padding-right:20px;
+
+            &::before {
+              bottom: 19px;
+            }
+
+            &::after {
+              bottom: 16px;
+            }
+          }
+
+          &:first-of-type {
+            text-align: left;
+          }
+        }
+
+        + tr {
+          > td,
+          > th {
+            border-top: 0;
+          }
+        }
+      }
+
+      & > td, & > th {
+        padding: 12px 10px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  & > tbody, > tfoot {
+    & > tr {
+      & > td, & > th {
         padding: 16px 10px;
         white-space: nowrap;
       }
@@ -204,11 +258,28 @@
     }
   }
   & > tbody > tr > td {
+    text-align: right;
+    color: var(--font-r);
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 500;
     border-top: 1px solid var(--bg-1);
   }
 
   & > thead > tr {
-    & > th, & > td{
+
+    + tr {
+      > td,
+      > th {
+        border-top: 1px solid var(--bg-1);
+      }
+
+      &:last-child {
+        background-color: var(--green-sl);
+      }
+    }
+
+    & > th, & > td {
       vertical-align: bottom;
     }
     & > th {
@@ -227,34 +298,7 @@
 
   & > thead > tr:first-of-type {
 
-    & > th, & > td {
-      padding: 0 10px;
-      text-align: right;
-      white-space: normal;
-      max-width: 80px;
-      line-height: 13px;
-      font-size: 10px;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: .25px;
-      color: var(--font-l);
 
-      &.dt-sorter {
-        padding-right:20px;
-
-        &::before {
-          bottom: 7px;
-        }
-
-        &::after {
-          bottom: 4px;
-        }
-      }
-
-      &:first-of-type {
-        text-align: left;
-      }
-    }
   }
 
   & > tfoot  > tr{
