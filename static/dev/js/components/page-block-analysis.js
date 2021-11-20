@@ -1,3 +1,5 @@
+import JSTable from "../utils/jstable";
+
 const dataset = {
     dates: ["11-11-2021","12-11-2021","13-11-2021","14-11-2021","15-11-2021","16-11-2021","17-11-2021"],
     ee: ['3201.34','3167.1','2928.08','3092.35','4313.37','56','112'],
@@ -401,6 +403,8 @@ const BlockAnalysis = () => {
     };
 
     option && myChart.setOption(option);
+
+    let myTable = new JSTable("#analysis-table");
 
 };
 
