@@ -40,11 +40,11 @@ const JSTableDefaultConfig = {
 
  // Customise the display text
  labels: {
-  placeholder: "Search...",
+  placeholder: "Пошук...",
   perPage: "{select} entries per page",
   noRows: "No entries found",
-  info: "Showing {start} to {end} of {rows} entries",
-  loading: "Loading...",
+  info: "з {start} по {end} із {rows} записів(a)",
+  loading: "Завантажується...",
   infoFiltered: "Showing {start} to {end} of {rows} entries (filtered from {rowsTotal} entries)"
  },
 

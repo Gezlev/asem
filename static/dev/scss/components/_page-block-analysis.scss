@@ -334,27 +334,20 @@
   }
 
   &--table {
-    min-width: 100%;
 
-    thead>tr>th {
-
+    .dt-table>thead>tr>th:first-of-type {
       span {
         display: flex;
         max-width: 60px;
       }
     }
 
-    & &__headrow {
-      th {
-
-        &:first-of-type {
-          &.dt-sorter {
-            &::before,
-            &:after {
-              right: initial;
-              left: 35px;
-            }
-          }
+    .dt-table>thead>tr:first-of-type>th {
+      &:first-child {
+        &.dt-sorter::before,
+        &.dt-sorter::after {
+          right: initial;
+          left: 35px;
         }
       }
     }
