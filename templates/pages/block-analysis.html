@@ -70,7 +70,21 @@
 
         <div class="block-analysis--databox">
             <div class="block-analysis--table">
-                <table id="analysis-table">
+
+                <div class="block-analysis--table__perpage">
+                    <span>Відображати по:</span>
+                    <div class="select">
+                        <div class="select__header"></div>
+                        <ul class="select__opts">
+                            <li class="select__opt" data-value="5">5</li>
+                            <li class="select__opt" data-value="15">15</li>
+                            <li class="select__opt" data-value="25">25</li>
+                        </ul>
+                        <input type="hidden" value="" name="batable__perpage" />
+                    </div>
+                </div>
+
+                <table id="analysis-table" class="dt-table">
                     <thead>
                     <tr>
                         <th>Дата</th>

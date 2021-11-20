@@ -22,6 +22,7 @@ const Select = (() => {
         opt.classList.add('selected');
         slctHeader.innerHTML = opt.innerHTML;
         slctInp.value = opt.dataset.value;
+        slctInp.dispatchEvent(new Event('change', {bubbles: true}));
     }
 
     window.addEventListener('click', evnt => {

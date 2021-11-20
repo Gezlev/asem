@@ -1,4 +1,4 @@
-import JSTable from "../utils/jstable";
+import JSTable from "../modules/jstable";
 
 const dataset = {
     dates: ["11-11-2021","12-11-2021","13-11-2021","14-11-2021","15-11-2021","16-11-2021","17-11-2021"],
@@ -404,7 +404,30 @@ const BlockAnalysis = () => {
 
     option && myChart.setOption(option);
 
-    let myTable = new JSTable("#analysis-table");
+    const AnalysisTable = () => {
+
+        let perPage = document.querySelector('.block-analysis--table__perpage .select');
+        if (!perPage) return;
+
+        let perPageList = [];
+        perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(el.dataset.value));
+
+        let dataTable = new JSTable("#analysis-table", {
+            searchable: false,
+            perPageSelect: perPageList
+        });
+
+        let dataTableSelect = document.querySelector('.dt-selector');
+        console.log(dataTableSelect);
+
+        let perPageInp = perPage.querySelector('input');
+        perPageInp && perPageInp.addEventListener('change', evnt => {
+            dataTableSelect.value = perPageInp.value;
+            dataTableSelect.dispatchEvent(new Event('change', {bubbles: true}));
+            //dataTable.update();
+        }, {passive: true});
+    }
+    AnalysisTable();
 
 };
 

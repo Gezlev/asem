@@ -334,6 +334,7 @@
   }
 
   &--table {
+    margin-top: 36px;
 
     .dt-table>thead>tr>th:first-of-type {
       span {
@@ -359,6 +360,24 @@
         color: var(--font-l);
         font-size: 12px;
         font-weight: 300;
+      }
+    }
+    .dt-top {
+      display: none;
+    }
+
+    &__perpage {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 24px;
+
+      > span {
+        display: block;
+        margin-right: 16px;
+      }
+      .select {
+        flex: 0 0 116px;
       }
     }
   }
