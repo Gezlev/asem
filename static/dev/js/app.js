@@ -17,3 +17,6 @@ PageOrganizations();
 
 import BlockAnalysis from "./components/page-block-analysis";
 BlockAnalysis();
+
+import Contacts from "./components/page-contacts";
+Contacts();

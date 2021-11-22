@@ -9,6 +9,7 @@
 @use 'modules/form/checkbox-and-radio';
 @use 'modules/form/select';
 
+@use 'modules/asem-tooltip';
 @use 'modules/navigations';
 @use 'modules/breadcrumb';
 @use 'modules/pagination';
@@ -17,7 +18,11 @@
 
 @use 'modules/welcome';
 
-@use './components/page-login';
-@use './components/page-orglist';
-@use './components/page-blocklist';
-@use './components/page-block-analysis';
+@use 'components/page-login';
+@use 'components/page-organisations';
+@use 'components/page-blocklist';
+@use 'components/page-block-analysis';
+
+@use 'components/organisation/common';
+@use 'components/organisation/parameters';
+@use 'components/organisation/contacts';

@@ -7,9 +7,12 @@ const dataset = {
 
 const BlockAnalysis = () => {
     const range = document.querySelector('.block-analysis--filters__range');
-    let rangepicker = new DateRangePicker(range, {});
+    let rangepicker = range ? new DateRangePicker(range, {}) : false;
 
     let chartDom = document.querySelector('.block-analysis--chart');
+
+    if (!chartDom) return;
+
     var myChart = echarts.init(chartDom);
     var option;
 
@@ -418,7 +421,6 @@ const BlockAnalysis = () => {
         });
 
         let dataTableSelect = document.querySelector('.dt-selector');
-        console.log(dataTableSelect);
 
         let perPageInp = perPage.querySelector('input');
         perPageInp && perPageInp.addEventListener('change', evnt => {
