@@ -1,3 +1,4 @@
+import { DateRangePicker } from '../modules/vanillajs-datepicker';
 import JSTable from "../modules/jstable";
 
 const dataset = {
