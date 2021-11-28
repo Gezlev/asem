@@ -8,9 +8,9 @@ require_once 'vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('templates/');
 $twig = new \Twig\Environment($loader);
 
-echo $twig->render('pages/parameters.html', [
-    'title' => 'Параметри організації | ASEM',
-    'page' => 'parameters'
+echo $twig->render('pages/block/list.html', [
+    'title' => 'Блоки | ASEM',
+    'page' => 'blocks'
 ]);
 
 ?>

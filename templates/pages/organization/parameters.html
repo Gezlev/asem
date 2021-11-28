@@ -1,0 +1,173 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="org--params">
+        <div class="org--params__col">
+            <div class="white-box org--params__item">
+                <h3 class="title org--params__title">
+                    <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                    Теплова енергія
+                </h3>
+                <div class="org--params__row">
+                    <div class="org--params__name">Постачальник:</div>
+                    <div class="org--params__value"><a href="">МБРТ-6</a></div>
+                    <div class="org--params__icon">e</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Ціна:</div>
+                    <div class="org--params__value">-</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Договір:</div>
+                    <div class="org--params__value">690044</div>
+                    <div class="org--params__icon iconA">a</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Рахунок:</div>
+                    <div class="org--params__value">1640385</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Опалення, ГКал/г:</div>
+                    <div class="org--params__value">0.371</div>
+                    <div class="org--params__icon iconA">a</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">ГВП, ГКал/г:</div>
+                    <div class="org--params__value">0.204</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Вентиляція, ГКал/г:</div>
+                    <div class="org--params__value">0.092</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Всього, ГКал/г:</div>
+                    <div class="org--params__value">0.667</div>
+                </div>
+            </div>
+
+            <div class="white-box org--params__item">
+                <h3 class="org--params__title">
+                    <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconColdWater"></use></svg></div>
+                    Холодна вода
+                </h3>
+                <div class="org--params__row">
+                    <div class="org--params__name">Постачальник:</div>
+                    <div class="org--params__value">-</div>
+                    <div class="org--params__icon">e</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Ціна:</div>
+                    <div class="org--params__value">-</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Договір:</div>
+                    <div class="org--params__value">1640385</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Рахунок:</div>
+                    <div class="org--params__value">16403851640385</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Ввід води, м3:</div>
+                    <div class="org--params__value">12.204</div>
+                </div>
+            </div>
+
+            <div class="white-box org--params__item">
+                <h3 class="org--params__title">
+                    <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconGas"></use></svg></div>
+                    Газопостачання
+                </h3>
+                <div class="org--params__nodata">
+                    <span>Немає даних</span>
+                    <div class="btn btn_green">Додати</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="org--params__col">
+            <div class="white-box org--params__item">
+                <h3 class="org--params__title">
+                    <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconElectricEnergy"></use></svg></div>
+                    Електрична енергія
+                </h3>
+                <div class="org--params__row">
+                    <div class="org--params__name">Постачальник:</div>
+                    <div class="org--params__value"><a href="">ТОВ "Біла Церква Міськ Постач Енерго Ренесанс Потреб Надзор"</a></div>
+                    <div class="org--params__icon iconE">e</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Діючий тариф (грн / кВт*год):</div>
+                    <div class="org--params__value">2.76</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Договір:</div>
+                    <div class="org--params__value">ЕЕ 2021-09-15 /22</div>
+                    <div class="org--params__icon iconA">a</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Рахунок:</div>
+                    <div class="org--params__value">1234567890-1</div>
+                </div>
+
+                <h5 class="org--params__subtitle">Показники лічильників: </h5>
+                <div class="org--params__row">
+                    <div class="org--params__name">№123456789 - 000011.03</div>
+                    <div class="org--params__value">000011.03</div>
+                    <div class="org--params__icon iconA">a</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">№123456780 - 000022.06</div>
+                    <div class="org--params__value">000022.06</div>
+                </div>
+            </div>
+
+            <div class="white-box org--params__item">
+                <h3 class="org--params__title">
+                    <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconHotWater"></use></svg></div>
+                    ГВП
+                </h3>
+                <div class="org--params__row">
+                    <div class="org--params__name">Постачальник:</div>
+                    <div class="org--params__value">-</div>
+                    <div class="org--params__icon">e</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Ціна:</div>
+                    <div class="org--params__value">-</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Договір:</div>
+                    <div class="org--params__value">1640385</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Рахунок:</div>
+                    <div class="org--params__value">16403851640385</div>
+                </div>
+                <div class="org--params__row">
+                    <div class="org--params__name">Ввід води, м3:</div>
+                    <div class="org--params__value">12.204</div>
+                </div>
+            </div>
+
+            <div class="white-box org--params__item">
+                <h3 class="org--params__title">
+                    <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconLight"></use></svg></div>
+                    Мікроклімат
+                </h3>
+                <div class="org--params__nodata">
+                    <span>Немає даних</span>
+                    <div class="btn btn_green">Додати</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

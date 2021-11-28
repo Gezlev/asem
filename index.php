@@ -8,7 +8,7 @@ require_once 'vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('templates/');
 $twig = new \Twig\Environment($loader);
 
-echo $twig->render('pages/organizations-empty.html', [
+echo $twig->render('pages/organization/list-empty.html', [
     'title' => 'No Records Page | ASEM',
     'page' => 'index'
 ]);
