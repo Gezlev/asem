@@ -1,0 +1,42 @@
+.org--general {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+
+    .white-box + .white-box {
+        margin-top: 24px;
+    }
+
+    &__main {
+        flex: 1 1 auto;
+        padding-top: 32px;
+        padding-right: 32px;
+        box-sizing: border-box;
+
+        .white-box {
+            padding: 32px 24px;
+        }
+    }
+
+    &__sidebar {
+        flex: 0 0 352px;
+        padding-top: 32px;
+        padding-left: 32px;
+        box-sizing: border-box;
+        border-left: 1px solid var(--bg-1);
+    }
+}
+
+.org--currents {
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .title {
+        margin: 0;
+        padding: 0;
+        color: var(--font-d);
+    }
+}
