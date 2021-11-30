@@ -28,12 +28,8 @@
 }
 
 .org--currents {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
     &__header {
-        flex: 0 0 100%;
         display: flex;
         justify-content: space-between;
         margin: 0 0 12px;
@@ -45,84 +41,135 @@
         color: var(--font-d);
     }
 
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &__temp {
         flex: 0 0 auto;
+        max-width: 216px;
         padding-right: 32px;
         box-sizing: border-box;
+    }
 
-        &_value {
-            display: flex;
-            align-items: flex-start;
-            margin: 0 0 12px;
-            line-height: 64px;
-            font-size: 62px;
-            font-weight: 700;
-            color: var(--font-d);
+    &__value {
+        display: flex;
+        align-items: flex-start;
+        margin: 0 0 12px;
+        line-height: 64px;
+        font-size: 62px;
+        font-weight: 700;
+        color: var(--font-d);
 
-            small {
-                display: block;
-                margin-left: 4px;
-                line-height: 36px;
-                font-size: 32px;
-            }
+        small {
+            display: block;
+            margin-left: 4px;
+            line-height: 36px;
+            font-size: 32px;
         }
+    }
 
-        &_desc {
-            display: flex;
-            margin-bottom: 28px;
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        color: var(--white-inverse);
+        line-height: 1;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 6px;
+        background-color: var(--font-d);
+
+        svg {
+            display: block;
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &__desc {
+        display: flex;
+        margin-bottom: 28px;
+        line-height: 18px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--font-d);
+
+        span {
+            display: block;
+            max-width: 96px;
+            margin-top: 1px;
+        }
+    }
+    &__desc &__icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 18px;
+        border-radius: 12px;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    &__middle {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        border-top: 1px solid var(--bg-1);
+
+        span {
+            flex: 0 0 100%;
+            display: block;
+            max-width: 200px;
             line-height: 18px;
             font-size: 12px;
             font-weight: 500;
-            color: var(--font-d);
+            color: var(--font-r);
+        }
+    }
 
-            span {
-                display: block;
-                max-width: 96px;
-                margin-top: 1px;
-            }
+    &__plot {
+        height: 28px;
+        flex: 1 1 auto;
+        margin-right: 8px;
+    }
+
+    &__diff {
+        flex: 0 0 48px;
+        display: flex;
+        align-items: center;
+        line-height: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--font-d);
+    }
+    &__diff &__icon {
+        margin-right: 6px;
+        border-radius: 50%;
+        background-color: var(--green);
+
+        svg {
+            width: 10px;
+            height: 10px;
+            fill: #FFFFFF;
+            transform: rotate(90deg);
         }
 
-        &_icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            margin-right: 18px;
-            border-radius: 12px;
-            background-color: #304156;
-
+        &.up {
             svg {
-                display: block;
-                width: 18px;
-                height: 18px;
-                fill: #FFFFFF;
+                transform: rotate(90deg);
             }
         }
 
-        &_middle {
-            display: flex;
-            flex-wrap: wrap;
-            border-top: 1px solid var(--bg-1);
-
-            span {
-                flex: 0 0 100%;
-                display: block;
-                max-width: 200px;
-                line-height: 18px;
-                font-size: 12px;
-                font-weight: 500;
-                color: var(--font-r);
+        &.down {
+            svg {
+                transform: rotate(-90deg);
             }
-        }
-
-        &_chart {
-            height: 28px;
-            width: 200px;
-        }
-
-        &_diff {
-            flex: 0 0 32px;
         }
     }
 
@@ -131,11 +178,16 @@
     }
 
     &__params {
-        flex: 0 0 100%;
         display: flex;
         border-radius: 8px;
         box-sizing: border-box;
         border: 1px solid var(--bg-1);
+    }
+
+    &__params &__icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
     }
 
     &__group,
@@ -145,6 +197,8 @@
     }
 
     &__group {}
+    &__group &__icon {
+    }
     &__itp {}
     &__eclass {}
 }

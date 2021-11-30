@@ -25,23 +25,35 @@
                     </div>
                 </header>
 
-                <div class="org--currents__temp">
-                    <div class="org--currents__temp_value">23.7<small>°C</small></div>
-                    <div class="org--currents__temp_desc">
-                        <div class="org--currents__temp_icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
-                        <span>Температура в&nbsp;приміщеннях</span>
+                <div class="org--currents__info">
+                    <div class="org--currents__temp">
+                        <div class="org--currents__value">23.7<small>°C</small></div>
+                        <div class="org--currents__desc">
+                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
+                            <span>Температура в&nbsp;приміщеннях</span>
+                        </div>
+                        <div class="org--currents__middle">
+                            <div class="org--currents__plot"></div>
+                            <div class="org--currents__diff">
+                                <div class="org--currents__icon up {# down #}"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#arrowBack"></use></svg></div>
+                                6%
+                            </div>
+                            <span>відношення до середньорічної температури</span>
+                        </div>
                     </div>
-                    <div class="org--currents__temp_middle">
-                        <div class="org--currents__temp_chart"></div>
-                        <div class="org--currents__temp_diff">1</div>
-                        <span>відношення до середньорічної температури</span>
+
+                    <div class="org--currents__chart">
+                        <div class="org--currents__chartlabels">
+                            <div class="org--currents__chartlabel"><span></span> Зовнішня температура: <b>8,7°С</b></div>
+                            <div class="org--currents__chartlabel"><span></span> Відносна норма: <b>13,5°С</b></div>
+                        </div>
                     </div>
                 </div>
-                <div class="org--currents__chart"></div>
+
                 <div class="org--currents__params">
                     <div class="org--currents__group">
                         <header>
-                            <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg>
+                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconResponsibility"></use></svg></div>
                             <span>Відповідальність / Група</span>
                         </header>
                         <strong>586.75</strong>
@@ -49,14 +61,14 @@
                     </div>
                     <div class="org--currents__itp">
                         <header>
-                            <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg>
+                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconStateitp"></use></svg></div>
                             <span>Стан ІТП</span>
                         </header>
                         <strong>6,937</strong>
                     </div>
                     <div class="org--currents__eclass">
                         <header>
-                            <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg>
+                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEclass"></use></svg></div>
                             <span>Клас енергоефективності:</span>
                         </header>
                         <strong>E</strong>

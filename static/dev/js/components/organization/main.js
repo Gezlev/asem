@@ -8,7 +8,7 @@ const OrgMain = () => {
     }
 
 
-    let chartDom = document.querySelector('.org--currents__temp_chart');
+    let chartDom = document.querySelector('.org--currents__plot');
 
     if (!chartDom) return;
 
