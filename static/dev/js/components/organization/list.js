@@ -1,4 +1,4 @@
-const PageOrganizations = () => {
+const OrgList = () => {
 
     const OrglistView = () => {
         let viewBtns = document.querySelector('.list--header__view');
@@ -37,4 +37,4 @@ const PageOrganizations = () => {
     OrglistView();
 };
 
-export default PageOrganizations;
+export default OrgList;

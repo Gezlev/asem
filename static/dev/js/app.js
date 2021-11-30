@@ -12,8 +12,11 @@ loginPassEye('.loginpass__eye', '#loginpass');
 import SidebarMenu from "./modules/sidebar-menu";
 SidebarMenu();
 
-import PageOrganizations from "./components/page-organizations";
-PageOrganizations();
+import OrgList from "./components/organization/list";
+OrgList();
+
+import OrgMain from "./components/organization/main";
+OrgMain();
 
 import BlockAnalysis from "./components/page-block-analysis";
 BlockAnalysis();

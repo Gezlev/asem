@@ -8,8 +8,8 @@
 
     {% include 'blocks/organization/menu.html' %}
 
-    <div class="org--general">
-        <div class="org--general__main">
+    <div class="org--main">
+        <div class="org--main__content">
             <div class="white-box org--currents">
                 <header class="org--currents__header">
                     <h3 class="title">Поточний стан</h3>
@@ -26,14 +26,14 @@
                 </header>
 
                 <div class="org--currents__temp">
-                    <div class="org--currents__temp_value">27<small>°C</small></div>
+                    <div class="org--currents__temp_value">23.7<small>°C</small></div>
                     <div class="org--currents__temp_desc">
-                        <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
-                        <span>Температура в приміщеннях</span>
+                        <div class="org--currents__temp_icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
+                        <span>Температура в&nbsp;приміщеннях</span>
                     </div>
                     <div class="org--currents__temp_middle">
                         <div class="org--currents__temp_chart"></div>
-                        <div class="org--currents__temp_diff"></div>
+                        <div class="org--currents__temp_diff">1</div>
                         <span>відношення до середньорічної температури</span>
                     </div>
                 </div>
@@ -41,45 +41,33 @@
                 <div class="org--currents__params">
                     <div class="org--currents__group">
                         <header>
-                            <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
-                            Відповідальність / Група
+                            <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg>
+                            <span>Відповідальність / Група</span>
                         </header>
                         <strong>586.75</strong>
                         <small>1</small>
                     </div>
                     <div class="org--currents__itp">
                         <header>
-                            <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
-                            Стан ІТП
+                            <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg>
+                            <span>Стан ІТП</span>
                         </header>
                         <strong>6,937</strong>
                     </div>
                     <div class="org--currents__eclass">
                         <header>
-                            <div class="org--params__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
-                            Клас енергоефективності:
+                            <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg>
+                            <span>Клас енергоефективності:</span>
                         </header>
                         <strong>E</strong>
-                        <div class="org--currents__eclassicon">
+                        <div class="org--currents__eclass_icon">
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="white-box">
-                Поточний стан
-                <br>
-                <br>
-                <br>
-            </div>
-            <div class="white-box">
-                Поточний стан
-                <br>
-                <br>
-                <br>
-            </div>
         </div>
-        <div class="org--general__sidebar">
+        <div class="org--main__sidebar">
             <div class="white-box">
                 Поточний стан
                 <br>

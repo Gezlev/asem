@@ -8,7 +8,9 @@ const dataset = {
 
 const BlockAnalysis = () => {
     const range = document.querySelector('.block-analysis--filters__range');
-    let rangepicker = range ? new DateRangePicker(range, {}) : false;
+    let rangepicker = range ? new DateRangePicker(range, {
+        format: 'dd/mm/yyyy'
+    }) : false;
 
     let chartDom = document.querySelector('.block-analysis--chart');
 
