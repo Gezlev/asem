@@ -411,6 +411,13 @@ const OrgMain = () => {
                 disableDefaultUI: true,
                 styles: options
             });
+            if (coords) {
+                new google.maps.Marker({
+                    position: { lat: Number(coords[0]), lng: Number(coords[1]) },
+                    map,
+                    icon: "static/build/img/icon-map-marker.svg"
+                });
+            }
         };
 
         let zoomIn = wrapper.querySelector('.org--map__zoomin');
