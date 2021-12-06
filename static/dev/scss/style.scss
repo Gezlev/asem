@@ -2,6 +2,7 @@
 @use './utils/colors' as *;
 @use './utils/typography';
 @use './utils/layout';
+@use './utils/icons';
 
 @use 'modules/jstable';
 @use 'modules/datepicker';
@@ -16,6 +17,8 @@
 @use 'modules/pagination';
 @use 'modules/informer';
 @use 'modules/list';
+@use 'modules/slider';
+@use 'modules/gallery';
 
 @use 'modules/welcome';
 

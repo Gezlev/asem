@@ -11,9 +11,6 @@ const Contacts = () => {
         searchable: false,
         perPage: 100
     });
-    contactTable.on("init", function () {
-        console.log("init");
-    });
 
 };
 

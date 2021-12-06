@@ -7,7 +7,7 @@
     width: calc(50% - 16px);
   }
 
-  &__item {
+  & &__item {
     padding: 32px;
     margin-bottom: 24px;
     box-sizing: border-box;
@@ -45,9 +45,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: #EEE;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: var(--icons-bg);
+
+    &.iconA {
+      color: #FFF;
+      background-color: var(--green);
+    }
 
     svg {
       display: block;
+      width: 12px;
+      height: 12px;
+    }
+
+    &.lg {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 
@@ -59,17 +85,8 @@
     padding: 0;
     color: var(--font-d);
   }
-  &__title &__icon {
-    width: 32px;
-    height: 32px;
+  &__title .source-icon {
     margin-right: 20px;
-    border-radius: 12px;
-    background-color: #304156;
-
-    svg {
-      width: 18px;
-      height: 18px;
-    }
   }
 
   &__subtitle {
@@ -107,30 +124,11 @@
       background-color: var(--bg);
     }
   }
-  &__row &__icon {
+  &__row .source-icon {
     position: absolute;
     top: 50%;
     right: 12px;
-    width: 16px;
-    height: 16px;
     margin-top: -8px;
-    color: var(--white-inverse);
-    line-height: 1;
-    font-size: 12px;
-    font-weight: 500;
-    border-radius: 6px;
-    background-color: var(--font-d);
-
-    &.iconA {
-      color: #FFF;
-      background-color: var(--green);
-    }
-
-    svg {
-      display: block;
-      width: 12px;
-      height: 12px;
-    }
   }
 
   &__name,

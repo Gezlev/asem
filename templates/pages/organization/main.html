@@ -29,14 +29,20 @@
                     <div class="org--currents__temp">
                         <div class="org--currents__value">23.7<small>°C</small></div>
                         <div class="org--currents__desc">
-                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
+                            <div class="source-icon source-icon_lg"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
                             <span>Температура в&nbsp;приміщеннях</span>
                         </div>
                         <div class="org--currents__middle">
-                            <div class="org--currents__plot"></div>
+                            {%
+                                set barData = {
+                                    dates: ["2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],
+                                    values: [34,76,120,100,130,120,180,130,176,156,180,210,160,240],
+                                }
+                            %}
+                            <div class="org--currents__plot" data-chart="{{ barData|json_encode|e('html_attr')  }}"></div>
                             <div class="org--currents__diff">
-                                <div class="org--currents__icon up {# down #}"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#arrowBack"></use></svg></div>
-                                6%
+                                <div class="status-icon status-icon_arrow up {# down #}"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#arrowBack"></use></svg></div>
+                                <span>6%</span>
                             </div>
                             <span>відношення до середньорічної температури</span>
                         </div>
@@ -47,13 +53,22 @@
                             <div class="org--currents__chartlabel"><span></span> Зовнішня температура: <b>8,7°С</b></div>
                             <div class="org--currents__chartlabel"><span></span> Відносна норма: <b>13,5°С</b></div>
                         </div>
+                        {%
+                            set barData = {
+                                dates: ["2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01"],
+                                home: [26,23,22,24,22,25],
+                                outer: [8,3,-4,-11,-18,-12],
+                                norm: [16,8,-6,-14,-9,-2],
+                            }
+                        %}
+                        <div class="org--currents__bar" data-chart="{{ barData|json_encode|e('html_attr')  }}"></div>
                     </div>
                 </div>
 
                 <div class="org--currents__params">
                     <div class="org--currents__group">
                         <header>
-                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconResponsibility"></use></svg></div>
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconResponsibility"></use></svg></div>
                             <span>Відповідальність / Група</span>
                         </header>
                         <strong>586.75</strong>
@@ -61,32 +76,166 @@
                     </div>
                     <div class="org--currents__itp">
                         <header>
-                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconStateitp"></use></svg></div>
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconStateitp"></use></svg></div>
                             <span>Стан ІТП</span>
                         </header>
                         <strong>6,937</strong>
                     </div>
                     <div class="org--currents__eclass">
                         <header>
-                            <div class="org--currents__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEclass"></use></svg></div>
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEclass"></use></svg></div>
                             <span>Клас енергоефективності:</span>
                         </header>
                         <strong>E</strong>
-                        <div class="org--currents__eclass_icon">
+                        <div class="org--currents__eclass_icon classE"> {# can be set: classA, classB, classC, classD, classE, classF, classG #}
                             <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="white-box org--main__general">
+                <h3 class="title">Загальні відомості</h3>
+
+                <div class="org--params__item">
+                    <div class="org--params__row">
+                        <div class="org--params__name">Загальна площа, м<sup>2</sup>:</div>
+                        <div class="org--params__value">2 556</div>
+                        <div class="source-icon">e</div>
+                    </div>
+                    <div class="org--params__row">
+                        <div class="org--params__name">Опалювальна площа, м<sup>2</sup>:</div>
+                        <div class="org--params__value">2 435</div>
+                    </div>
+                    <div class="org--params__row">
+                        <div class="org--params__name">Загальний об'єм, м<sup>3</sup>:</div>
+                        <div class="org--params__value">7 285</div>
+                    </div>
+                    <div class="org--params__row">
+                        <div class="org--params__name">Опалювальний об'єм, м<sup>3</sup>:</div>
+                        <div class="org--params__value">6 937</div>
+                    </div>
+                </div>
+
+                <div class="org--params__item">
+                    <div class="org--params__row">
+                        <div class="org--params__name">Персонал:</div>
+                        <div class="org--params__value">-</div>
+                    </div>
+                    <div class="org--params__row">
+                        <div class="org--params__name">Відвідувачі:</div>
+                        <div class="org--params__value">104</div>
+                        <div class="source-icon iconA">a</div>
+                    </div>
+                    <div class="org--params__row">
+                        <div class="org--params__name">Постійно присутні:</div>
+                        <div class="org--params__value">-</div>
+                    </div>
+                    <div class="org--params__row">
+                        <div class="org--params__name">Годин роботи на добу:</div>
+                        <div class="org--params__value">24</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="white-box">
+                <h3 class="title">Підключення / cпоживання енергоресурсів</h3>
+
+                <div class="org--main__table">
+                    <table id="source-list" class="dt-table">
+                        <thead>
+                        <tr>
+                            <th>Ресурс</th>
+                            <th data-sortable="false"></th>
+                            <th>Базовий рівень</th>
+                            <th>Фактичне спож-ня</th>
+                            <th>економія / перевитрата</th>
+                            <th>Статус</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div> Теплова енергія</td>
+                            <td>Гкал</td>
+                            <td>0.00</td>
+                            <td>1.30</td>
+                            <td>1.30</td>
+                            <td><span class="tooltip" alt="Активовано"><span class="status-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconElectricEnergy"></use></svg></div> Електрична енергія</td>
+                            <td>кВт*год</td>
+                            <td>10 000.00</td>
+                            <td>7859.00</td>
+                            <td>-2141.00</td>
+                            <td><span class="tooltip" alt="Аварія"><span class="status-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusAccident"></use></svg></span></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconColdWater"></use></svg></div> Водопостачання</td>
+                            <td>м<sup>3</sup></td>
+                            <td>90.00</td>
+                            <td>85.30</td>
+                            <td>-4.70</td>
+                            <td><span class="tooltip" alt="Увага"><span class="status-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusAlert"></use></svg></span></span></td>
+                        </tr>
+                        <tr>
+                            <td><div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconLight"></use></svg></div> Мікроклімат</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td>–</td>
+                            <td><span class="tooltip" alt="В очікуванні"><span class="status-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusWaiting"></use></svg></span></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
         </div>
+
         <div class="org--main__sidebar">
             <div class="white-box">
-                Поточний стан
-                <br>
-                <br>
-                <br>
+                <div class="org--map">
+                    <div id="orgmap" data-coords="50.482924;30.451231"></div>
+                    <div class="org--map__controls">
+                        <div class="org--map__zoomin">+</div>
+                        <div class="org--map__zoomout">—</div>
+                    </div>
+                    <div class="org--map__zoom"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconMapZoom"></use></svg></div>
+                </div>
+                <div class="org--main__address">
+                    <p>Київ, Шевченківський р-н, вул. Бакінська, 37-Д</p>
+                    <a href="https://www.google.com/maps/@50.482924,30.451231,16z?hl=uk-UA" target="_blank">Дивитись на мапі</a> {# google.com/maps/@<lat>,<lng>,16z?hl=uk-UA #}
+                </div>
+                <ul class="org--main__info">
+                    <li><span>Всього Блоків:</span> <span>525</span></li>
+                    <li><span>Всього Корпусів:</span> <span>1</span></li>
+                    <li><span>Поверхів:</span> <span>25</span></li>
+                    <li><span>Рік забудови:</span> <span>2015</span></li>
+                </ul>
+            </div>
+
+            <div class="white-box org--main__gallery">
+                <h3 class="title">Галерея (3)</h3>
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide"><img src="static/build/img/organizations/org1.webp" decoding="async" loading="lazy" alt="" data-origin="static/build/img/organizations/org1@3x.webp" /></li>
+                            <li class="splide__slide"><img src="static/build/img/organizations/org2.webp" decoding="async" loading="lazy" alt="" data-origin="static/build/img/organizations/org2@3x.webp" /></li>
+                            <li class="splide__slide"><img src="static/build/img/organizations/org3.webp" decoding="async" loading="lazy" alt="" data-origin="static/build/img/organizations/org3@3x.webp" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="white-box org--main__schedule">
+                <h3 class="title">Графік роботи</h3>
+                <ul class="org--main__info">
+                    <li><span>Пн-Пт:</span> <span>9:00-18:00</span></li>
+                    <li><span>Сб-Нд:</span> <span>Вихідні</span></li>
+                </ul>
             </div>
         </div>
     </div>
-
 {% endblock %}
