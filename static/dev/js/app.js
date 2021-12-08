@@ -7,7 +7,7 @@ import Select from "./modules/select";
 document.querySelectorAll('.select').forEach( el => Select.init(el));
 
 import loginPassEye from "./modules/login-pass-eye";
-loginPassEye('.loginpass__eye', '#loginpass');
+loginPassEye('.loginpass__eye', '#password');
 
 import SidebarMenu from "./modules/sidebar-menu";
 SidebarMenu();

@@ -14,6 +14,7 @@
                 <h2 class="login--content__title">Увійти</h2>
                 <p class="login--content__text">Привіт, приємно бачити Вас знову!</p>
             </header>
+            <form data-parsley-validate="" action="" method="POST" class="form" role="form">
             <div class="login--form">
                 <div class="fieldset">
                     <label for="loginmail">Email</label>
@@ -21,8 +22,8 @@
                 </div>
 
                 <div class="fieldset">
-                    <label for="loginpass">Пароль</label>
-                    <input type="password" id="loginpass" name="loginpass" />
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" />
                     <div class="loginpass__eye"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#passEye"></use></svg></div>
                 </div>
 
@@ -34,13 +35,14 @@
                     <span>Запам'ятати мене</span>
                 </div>
 
-                <div class="btn btn_green">Увійти</div>
+                <button class="btn btn_green" type="submit">Увійти</button>
 
                 <div class="login--form__links">
                     <a href="">Забули пароль?</a>
                     <a href="">Зареєструватись</a>
                 </div>
             </div>
+            </form>
             <div class="login--content__copy">&copy; Copyright 2021 asem.escoua.com</div>
         </main>
     </div>

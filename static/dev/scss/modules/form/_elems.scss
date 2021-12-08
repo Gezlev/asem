@@ -42,6 +42,7 @@ input {
   text-decoration: none;
   cursor: pointer;
   border-radius: 6px;
+  border: 0;
   transition: background-color .3s ease-out;
 
   &_green {
