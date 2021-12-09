@@ -1,0 +1,38 @@
+{% extends 'layouts/base.html'%}
+
+{% block container %}
+    <header class="landing--header">
+        <a class="landing--header__logo" href="/">
+            <svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg>
+        </a>
+
+        <nav class="landing--nav">
+            <ul class="landing--menu">
+                <li class="landing--menu__item"><a class="landing--menu__link">Product</a></li>
+                <li class="landing--menu__item"><a class="landing--menu__link">About</a></li>
+                <li class="landing--menu__item"><a class="landing--menu__link">Contacts</a></li>
+                <li class="landing--menu__item"><a class="landing--menu__link">Info</a></li>
+                <li class="landing--menu__item"><a class="landing--menu__link">Policy</a></li>
+            </ul>
+            <a class="landing--nav__login" href=""><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#landingLogin"></use></svg> Увійти</a>
+        </nav>
+    </header>
+
+    <main class="landing--content">
+
+        <section class="landing--top">
+
+            <div class="landing__container">
+                <h1 class="landing--top__title">Автоматизована Система Енергетичного Моніторингу</h1>
+                <p class="landing--top__desc">Комплекс програмного та технічного забеспечення для дистанційного обліку паливно-енергетичних ресурсів отриманих від вузлів обліку</p>
+                <a class="landing--top__btn" href="">Увійти</a>
+                <a class="landing--top__btn landing--top__btn_transparent" href="">Реєстрація</a>
+            </div>
+
+            <div class="landing--top__img">
+                <img src="/static/build/img/land-asem-review.png" />
+            </div>
+        </section>
+        <div class="login--content__copy">&copy; Copyright 2021 asem.escoua.com</div>
+    </main>
+{% endblock %}

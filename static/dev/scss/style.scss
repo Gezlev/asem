@@ -22,6 +22,7 @@
 
 @use 'modules/welcome';
 
+@use 'components/page-landing';
 @use 'components/page-login';
 @use 'components/page-organisations';
 @use 'components/page-blocklist';
