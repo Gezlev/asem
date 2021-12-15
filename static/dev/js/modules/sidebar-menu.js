@@ -8,8 +8,21 @@ const SidebarMenu = () => {
         })
     }, {passive: true});
 
+    let sidebar = localStorage.getItem('sidebar');
+    let siteWrapper = document.querySelector('.site--wrapper');
     let sidebarExpand = document.querySelector('.sidebar--expand');
-    sidebarExpand && sidebarExpand.addEventListener('click', () => document.querySelector('.site--wrapper').classList.toggle('collapsed'));
+    if (siteWrapper && sidebar && sidebar === 'collapsed') {
+        siteWrapper.classList.add('collapsed');
+    }
+    sidebarExpand && sidebarExpand.addEventListener('click', () => {
+        if (siteWrapper.classList.contains('collapsed')) {
+            siteWrapper.classList.remove('collapsed');
+            localStorage.setItem('sidebar', 'expanded');
+        } else {
+            siteWrapper.classList.add('collapsed');
+            localStorage.setItem('sidebar', 'collapsed');
+        }
+    });
 
     let theme = localStorage.getItem('theme');
     let themeSwitcher = document.querySelector('#themeSwitcher');

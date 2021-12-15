@@ -65,6 +65,26 @@
         color: var(--font-d);
         white-space: nowrap;
         text-overflow: ellipsis;
+
+        a {
+          display: block;
+          width: 100%;
+          color: var(--font-d);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-decoration: none;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
 
       &__container.gridview .list__name {

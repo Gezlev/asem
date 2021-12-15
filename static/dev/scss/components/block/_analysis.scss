@@ -353,6 +353,10 @@
       }
     }
 
+    .dt-table>thead>tr>th {
+      user-select: none;
+    }
+
     .dt-table>tbody>tr>td {
 
       &:first-of-type {

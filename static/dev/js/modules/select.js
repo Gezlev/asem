@@ -41,7 +41,8 @@ const Select = (() => {
     }, {passive: true});
 
     return {
-        init: slct => {
+        init: el => {
+            let slct  = typeof el === 'string' || el instanceof String ? document.querySelector(el) : el;
             let selected = slct.querySelector('.selected') || slct.querySelector('.select__opt');
             chooseOpt(selected);
             slct.style.width = `${ 16 + slct.querySelector('.select__opt').clientWidth }px`;

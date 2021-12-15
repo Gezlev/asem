@@ -1,6 +1,8 @@
 {% extends 'layouts/base.html'%}
 
 {% block container %}
+    <script>(b=>{let t=localStorage.getItem('theme');t&&(t==='dark')&&b.classList.add('darktheme');})(document.body);</script>
+
     <header class="landing--header">
         <a class="landing--header__logo" href="/">
             <svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg>
@@ -21,18 +23,138 @@
     <main class="landing--content">
 
         <section class="landing--top">
-
             <div class="landing__container">
                 <h1 class="landing--top__title">Автоматизована Система Енергетичного Моніторингу</h1>
-                <p class="landing--top__desc">Комплекс програмного та технічного забеспечення для дистанційного обліку паливно-енергетичних ресурсів отриманих від вузлів обліку</p>
-                <a class="landing--top__btn" href="">Увійти</a>
-                <a class="landing--top__btn landing--top__btn_transparent" href="">Реєстрація</a>
+                <p class="landing__desc">Комплекс програмного та технічного забеспечення для дистанційного обліку паливно-енергетичних ресурсів отриманих від вузлів обліку</p>
+                <div class="landing--top__btns">
+                    <a class="landing--top__btn" href="">Увійти</a>
+                    <a class="landing--top__btn landing--top__btn_transparent" href="">Реєстрація</a>
+                </div>
             </div>
 
             <div class="landing--top__img">
-                <img src="/static/build/img/land-asem-review.png" />
+                <img src="/static/build/img/landing/asem-review.png" />
             </div>
         </section>
-        <div class="login--content__copy">&copy; Copyright 2021 asem.escoua.com</div>
+
+        <section class="landing--logos">
+            <div class="landing__container">
+                <div class="landing--logos__item airbnb"><img src="static/build/img/landing/logos/airbnb.svg" decoding="async" loading="lazy" height="76"></div>
+                <div class="landing--logos__item uber"><img src="static/build/img/landing/logos/uber.svg" decoding="async" loading="lazy" height="76"></div>
+                <div class="landing--logos__item google"><img src="static/build/img/landing/logos/google.svg" decoding="async" loading="lazy" height="76"></div>
+                <div class="landing--logos__item nike"><img src="static/build/img/landing/logos/nike.svg" decoding="async" loading="lazy" height="76"></div>
+                <div class="landing--logos__item dropbox"><img src="static/build/img/landing/logos/dropbox.svg" decoding="async" loading="lazy" height="76"></div>
+                <div class="landing--logos__item stripe"><img src="static/build/img/landing/logos/stripe.svg" decoding="async" loading="lazy" height="76"></div>
+            </div>
+        </section>
+
+        <section class="landing--about">
+            <div class="landing__container">
+                <div class="landing--about__title">
+                    <div class="source-icon source-icon_md"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#landingAbout"></use></svg></div>
+                    Про систему Асем
+                </div>
+                <div class="landing--about__col">
+                    <p>The navigation design should communicate the relationship between the links it contains so that users understand the options they have for navigating the site. </p>
+                </div>
+                <div class="landing--about__col">The navigation system provides a set of screen elements that allow the user to move page to page through the website. </div>
+            </div>
+        </section>
+
+        <section class="landing--features">
+            <h2 class="landing__title">Основні можливості</h2>
+            <p class="landing__desc">Комплекс програмного та технічного забеспечення для дистанційного обліку паливно-енергетичних ресурсів отриманих від вузлів обліку</p>
+            <div class="landing__container">
+
+                <div class="landing--features__item landing--features__item_monitoring">
+                    <div class="landing--features__img"><img src="static/build/img/landing/features-monitoring.png" decoding="async" loading="lazy" height="820" width="1080"></div>
+                    <div class="landing--features__text">
+                        <div class="source-icon source-icon_md"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconInfo"></use></svg></div>
+                        <h3 class="landing__title">Моніторинг</h3>
+                        <p>Система дозволяє проводити моніторинг параметрів споживання енергоресурсів та параметри мікроклімату приміщень (комфорту)</p>
+                    </div>
+                </div>
+
+                <div class="landing--features__item landing--features__item_reports">
+                    <div class="landing--features__img"><img src="static/build/img/landing/features-reports.png" decoding="async" loading="lazy" height="820" width="1080"></div>
+                    <div class="landing--features__text">
+                        <div class="source-icon source-icon_md"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconResponsibility"></use></svg></div>
+                        <h3 class="landing__title">Звітність</h3>
+                        <p>Система дозволяє зручно проводити аналіз, налаштовувати різноманітні звіти та працює з будь-якими лічильниками</p>
+                    </div>
+                </div>
+
+                <div class="landing--features__item landing--features__item_eplanning">
+                    <div class="landing--features__img"><img src="static/build/img/landing/features-eplanning.png" decoding="async" loading="lazy" height="820" width="1080"></div>
+                    <div class="landing--features__text">
+                        <div class="source-icon source-icon_md"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#landingEplanning"></use></svg></div>
+                        <h3 class="landing__title">Енергопланування</h3>
+                        <p>Система дозволяє прогнозувати та  скорочувати споживання ресурсів та економити кошти за різними сценаріями</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="landing--additionals">
+            <h2 class="landing__title">Додаткові переваги</h2>
+            <div class="landing__container">
+                <div class="landing--additionals__item">
+                    <div class="source-icon source-icon_xl"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#landingBell"></use></svg></div>
+                    <h3 class="landing--additionals__title">Оповіщення</h3>
+                    <p class="landing--additionals__desc">Виявлення та оповіщення щодо аварійних та нештатних ситуацій</p>
+                </div>
+
+                <div class="landing--additionals__item">
+                    <div class="source-icon source-icon_xl"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#landingAccounting"></use></svg></div>
+                    <h3 class="landing--additionals__title">Комерційний облік</h3>
+                    <p class="landing--additionals__desc">Асем дозволяє передачу обсягів енергоресурсів до постачальників</p>
+                </div>
+
+                <div class="landing--additionals__item">
+                    <div class="source-icon source-icon_xl"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#landingProtect"></use></svg></div>
+                    <h3 class="landing--additionals__title">Захист данних</h3>
+                    <p class="landing--additionals__desc">Багаторівневий захист від несанкціонованого доступу</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing--reviews">
+            <div class="landing__container">
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide landing--reviews__item">
+                                <div class="landing--reviews__author">
+                                    <img class="landing--reviews__photo" />
+                                    <h4 class="landing--reviews__name">Лана  Антошенко</h4>
+                                    <p class="landing--reviews__desc">Ut non sem tincidunt congue lectus eget</p>
+                                </div>
+                                <div class="landing--reviews__text">“Amazing experience i love it a lot. Thanks to the team that dreams come true, great! I appreciate there attitude and approach. Truly professionals!”</div>
+                            </li>
+                            <li class="splide__slide landing--reviews__item">
+                                <div class="landing--reviews__author">
+                                    <img class="landing--reviews__photo" />
+                                    <h4 class="landing--reviews__name"></h4>
+                                    <p class="landing--reviews__desc"></p>
+                                </div>
+                                <div class="landing--reviews__text"></div>
+                            </li>
+                            <li class="splide__slide landing--reviews__item">
+                                <div class="landing--reviews__author">
+                                    <img class="landing--reviews__photo" />
+                                    <h4 class="landing--reviews__name"></h4>
+                                    <p class="landing--reviews__desc"></p>
+                                </div>
+                                <div class="landing--reviews__text"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="landing--content__copy">&copy; Copyright 2021 asem.escoua.com</div>
+
     </main>
 {% endblock %}

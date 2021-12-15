@@ -196,10 +196,11 @@
         flex: 0 0 18%;
       }
       &__org {
-        flex: 0 0 24%;
+        flex: 0 0 28%;
+        max-width: 28%;
       }
       &__address {
-        flex: 0 0 calc(100% - 56px - 18% - 24% - 5% - 128px - 60px);
+        flex: 0 0 calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
       }
       &__build {
         flex: 0 0 5%;
@@ -220,8 +221,14 @@
     }
 
     &__item {
+      position: relative;
+
       &:nth-of-type(even) {
         background-color: var(--bg);
+
+        &:hover {
+          background-color: var(--green-sl);
+        }
       }
       &:last-of-type {
         border-bottom: 1px solid var(--bg-1);
@@ -229,6 +236,8 @@
     }
 
     &__checkbox {
+      position: relative;
+      z-index: 2;
       flex: 0 0 56px;
       padding-left: 12px;
       box-sizing: border-box;
@@ -244,7 +253,8 @@
     }
 
     &__org {
-      flex: 0 0 24%;
+      flex: 0 0 28%;
+      max-width: 28%;
       display: flex;
       align-items: center;
       padding-right: 8px;
@@ -260,11 +270,31 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+        a {
+          display: block;
+          width: 100%;
+          color: var(--font-d);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-decoration: none;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
 
     &__address {
-      flex: 0 0 calc(100% - 56px - 18% - 24% - 5% - 128px - 60px);
+      flex: 0 0 calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
       padding-right: 8px;
       box-sizing: border-box;
       overflow: hidden;

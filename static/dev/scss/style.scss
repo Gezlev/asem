@@ -16,7 +16,7 @@
 @use 'modules/breadcrumb';
 @use 'modules/pagination';
 @use 'modules/informer';
-@use 'modules/list';
+@use 'modules/list' as *;
 @use 'modules/slider';
 @use 'modules/gallery';
 
@@ -24,10 +24,11 @@
 
 @use 'components/page-landing';
 @use 'components/page-login';
-@use 'components/page-organisations';
-@use 'components/page-blocklist';
-@use 'components/page-block-analysis';
 
+@use 'components/block/list' as *;
+@use 'components/block/analysis';
+
+@use 'components/organisation/list';
 @use 'components/organisation/common';
 @use 'components/organisation/main';
 @use 'components/organisation/parameters';

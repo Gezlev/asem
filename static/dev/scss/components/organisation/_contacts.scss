@@ -1,6 +1,32 @@
 .org--contacts {
   margin: 36px 0 0;
 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__invite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: var(--white-inverse);
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--font-d);
+    transition: color .3s ease-out, background-color .3s ease-out;
+
+    &:hover {
+      color: #FFF;
+      background-color: var(--green-d);
+    }
+  }
+
   &__title {
     margin: 0;
     padding: 0;
@@ -16,6 +42,7 @@
 
     .dt-table > thead > tr > th {
       text-align: left;
+      user-select: none;
 
       &:nth-of-type(2) {
         &:before,
