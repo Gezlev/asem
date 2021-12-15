@@ -3,8 +3,8 @@
 
 // SCRIPTS
 
-import Select from "./modules/select";
-window.Select = Select;
+//import Select from "./modules/select";
+//window.Select = Select;
 //document.querySelectorAll('.select').forEach( el => Select.init(el));
 
 import loginPassEye from "./modules/login-pass-eye";
