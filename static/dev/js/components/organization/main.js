@@ -415,7 +415,7 @@ const OrgMain = () => {
                 new google.maps.Marker({
                     position: { lat: Number(coords[0]), lng: Number(coords[1]) },
                     map,
-                    icon: "static/build/img/icon-map-marker.svg"
+                    icon: "/static/build/img/icon-map-marker.svg"
                 });
             }
         };
@@ -445,17 +445,16 @@ const OrgMain = () => {
 
         const LoadLib = () => {
             let script = document.createElement('script');
-            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAY0xtjk9QZj7ga5QM7oqeDRkDCZf1Oklc&callback=initOrgMap&v=weekly';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDd-qx1Hk3NRKfwVnku98-drq7-tw1P_KI&callback=initOrgMap&v=weekly';
             document.head.append(script);
         };
         LoadLib();
     }
     Map();
 
-
     const Slider = () => {
-        if (!document.querySelector('.splide')) return;
-        const slider = new Splide('.splide', {
+        if (!document.querySelector('.org--main__sidebar .splide')) return;
+        const slider = new Splide('.org--main__sidebar .splide', {
             gap: 6,
             arrows: false
         });
@@ -491,7 +490,6 @@ const OrgMain = () => {
             setTimeout( () => {
                 let slider = popup.querySelector('.splide');
                 slider.style.transform = "translate3d(0,0,0)";
-                slider = slider.replaceWith(slider.cloneNode(true));
                 gallerySlider.destroy();
             }, 1000);
         };

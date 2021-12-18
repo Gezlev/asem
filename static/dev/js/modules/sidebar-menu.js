@@ -4,6 +4,8 @@ const SidebarMenu = () => {
     document.querySelectorAll('.has-child .menu__link').forEach( item => {
         item.addEventListener('click', evt => {
             evt.preventDefault();
+            let expanded = document.querySelector('.sidebar .menu__item.expanded');
+            expanded && expanded.classList.remove('expanded');
             item.parentNode.classList.toggle('expanded');
         })
     }, {passive: true});

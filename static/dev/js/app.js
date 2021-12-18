@@ -24,3 +24,6 @@ BlockAnalysis();
 
 import Contacts from "./components/page-contacts";
 Contacts();
+
+import Landing from "./components/page-landing";
+Landing();

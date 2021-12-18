@@ -8,6 +8,7 @@
   line-height: 1;
   font-size: 12px;
   font-weight: 500;
+  text-decoration: none;
   border-radius: 6px;
   background-color: var(--icons-bg);
 
@@ -55,7 +56,13 @@
     }
   }
 }
+a.source-icon {
+  transition: background-color .3s ease-out;
 
+  &:hover {
+    background-color: var(--blue);
+  }
+}
 .status-icon {
   display: flex;
   align-items: center;

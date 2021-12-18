@@ -4,7 +4,7 @@
     <script>(b=>{let t=localStorage.getItem('theme');t&&(t==='dark')&&b.classList.add('darktheme');})(document.body);</script>
 
     <header class="landing--header">
-        <a class="landing--header__logo" href="/">
+        <a class="landing__logo" href="/">
             <svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg>
         </a>
 
@@ -24,11 +24,11 @@
 
         <section class="landing--top">
             <div class="landing__container">
-                <h1 class="landing--top__title">Автоматизована Система Енергетичного Моніторингу</h1>
-                <p class="landing__desc">Комплекс програмного та технічного забеспечення для дистанційного обліку паливно-енергетичних ресурсів отриманих від вузлів обліку</p>
+                <h1 class="landing--top__title landing__lgtitle">Автоматизована Система Енергетичного Моніторингу</h1>
+                <p class="landing--top__desc landing__desc">Комплекс програмного та технічного забеспечення для дистанційного обліку паливно-енергетичних ресурсів отриманих від вузлів обліку</p>
                 <div class="landing--top__btns">
-                    <a class="landing--top__btn" href="">Увійти</a>
-                    <a class="landing--top__btn landing--top__btn_transparent" href="">Реєстрація</a>
+                    <a class="landing--top__btn" href="/login.php">Увійти</a>
+                    <a class="landing--top__btn landing--top__btn_transparent" href="/login.php">Реєстрація</a>
                 </div>
             </div>
 
@@ -121,32 +121,33 @@
 
         <section class="landing--reviews">
             <div class="landing__container">
+                <h3 class="landing--reviews__title">Відгуки </h3>
                 <div class="splide">
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide landing--reviews__item">
                                 <div class="landing--reviews__author">
-                                    <img class="landing--reviews__photo" />
-                                    <h4 class="landing--reviews__name">Лана  Антошенко</h4>
+                                    <img class="landing--reviews__photo" src="/static/build/img/avatar.webp" decoding="async" loading="lazy" width="42" height="42" alt="" />
+                                    <h4 class="landing--reviews__name">Лана Антошенко</h4>
                                     <p class="landing--reviews__desc">Ut non sem tincidunt congue lectus eget</p>
                                 </div>
-                                <div class="landing--reviews__text">“Amazing experience i love it a lot. Thanks to the team that dreams come true, great! I appreciate there attitude and approach. Truly professionals!”</div>
+                                <div class="landing--reviews__text">&laquo;Купила собі в подарунок. Одразу ж скажу- спочатку я взяла Tefal, але вона прийшла не робоча і відправила назад... Але це стало і на краще-тому що ця супер!!! Однозначно рекомендую!&raquo;</div>
                             </li>
                             <li class="splide__slide landing--reviews__item">
                                 <div class="landing--reviews__author">
-                                    <img class="landing--reviews__photo" />
-                                    <h4 class="landing--reviews__name"></h4>
+                                    <img class="landing--reviews__photo" src="/static/build/img/avatar.webp" decoding="async" loading="lazy" width="42" height="42" alt="" />
+                                    <h4 class="landing--reviews__name">Злата Нечипуренко</h4>
                                     <p class="landing--reviews__desc"></p>
                                 </div>
-                                <div class="landing--reviews__text"></div>
+                                <div class="landing--reviews__text">&laquo;Мені сподобався, користуюсь 2 місяці, нарікань жодних. Дизайн класний, легкий. Всі необхідні функції є. Класний вузькій носик, що теж дуже зручно.&raquo;</div>
                             </li>
                             <li class="splide__slide landing--reviews__item">
                                 <div class="landing--reviews__author">
-                                    <img class="landing--reviews__photo" />
-                                    <h4 class="landing--reviews__name"></h4>
-                                    <p class="landing--reviews__desc"></p>
+                                    <img class="landing--reviews__photo" src="/static/build/img/avatar.webp" decoding="async" loading="lazy" width="42" height="42" alt="" />
+                                    <h4 class="landing--reviews__name">Константин Константинопільський</h4>
+                                    <p class="landing--reviews__desc">Директор ЗОШ №231</p>
                                 </div>
-                                <div class="landing--reviews__text"></div>
+                                <div class="landing--reviews__text">&laquo;Дуже стильна, гарний червоний колір. Нагрівається швидко. Також дуже зручна,не важка. Користуюсь із задоволенням. За свою ціну чудовий товар. Рекомендую.&raquo;</div>
                             </li>
                         </ul>
                     </div>
@@ -154,7 +155,90 @@
             </div>
         </section>
 
-        <div class="landing--content__copy">&copy; Copyright 2021 asem.escoua.com</div>
+        <section class="landing--faq">
+            <div class="landing__container">
+                <h3 class="landing--faq__title">Питання-Відповідь</h3>
+                <ul class="landing--faq__list">
+                    <li class="landing--faq__item expanded">
+                        <h4>Ціна товару на сайті і в фізичному магазині різна. Кому вірити?</h4>
+                        <div>Ми продаємо товари за цінами вказаними на сайті. Салони мають інший спосіб ціноутворення, тому і ціни в «офлайнових» магазинах інші.</div>
+                    </li>
+                    <li class="landing--faq__item">
+                        <h4>Чи співпрацюєте ви з сервісними центрами?</h4>
+                        <div>Для гарантійного обслуговування товару, придбаного в нашому інтернет-магазині, Ви можете звернутися безпосередньо в офіційний сервісний центр виробника або до філії інтернет-магазину. З подробицями гарантійного обслуговування ви можете ознайомитися на сторінці "Гарантія та сервісні центри".</div>
+                    </li>
+                    <li class="landing--faq__item">
+                        <h4>В які міста є у вас доставка?</h4>
+                        <div>Працюємо по всій території України. Оплата можлива як за безготівковим розрахунком, картами Visa / Master Card, так і готівкою за фактом доставки замовлення (оплата кур'єру перевізника). Термін доставки замовленого товару – від 1 до 3 днів.</div>
+                    </li>
+                    <li class="landing--faq__item">
+                        <h4>Які умови доставки великогабаритних вантажів?</h4>
+                        <div>Доставка великогабаритного вантажу провадиться до під'їзду вашого будинку. При необхідності ви можете замовити додаткові послуги: "Підйом товару на поверх" (Вартість послуги 30 грн / поверх) і "Адресна доставка "Нова пошта" (вартість послуги становить 140 грн). Вартість адресної доставки "Нова пошта" інших категорій товарів уточнюйте у менеджера.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="landing--contacts">
+            <div class="landing__container landing__desc">
+                <div class="landing--contacts__label">Контакти</div>
+                <h3 class="landing--contacts__title landing__lgtitle">Зворотній зв'язок</h3>
+                <div class="landing--contacts__form">
+                    <form data-parsley-validate="" action="" method="POST" class="form" role="form">
+                        <div class="fieldset">
+                            <input type="email" id="loginmail" name="loginmail" placeholder="Ваш і-мейл уотута....">
+                        </div>
+
+                        <div class="fieldset">
+                            <input type="subject" id="subject" name="subject" placeholder="Тема...">
+                        </div>
+
+                        <div class="fieldset">
+                            <textarea type="text" id="text" name="text" placeholder="Ваше звернення..."></textarea>
+                        </div>
+
+                        <button class="btn" type="submit">Відправити</button>
+                    </form>
+                </div>
+                <div class="landing--contacts__info">
+                    <a href="mailto:hello@asem.ua">hello@asem.ua</a>
+                    <a href="">508 Bridle Avenue Newnan, GA 30263</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="landing--join">
+            <h3 class="landing__lgtitle">Приєднуйся до Асем</h3>
+            <p class="landing__desc">Один в&nbsp;полі не&nbsp;воїн. Запрошуємо приєднатись до&nbsp;наших зусиль, щоб наш регіон знову став здоровим та&nbsp;квітучим, на&nbsp;благо природи та&nbsp;людей.</p>
+
+            <div class="landing--join__btns">
+                <a class="landing--top__btn" href="/login.php">Увійти</a>
+                <a class="landing--top__btn landing--top__btn_transparent" href="login.php">Реєстрація</a>
+            </div>
+        </section>
 
     </main>
+
+    <footer class="landing--footer">
+        <div class="landing__container">
+            <a class="landing__logo" href="/">
+                <svg><use xlink:href="/static/build/img/asem-logo.svg#logo"></use></svg>
+            </a>
+
+            <div class="landing--footer__socials">
+                <a href="/"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#socialIN"></use></svg></a>
+                <a href="/"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#socialFB"></use></svg></a>
+                <a href="/"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#socialTW"></use></svg></a>
+                <a href="/"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#socialTG"></use></svg></a>
+                <a href="/"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#socialYT"></use></svg></a>
+            </div>
+
+            <div class="landing--footer__links">
+                <a href="/">Політика конфіденційності</a>
+                <a href="/">Положення та умови</a>
+            </div>
+        </div>
+
+        <div class="landing__copy">&copy; Copyright 2021 asem.escoua.com</div>
+    </footer>
 {% endblock %}
