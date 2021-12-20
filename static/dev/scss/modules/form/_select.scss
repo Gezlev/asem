@@ -82,6 +82,9 @@
     }
   }
 
+  &.expanded {
+    z-index: 90;
+  }
   //&:hover .select__header,
   &.expanded .select__header {
     &:after {

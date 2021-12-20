@@ -33,3 +33,7 @@
 @use 'components/organisation/main';
 @use 'components/organisation/parameters';
 @use 'components/organisation/contacts';
+
+@use 'components/organisation/admin/common' as *;
+@use 'components/organisation/admin/menu';
+@use 'components/organisation/admin/services';

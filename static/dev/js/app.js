@@ -4,7 +4,6 @@
 // SCRIPTS
 
 //import Select from "./modules/select";
-//window.Select = Select;
 //document.querySelectorAll('.select').forEach( el => Select.init(el));
 
 import loginPassEye from "./modules/login-pass-eye";
@@ -27,3 +26,6 @@ Contacts();
 
 import Landing from "./components/page-landing";
 Landing();
+
+import AdminServices from "./components/organization/admin";
+AdminServices();

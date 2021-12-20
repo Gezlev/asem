@@ -141,9 +141,19 @@
     }
 
     a {
-      display: block;
+      display: flex;
       color: var(--font-r);
       text-decoration: none;
+      transition: color .3s ease-out;
+
+      svg {
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        fill: currentColor;
+        transition: fill .3s ease-out;
+      }
 
     }
   }

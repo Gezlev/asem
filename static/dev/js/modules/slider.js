@@ -1,4 +1,4 @@
-/*!
+/*
  * Splide.js
  * Version  : 3.6.9
  * License  : MIT

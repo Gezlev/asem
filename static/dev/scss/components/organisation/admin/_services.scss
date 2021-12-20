@@ -1,0 +1,298 @@
+.org-admin--services {
+
+  .list--filters,
+  .list {
+
+    &__type {
+      flex: 0 0 28%;
+      display: flex;
+      box-sizing: border-box;
+    }
+
+    &__name {
+      flex: 0 0 22%;
+      input {
+        font-weight: 300;
+      }
+    }
+
+    &__desc {
+      flex: 0 0 33%;
+    }
+
+    &__tariff {
+      flex: 0 0 calc(100% - 28% - 22% - 33% - 88px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    &__btns {
+      flex: 0 0 88px;
+      padding-left: 16px;
+      padding-right: 16px;
+      box-sizing: border-box;
+
+      svg {
+        display: block;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .list--filters {
+    &__type {
+      padding-left: 16px;
+    }
+    &__tariff {
+      box-sizing: border-box;
+      padding-right: 4px;
+    }
+
+
+    &__name,
+    &__desc {
+      padding-left: 12px;
+      box-sizing: border-box;
+    }
+  }
+
+  .list__item {
+    height: 50px;
+    padding: 4px 0;
+
+    &:hover {
+      background-color: initial;
+    }
+    &:nth-of-type(even) {
+      background-color: var(--bg);
+    }
+
+    input {
+      height: 36px;
+      width: calc(100% - 20px);
+      padding: 10px 12px 6px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--font-d);
+      background-color: var(--blue-sl);
+
+      &:focus {
+        border-color: var(--blue);
+        background-color: var(--white-inverse);
+      }
+    }
+
+    .tooltip {
+      display: block;
+      width: auto;
+      min-width: 24px;
+      height: 24px;
+    }
+    .asem-tooltip {
+      right: calc(50% - 18px);
+      white-space: nowrap;
+    }
+  }
+
+  .list__type {
+    padding-left: 4px;
+  }
+
+  .list__controls,
+  .list__updates {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      fill: var(--font-r);
+    }
+  }
+
+  .list__controls {
+    display: none;
+  }
+
+  &__tariff {
+    box-sizing: border-box;
+    padding-top: 4px;
+    color: var(--blue);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__add {
+    display: block;
+    padding-top: 2px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      fill: var(--font-r);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--green);
+      }
+    }
+  }
+
+  &__del {
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: var(--red);
+      }
+    }
+  }
+
+  &__change {
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: var(--blue);
+      }
+    }
+  }
+
+  & &__save {
+    cursor: pointer;
+
+    svg {
+      fill: var(--green);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--green-d);
+      }
+    }
+  }
+
+  & &__cancel {
+    cursor: pointer;
+
+    svg {
+      fill: var(--font-d);
+    }
+  }
+
+  .select {
+    min-width: calc(100% - 40px);
+  }
+
+  .select__header,
+  .select__opt {
+
+    .source-icon {
+      flex: 0 0 16px;
+      margin-right: 8px;
+    }
+
+    span,
+    small {
+      height: 16px;
+      box-sizing: border-box;
+    }
+
+    span {
+      flex: 1 1 auto;
+      min-width: 50%;
+    }
+
+    small {
+      flex: 0 0 50px;
+      color: var(--font-r);
+    }
+  }
+
+  .select__header {
+    display: flex;
+    padding: 12px 20px 8px 12px;
+    background-color: var(--blue-sl);
+
+    .source-icon {
+      margin-top: -2px;
+    }
+
+    span {
+      padding-top: 0;
+    }
+
+    small {
+      padding-top: 1px;
+    }
+  }
+
+  .select__opt {
+    padding-right: 20px;
+
+    .source-icon {
+      flex: 0 0 16px;
+      margin-top: 2px;
+    }
+
+    span {
+      padding-top: 0;
+      margin-top: -1px;
+    }
+
+    small {
+      box-sizing: border-box;
+    }
+  }
+
+  .list__item.readonly {
+
+    input,
+    .select {
+      pointer-events: none;
+    }
+
+    input,
+    .select__header {
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    .select__header {
+      &:after {
+        display: none;
+      }
+    }
+
+    .list__controls {
+      display: flex;
+    }
+
+    .list__updates {
+      display: none;
+    }
+    .list__desc {
+      input {
+        color: var(--font-r);
+      }
+    }
+  }
+
+  .btn {
+    width: 200px;
+    margin: 24px auto 0;
+    font-size: 14px;
+  }
+}
