@@ -46,7 +46,7 @@
                 </div>
                 <div class="list__name"><input type="text" name="" value="Опалення" /></div>
                 <div class="list__desc"><input type="text" name="" value="Lorem ipsum dolor sit amet" /></div>
-                <div class="list__tariff"><div class="org-admin--services__add"><span class="tooltip" alt="Додати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editAdd"></use></svg></span></div></div>
+                <div class="list__tariff popup-btn" data-popup="admin-tariff-popup"><div class="org-admin--services__add"><span class="tooltip" alt="Додати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editAdd"></use></svg></span></div></div>
                 <div class="list__btns">
                     <div class="list__controls">
                         <div class="org-admin--services__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="list__name"><input type="text" name="" value="Електрична енергія" /></div>
                 <div class="list__desc"><input type="text" name="" value="Lorem ipsum dolor sit amet" /></div>
-                <div class="list__tariff"><div class="org-admin--services__tariff"><span class="tooltip" alt="Дійсний до 01.01.2021">1.68</span></div></div>
+                <div class="list__tariff popup-btn" data-popup="admin-tariff-popup"><div class="org-admin--services__tariff"><span class="tooltip" alt="Дійсний до 01.01.2021">1.68</span></div></div>
                 <div class="list__btns">
                     <div class="list__controls">
                         <div class="org-admin--services__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="list__name"><input type="text" name="" value="Електрична енергія" /></div>
                 <div class="list__desc"><input type="text" name="" value="Lorem ipsum dolor sit amet" /></div>
-                <div class="list__tariff"><div class="org-admin--services__tariff"><span class="tooltip" alt="Дійсний до 01.01.2021">23.25</span></div></div>
+                <div class="list__tariff popup-btn" data-popup="admin-tariff-popup"><div class="org-admin--services__tariff"><span class="tooltip" alt="Дійсний до 01.01.2021">23.25</span></div></div>
                 <div class="list__btns">
                     <div class="list__controls">
                         <div class="org-admin--services__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="list__name"><input type="text" name="" value="Гаряча вода" /></div>
                 <div class="list__desc"><input type="text" name="" value="Lorem ipsum dolor sit amet" /></div>
-                <div class="list__tariff"><div class="org-admin--services__tariff"><span class="tooltip" alt="Дійсний до 01.01.2021">150.58</span></div></div>
+                <div class="list__tariff popup-btn" data-popup="admin-tariff-popup"><div class="org-admin--services__tariff"><span class="tooltip" alt="Дійсний до 01.01.2021">150.58</span></div></div>
                 <div class="list__btns">
                     <div class="list__controls">
                         <div class="org-admin--services__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="list__name"><input type="text" name="" value="-" /></div>
                 <div class="list__desc"><input type="text" name="" value="-" /></div>
-                <div class="list__tariff"><div class="org-admin--services__add"><span class="tooltip" alt="Додати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editAdd"></use></svg></span></div></div>
+                <div class="list__tariff popup-btn" data-popup="admin-tariff-popup"><div class="org-admin--services__add"><span class="tooltip" alt="Додати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editAdd"></use></svg></span></div></div>
                 <div class="list__btns">
                     <div class="list__controls">
                         <div class="org-admin--services__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
@@ -221,6 +221,31 @@
 
     </div>
 
-    <div class="org-admin--popup"></div>
+    <div class="org-admin--popup">
+        <div class="org-admin--popup__box" id="admin-tariff-popup">
+            <div class="org-admin--popup__container">
+                <h3 class="org-admin--popup__title">Додати (Редагувати) тариф</h3>
+                <p class="org-admin--popup__desc">Тарифи &lt;Service 6 - Електрична енергія to org 1&gt;</p>
+                <form type="">
+                    <div class="fieldsbox">
+                        <div class="fieldset">
+                            <input type="text" value="" name="" class="admin-tariff-date" placeholder="Дата" />
+                        </div>
+                        <div class="fieldset">
+                            <input type="text" value="" name="" placeholder="Тариф" />
+                        </div>
+                        <div class="fieldset">
+                            <input type="text" value="" name="" placeholder="Нотаток" />
+                        </div>
+                    </div>
+                    <div class="org-admin--popup__btns">
+                        <button type="submit" class="btn">Зберегти</button>
+                        <button type="reset" class="btn btn_reset">Скасувати</button>
+                    </div>
+                </form>
+            </div>
+            <div class="org-admin--popup__close"></div>
+        </div>
+    </div>
 
 {% endblock %}

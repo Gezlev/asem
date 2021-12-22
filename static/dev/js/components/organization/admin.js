@@ -1,4 +1,5 @@
 import AsemTooltip from "../../modules/tooltip";
+import { Datepicker } from "../../modules/vanillajs-datepicker";
 
 const AdminServices = () => {
 
@@ -17,6 +18,13 @@ const AdminServices = () => {
             el.closest('.list__item').classList.add('readonly');
         });
     });
+
+
+    const inputDate = document.querySelector('input.admin-tariff-date');
+    console.log()
+    const datepicker = inputDate ? new Datepicker(inputDate, {
+        format: 'dd/mm/yyyy'
+    }) : false;
 };
 
 export default AdminServices;
