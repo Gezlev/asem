@@ -3,8 +3,8 @@
 
 // SCRIPTS
 
-import Select from "./modules/select";
-document.querySelectorAll('.select').forEach( el => Select.init(el));
+//import Select from "./modules/select";
+//document.querySelectorAll('.select').forEach( el => Select.init(el));
 
 import Popup from "./modules/popup";
 document.querySelectorAll('.popup-btn').forEach( el => Popup.init(el));
