@@ -42,6 +42,8 @@
   }
 
   .list--filters {
+    padding: 28px 0 12px;
+
     &__type {
       padding-left: 16px;
     }
@@ -49,8 +51,7 @@
       box-sizing: border-box;
       padding-right: 4px;
     }
-
-
+    
     &__name,
     &__desc {
       padding-left: 12px;

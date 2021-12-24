@@ -1,0 +1,120 @@
+
+$vn-info-background: #3498db !default;
+$vn-success-background: #2ecc71 !default;
+$vn-error-background: #e74c3c !default;
+$vn-warning-background: #f39c12 !default;
+$vn-notify-background: #333 !default;
+
+$vn-info-color: #fff !default;
+$vn-success-color: #fff !default;
+$vn-error-color: #fff !default;
+$vn-warning-color: #fff !default;
+$vn-notify-color: #fff !default;
+
+.vnotify-container {
+  position: fixed;
+
+  &.vn-top-right {
+    right: 12px;
+    top: 12px;
+  }
+
+  &.vn-top-left {
+    top: 12px;
+    left: 12px;
+  }
+
+  &.vn-bottom-right {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  &.vn-bottom-left {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  &.vn-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .vn-close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--white-t);
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      top: 13px;
+      left: 7px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.vnotify-item {
+  width: 300px;
+  padding: 16px;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.vnotify-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.vnotify-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.vnotify {
+  &-info {
+    background: var(--font-d);
+    color: var(--white-inverse);
+  }
+
+  &-success {
+    background: var(--green);
+    color: #FFF;
+  }
+
+  &-error {
+    background: var(--red);
+    color: #FFF;
+  }
+
+  &-warning {
+    background: var(--orange);
+    color: #FFF;
+  }
+
+  &-notify {
+    background: var(--blue);
+    color: #FFF;
+  }
+}

@@ -80,93 +80,6 @@ const OrgMain = () => {
     };
     LineChart();
 
-
-    const BarChart = () => {
-        let currentsBarDom = document.querySelector('.org--currents__bar');
-        if (!currentsBarDom ) return;
-
-        let months = ['Січ','Лют','Бер','Кві','Тра','Чер','Лип','Сер','Вер','Жов','Лис','Гру'];
-        let barSet = JSON.parse(currentsBarDom.dataset.chart);
-        let barOptions = {
-            tooltip: {},
-            grid: {
-                top: 20,
-                left: 30,
-                right: 0,
-                bottom: 20,
-                show: false
-            },
-            toolbox: {},
-            legend: {
-                show: false
-            },
-            xAxis: {
-                type: 'category',
-                data: barSet.dates,
-                axisLine: {
-                    show: false
-                },
-                axisTick: {
-                    show: false
-                },
-                axisLabel: {
-                    formatter: (value, index) => {
-                        let date = new Date(value);
-                        return months[date.getMonth()] + ' ' + date.getFullYear();
-                    }
-                }
-            },
-            yAxis: {
-                type: 'value',
-                splitLine: {
-                    show: true,
-                    lineStyle: {
-                        color: 'rgba(150,150,150,0.5)',
-                        type: [1, 4],
-                        dashOffset: 5
-                    }
-                }
-            },
-            series: [
-                {
-                    name: 'Температура в приміщеннях',
-                    type: 'bar',
-                    data: barSet.home,
-                    itemStyle: {
-                        color: localStorage.getItem('theme') === 'dark' ? '#315b96' : '#304156'
-                    },
-                    barMaxWidth: 20,
-                    barMinWidth: 10
-                },
-                {
-                    name: 'Зовнішня температура',
-                    type: 'bar',
-                    data: barSet.outer,
-                    itemStyle: {
-                        color: '#8cd31a'
-                    },
-                    barMaxWidth: 20,
-                    barMinWidth: 10,
-                    barGap: '-30%',
-                    z: 3
-                },
-                {
-                    name: 'Відносна норма',
-                    type: 'bar',
-                    data: barSet.norm,
-                    itemStyle: {
-                        color: '#c6dfff'
-                    },
-                    barMaxWidth: 20,
-                    barMinWidth: 10
-                }
-            ]
-        };
-        let currentsBar = echarts.init(currentsBarDom);
-        currentsBar.setOption(barOptions);
-    };
-    BarChart();
-
     const Sources = () => {
         let sourceList = document.querySelector('#source-list');
         if (!sourceList) return;
@@ -177,8 +90,6 @@ const OrgMain = () => {
         });
     };
     Sources();
-
-
 
     const Map = () => {
         let container = document.querySelector('#orgmap');

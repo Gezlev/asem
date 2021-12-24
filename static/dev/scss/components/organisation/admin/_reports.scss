@@ -1,0 +1,119 @@
+.org-admin--reports {
+
+  .list--filters,
+  .list {
+
+    &__org {
+      flex: 0 0 28%;
+      max-width: 28%;
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      padding-right: 12px;
+      box-sizing: border-box;
+    }
+
+    &__desc {
+      flex: 0 0 calc(100% - 28% - 76px - 160px - 88px);
+      max-width: calc(100% - 28% - 76px - 160px - 88px);
+      padding-right: 16px;
+      box-sizing: border-box;
+    }
+
+    &__date {
+      flex: 0 0 76px;
+      justify-content: flex-end;
+    }
+
+    &__status {
+      flex: 0 0 160px;
+      justify-content: flex-end;
+    }
+
+    &--menu {
+      flex: 0 0 88px;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 16px;
+      box-sizing: border-box;
+    }
+  }
+  .list--filters {
+    padding: 28px 0 12px;
+  }
+
+  .list {
+
+    &__item {
+
+      &:nth-of-type(even) {
+        background-color: var(--bg);
+
+        &:hover {
+          background-color: var(--green-sl);
+        }
+      }
+      &:last-of-type {
+        border-bottom: 1px solid var(--bg-1);
+      }
+    }
+
+    &__org {
+
+      span,
+      a {
+        display: block;
+        flex: 0 0 calc(100% - 40px);
+        max-width: calc(100% - 40px);
+        text-decoration: none;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--font-d);
+      }
+
+      .source-icon {
+        flex: 0 0 32px;
+        margin-right: 8px;
+
+        svg {
+          fill: currentColor;
+        }
+      }
+    }
+
+    &__desc {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &__desc,
+    &__date {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--font-r);
+    }
+    &__date {
+      text-align: right;
+    }
+
+    &__status {
+      display: flex;
+      align-items: center;
+      font-size: 0;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  > .btn {
+    width: 200px;
+    margin: 24px auto 0;
+    font-size: 14px;
+  }
+}

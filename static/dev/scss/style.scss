@@ -11,6 +11,7 @@
 @use 'modules/form/checkbox-and-radio';
 @use 'modules/form/select';
 
+@use 'modules/notify';
 @use 'modules/asem-tooltip';
 @use 'modules/navigations';
 @use 'modules/breadcrumb';
@@ -37,3 +38,4 @@
 @use 'components/organisation/admin/common' as *;
 @use 'components/organisation/admin/menu';
 @use 'components/organisation/admin/services';
+@use 'components/organisation/admin/reports';

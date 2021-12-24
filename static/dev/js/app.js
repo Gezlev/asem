@@ -9,6 +9,9 @@
 import Popup from "./modules/popup";
 document.querySelectorAll('.popup-btn').forEach( el => Popup.init(el));
 
+import vNotify from "./modules/notify";
+window.vNotify = vNotify;
+
 import loginPassEye from "./modules/login-pass-eye";
 loginPassEye('.loginpass__eye', '#password');
 

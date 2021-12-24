@@ -3,5 +3,5 @@
   <li class="org--menu__item {% if page == 'org-parameters' %}current{% endif %}"><a href="/organization-parameters.php">Параметри</a></li>
   <li class="org--menu__item"><a href="">Схема</a></li>
   <li class="org--menu__item {% if page == 'org-contacts' %}current{% endif %}"><a href="/organization-contacts.php">Контакти</a></li>
-  <li class="org--menu__item {% if page == 'org-admin-services' %}current{% endif %}"><a href="/organization-admin-services.php"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconAdmin"></use></svg> Адмін</a></li>
+  <li class="org--menu__item {% if page == 'org-admin-services' or page == 'org-admin-scheme' or page == 'org-admin-reports' %}current{% endif %}"><a href="/organization-admin-services.php"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconAdmin"></use></svg> Адмін</a></li>
 </ul>

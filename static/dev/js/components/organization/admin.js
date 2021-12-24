@@ -21,10 +21,10 @@ const AdminServices = () => {
 
 
     const inputDate = document.querySelector('input.admin-tariff-date');
-    console.log()
     const datepicker = inputDate ? new Datepicker(inputDate, {
         format: 'dd/mm/yyyy'
     }) : false;
+
 };
 
 export default AdminServices;
