@@ -15,7 +15,10 @@ const Popup = (() => {
         let popup = document.getElementById(el.dataset.popup);
         if (!popup) return;
 
-        el.addEventListener('click', () =>  showPopup(popup), {passive: true});
+        el.addEventListener('click', evt =>  {
+            showPopup(popup);
+            return false
+        }, {passive: true});
 
         let closeBtn = popup.querySelector('.org-admin--popup__close');
         closeBtn && closeBtn.addEventListener('click', () => hidePopup(popup), {passive: true});

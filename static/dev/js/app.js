@@ -33,6 +33,6 @@ Contacts();
 import Landing from "./components/page-landing";
 Landing();
 
-import AdminServices from "./components/organization/admin";
+import {AdminServices, AdminScheme} from "./components/organization/admin";
 AdminServices();
-
+AdminScheme();

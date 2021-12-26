@@ -1,0 +1,411 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="white-box org-admin org-admin--scheme">
+        {% include 'blocks/organization/admin-menu.html' %}
+
+        <div class="org-admin--scheme__refresh"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconRefresh"></use></svg> Оновити енергосхему</div>
+        <div class="org-admin--scheme__wrapper">
+
+            <ul class="org-admin--scheme__tabs">
+                <li class="org-admin--scheme__tab active">
+                    <span>Теплова енергія</span>
+                    <small>3</small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Електрична енергія</span>
+                    <small></small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Водопостачання</span>
+                    <small>1</small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>ГВП</span>
+                    <small></small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Температура</span>
+                    <small></small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Технічна вода</span>
+                    <small>1</small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Технологічні параметри</span>
+                    <small></small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Витрати</span>
+                    <small>3</small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Потужність</span>
+                    <small>2</small>
+                </li>
+                <li class="org-admin--scheme__tab">
+                    <span>Info</span>
+                    <small></small>
+                </li>
+            </ul>
+
+            <div class="org-admin--scheme__boxes">
+
+                <div class="org-admin--scheme__box active">
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>212121212-89 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>0000000000016620 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                            <h4>Опалення перша зона</h4>
+                            <small>Real</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>5568</span>
+                            <small>Ergomera</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconColdWater"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>212121212-89 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTechnicalWater"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>212121212-89 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCosts"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>212121212-89 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCosts"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>0000000000016620 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCosts"></use></svg></div>
+                            <h4>Опалення перша зона</h4>
+                            <small>Real</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>5568</span>
+                            <small>Ergomera</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPower"></use></svg></div>
+                            <h4>Загальний лічильник</h4>
+                            <small>Real, Коефіцієнт -1</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>0000000000016620 <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></span>
+                            <small>Mutual II</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="org-admin--scheme__item">
+                        <div class="org-admin--scheme__name">
+                            <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPower"></use></svg></div>
+                            <h4>Опалення перша зона</h4>
+                            <small>Real</small>
+                        </div>
+                        <div class="org-admin--scheme__param">
+                            <span>5568</span>
+                            <small>Ergomera</small>
+                        </div>
+                        <div class="list--menu">
+                            <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                            <ul class="list--menu__list">
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-edit"><span>Редагувати</span></li>
+                                <li class="list--menu__item"><a href="">Оновити</a></li>
+                                <li class="list--menu__item popup-btn" data-popup="admin-scheme-attach"><span>Прив'язати прилад</span></li>
+                                <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+                <div class="org-admin--scheme__box">
+                    <div class="btn btn_green">+ Додати точку та прилад</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="org-admin--popup">
+        <div class="org-admin--popup__box" id="admin-scheme-edit">
+            <div class="org-admin--popup__container">
+                <h3 class="org-admin--popup__title">Редагувати</h3>
+                <form type="">
+                    <div class="fieldsboxes">
+                        <div class="fieldsbox">
+                            <div class="fieldset">
+                                <input type="text" value="Загальний лічильник" name="" placeholder="Назва" />
+                            </div>
+                            <div class="select">
+                                <div class="select__header"></div>
+                                <ul class="select__opts">
+                                    <li class="select__opt" data-value="12">Теплова енергія</li>
+                                    <li class="select__opt" data-value="24">Теплова енергія 2</li>
+                                    <li class="select__opt" data-value="48">Теплова енергія 3</li>
+                                </ul>
+                                <input type="hidden" value="" name="" />
+                            </div>
+
+                            <div class="select">
+                                <div class="select__header"></div>
+                                <ul class="select__opts">
+                                    <li class="select__opt select__opt_placeholder" data-value=""><span class="placeholder">Оберіть тип</span></li>
+                                    <li class="select__opt" data-value="12">Стаціонарний</li>
+                                    <li class="select__opt" data-value="24">Переносний</li>
+                                    <li class="select__opt" data-value="48">Портативний</li>
+                                </ul>
+                                <input type="hidden" value="" name="" />
+                            </div>
+
+                            <div class="fieldset">
+                                <label for="coeff" class="input-switcher">
+                                    <input type="checkbox" id="coeff" name="coeff" checked>
+                                    <span><small></small></span>
+                                </label>
+                                <span>Коефіцієнт -1</span>
+                            </div>
+                        </div>
+
+                        <div class="fieldsbox">
+                            <div class="fieldset">
+                                <input type="text" value="" name="" placeholder="Серійний номер" />
+                            </div>
+
+                            <div class="select">
+                                <div class="select__header"></div>
+                                <ul class="select__opts">
+                                    <li class="select__opt select__opt_placeholder" data-value=""><span class="placeholder">Марка/тип приладу</span></li>
+                                    <li class="select__opt" data-value="12">Ваз 2106</li>
+                                    <li class="select__opt" data-value="24">Газ 53</li>
+                                    <li class="select__opt" data-value="48">ЗАЗ 968</li>
+                                </ul>
+                                <input type="hidden" value="" name="" />
+                            </div>
+
+                            <div class="fieldset">
+                                <label for="activeDevice" class="input-switcher">
+                                    <input type="checkbox" id="activeDevice" name="activeDevice">
+                                    <span><small></small></span>
+                                </label>
+                                <span>Активний прилад</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="org-admin--popup__btns">
+                        <button type="submit" class="btn">Зберегти</button>
+                        <button type="reset" class="btn btn_reset">Скасувати</button>
+                    </div>
+                </form>
+            </div>
+            <div class="org-admin--popup__close"></div>
+        </div>
+
+        <div class="org-admin--popup__box" id="admin-scheme-attach">
+            <div class="org-admin--popup__container">
+                <h3 class="org-admin--popup__title">Прив'язати прилад до точки</h3>
+                <form type="">
+                    <div class="select">
+                        <div class="select__header"></div>
+                        <ul class="select__opts">
+                            <li class="select__opt" data-value="12">6587898</li>
+                            <li class="select__opt" data-value="24">6587899</li>
+                            <li class="select__opt" data-value="48">6587900</li>
+                        </ul>
+                        <input type="hidden" value="" name="" />
+                    </div>
+
+                    <div class="org-admin--popup__btns">
+                        <button type="submit" class="btn">Зберегти</button>
+                        <button type="reset" class="btn btn_reset">Скасувати</button>
+                    </div>
+                </form>
+            </div>
+            <div class="org-admin--popup__close"></div>
+        </div>
+    </div>
+
+{% endblock %}

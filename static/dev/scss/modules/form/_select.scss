@@ -34,6 +34,11 @@
       transform: rotate(45deg);
       transition: transform .3s ease-out;
     }
+
+    .placeholder {
+      font-weight: 300;
+      color: var(--font-l);
+    }
   }
 
   &__opts {
@@ -53,7 +58,6 @@
     transform-origin: 50% 0;
     transition: opacity .3s ease-out, transform .2s ease-out .1s;
   }
-
   &__opt {
     display: flex;
     align-items: center;
@@ -80,6 +84,14 @@
     &:hover {
       background-color: var(--green-sl);
     }
+
+    &_placeholder {
+      height: 0;
+      overflow: hidden;
+    }
+  }
+  &__opt_placeholder + &__opt {
+    border-top: 0;
   }
 
   &.expanded {

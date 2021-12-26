@@ -29,8 +29,8 @@
 @use 'components/block/list' as *;
 @use 'components/block/analysis';
 
-@use 'components/organisation/list';
 @use 'components/organisation/common';
+@use 'components/organisation/list';
 @use 'components/organisation/main';
 @use 'components/organisation/parameters';
 @use 'components/organisation/contacts';
@@ -39,3 +39,4 @@
 @use 'components/organisation/admin/menu';
 @use 'components/organisation/admin/services';
 @use 'components/organisation/admin/reports';
+@use 'components/organisation/admin/scheme';

@@ -251,6 +251,7 @@
         border-radius: 0 0 3px 3px;
       }
 
+      span,
       a {
         position: relative;
         z-index: 2;
@@ -265,6 +266,7 @@
         color: currentColor;
         text-decoration: none;
         box-sizing: border-box;
+        cursor: pointer;
 
         &:hover {
           background-color: var(--white-t);
