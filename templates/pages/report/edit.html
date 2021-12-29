@@ -1,0 +1,322 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    <div class="report-edit--header">
+        <h1 class="report-edit--header__title">Редагувати</h1>
+        <a href="/block-list.php" class="report-edit--header__back"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#arrowBack"></use></svg></a>
+    </div>
+
+    <div class="report-edit--top">
+        <div class="report-edit--top__formbox">
+        <form type="post">
+            <div class="fieldset report-edit--top__name">
+                <label for="report-name">Назва Звіту</label>
+                <input type="text" id="report-name" name="report-name" />
+            </div>
+            <div class="fieldset report-edit--top__desc">
+                <label for="report-desc">Опис звіту</label>
+                <input type="text" id="report-desc" name="report-desc" />
+            </div>
+
+            <div class="report-edit--top__btns">
+                <button type="submit" class="btn">Зберегти</button>
+                <button type="reset" class="btn btn_reset">Скасувати</button>
+            </div>
+        </form>
+        </div>
+
+        <div class="report-edit--top__org">
+            {% include 'blocks/organization/head.html' %}
+        </div>
+    </div>
+
+    <div class="white-box report-edit">
+        <div class="list__container">
+            <div class="list--filters">
+                <div class="list--filters__hand"></div>
+                <div class="list--filters__type">Енерготочка</div>
+                <div class="list--filters__desc"></div>
+                <div class="list--filters__name filtered">Назва</div>
+                <div class="list--filters__color filtered">Колір</div>
+                <div class="list--filters__graph filtered">Графік</div>
+                <div class="list--filters__btns"></div>
+            </div>
+
+            <div class="list__item readonly">
+                    <div class="list__hand"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconDraggable"></use></svg></div>
+                    <div class="list__type">
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                                    <span>Теплова енергія</span>
+                                    <small>Гкал</small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconElectricEnergy"></use></svg></div>
+                                    <span>Електрична енергія</span>
+                                    <small>кВт*год</small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconColdWater"></use></svg></div>
+                                    <span>Водопостачання</span>
+                                    <small>м<sup>3</sup></small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconHotWater"></use></svg></div>
+                                    <span>ГВП</span>
+                                    <small>м<sup>3</sup></small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
+                                    <span>Температура</span>
+                                    <small>°C</small>
+                                </li>
+                            </ul>
+                            <input type="hidden" value="" name="" />
+                        </div>
+                    </div>
+                    <div class="list__desc">
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="12">Облік тепла №1</li>
+                                <li class="select__opt" data-value="12">Облік ХВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ГВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ГВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ХВП №2</li>
+                            </ul>
+                            <input type="hidden" value="" name="" />
+                        </div>
+                    </div>
+                    <div class="list__name"><input type="text" name="" value="Тепло" /></div>
+                    <div class="list__color">
+                        <label for="report-edit-color" class="input-color">
+                            <input type="color" id="report-edit-color" name="color" value="#8BFF52">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="list__graph">
+                        <label for="report-edit-average-1" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-average-1" name="average">
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-sum-1" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-sum-1" name="sum" checked>
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-show-1" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-show-1" name="show">
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-add-1" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-add-1" name="add" checked>
+                            <span><small></small></span>
+                        </label>
+                    </div>
+                    <div class="list__btns">
+                        <div class="list__controls">
+                            <div class="report-edit__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
+                            <div class="report-edit__change"><span class="tooltip" alt="Редагувати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></span></div>
+                        </div>
+                        <div class="list__updates">
+                            <div class="report-edit__save"><span class="tooltip" alt="Зберегти"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></span></div>
+                            <div class="report-edit__cancel"><span class="tooltip" alt="Скасувати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></span></div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="list__item">
+                    <div class="list__hand"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconDraggable"></use></svg></div>
+                    <div class="list__type">
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                                    <span>Теплова енергія</span>
+                                    <small>Гкал</small>
+                                </li>
+                                <li class="select__opt selected" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconElectricEnergy"></use></svg></div>
+                                    <span>Електрична енергія</span>
+                                    <small>кВт*год</small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconColdWater"></use></svg></div>
+                                    <span>Водопостачання</span>
+                                    <small>м<sup>3</sup></small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconHotWater"></use></svg></div>
+                                    <span>ГВП</span>
+                                    <small>м<sup>3</sup></small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
+                                    <span>Температура</span>
+                                    <small>°C</small>
+                                </li>
+                            </ul>
+                            <input type="hidden" value="" name="" />
+                        </div>
+                    </div>
+                    <div class="list__desc">
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="12">Облік тепла №1</li>
+                                <li class="select__opt" data-value="12">Облік ХВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ГВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ГВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ХВП №2</li>
+                            </ul>
+                            <input type="hidden" value="" name="" />
+                        </div>
+                    </div>
+                    <div class="list__name"><input type="text" name="" value="Тепло" /></div>
+                    <div class="list__color">
+                        <label for="report-edit-color-1" class="input-color">
+                            <input type="color" id="report-edit-color-1" name="color" value="#FFB03B">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="list__graph">
+                        <label for="report-edit-average-2" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-average-2" name="average" checked>
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-sum-2" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-sum-2" name="sum" checked>
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-show-2" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-show-2" name="show">
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-add-2" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-add-2" name="add" checked>
+                            <span><small></small></span>
+                        </label>
+                    </div>
+                    <div class="list__btns">
+                        <div class="list__controls">
+                            <div class="report-edit__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
+                            <div class="report-edit__change"><span class="tooltip" alt="Редагувати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></span></div>
+                        </div>
+                        <div class="list__updates">
+                            <div class="report-edit__save"><span class="tooltip" alt="Зберегти"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></span></div>
+                            <div class="report-edit__cancel"><span class="tooltip" alt="Скасувати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></span></div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="list__item readonly">
+                    <div class="list__hand"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconDraggable"></use></svg></div>
+                    <div class="list__type">
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconThermalEnergy"></use></svg></div>
+                                    <span>Теплова енергія</span>
+                                    <small>Гкал</small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconElectricEnergy"></use></svg></div>
+                                    <span>Електрична енергія</span>
+                                    <small>кВт*год</small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconColdWater"></use></svg></div>
+                                    <span>Водопостачання</span>
+                                    <small>м<sup>3</sup></small>
+                                </li>
+                                <li class="select__opt selected" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconHotWater"></use></svg></div>
+                                    <span>ГВП</span>
+                                    <small>м<sup>3</sup></small>
+                                </li>
+                                <li class="select__opt" data-value="12">
+                                    <div class="source-icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconTemperature"></use></svg></div>
+                                    <span>Температура</span>
+                                    <small>°C</small>
+                                </li>
+                            </ul>
+                            <input type="hidden" value="" name="" />
+                        </div>
+                    </div>
+                    <div class="list__desc">
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="12">Облік тепла №1</li>
+                                <li class="select__opt" data-value="12">Облік ХВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ГВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ГВП №1</li>
+                                <li class="select__opt" data-value="12">Облік ХВП №2</li>
+                            </ul>
+                            <input type="hidden" value="" name="" />
+                        </div>
+                    </div>
+                    <div class="list__name"><input type="text" name="" value="Тепло" /></div>
+                    <div class="list__color">
+                        <label for="report-edit-color-2" class="input-color">
+                            <input type="color" id="report-edit-color-2" name="color" value="#FF4A7A">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="list__graph">
+                        <label for="report-edit-average-3" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-average-3" name="average">
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-sum-3" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-sum-3" name="sum" checked>
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-show-3" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-show-3" name="show">
+                            <span><small></small></span>
+                        </label>
+                        <label for="report-edit-add-3" class="input-checkbox">
+                            <input type="checkbox" id="report-edit-add-3" name="add" checked>
+                            <span><small></small></span>
+                        </label>
+                    </div>
+                    <div class="list__btns">
+                        <div class="list__controls">
+                            <div class="report-edit__del"><span class="tooltip" alt="Видалити"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></span></div>
+                            <div class="report-edit__change"><span class="tooltip" alt="Редагувати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></span></div>
+                        </div>
+                        <div class="list__updates">
+                            <div class="report-edit__save"><span class="tooltip" alt="Зберегти"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></span></div>
+                            <div class="report-edit__cancel"><span class="tooltip" alt="Скасувати"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></span></div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="btn btn_green">+ Додати сервіс</div>
+
+    </div>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script>
+
+        let sortList = document.querySelector('.list__container');
+        Sortable.create(sortList, {
+            ghostClass: 'sortable-ghost',
+            chosenClass: 'sortable-chosen',
+            dragClass: 'sortable-drag',
+            draggable: '.list__item',
+            handle: '.list__hand',
+            animation: 150
+        });
+    </script>
+{% endblock %}

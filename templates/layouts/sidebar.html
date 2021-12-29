@@ -11,44 +11,38 @@
                     <span class="menu__text">Огляд</span>
                 </a>
             </li>
-            <li class="menu__item">
+            <li class="menu__item has-child">
                 <a class="menu__link {% if page == 'organizations' %}current{% endif %}" href="/organization-list.php">
                     <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconOrgs"></use></svg></span>
                     <span class="menu__text">Організації</span>
                 </a>
+                <ul class="child-menu">
+                    <li class="child-menu__item"><a class="child-menu__link" href="/organization-main.php">Доступні</a></li>
+                    <li class="child-menu__item"><a class="child-menu__link " href="/organization-list.php">Всі</a></li>
+                </ul>
             </li>
-            <li class="menu__item">
+            <li class="menu__item has-child">
                 <a class="menu__link  {% if page == 'blocks' %}current{% endif %}" href="/block-list.php">
                     <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconDashboard"></use></svg></span>
                     <span class="menu__text">Блоки</span>
                 </a>
+                <ul class="child-menu">
+                    <li class="child-menu__item"><a class="child-menu__link" href="/block-analysis.php">Доступні</a></li>
+                    <li class="child-menu__item"><a class="child-menu__link " href="/block-list.php">Всі</a></li>
+                </ul>
             </li>
             <li class="menu__item has-child">
-                <a class="menu__link {% if page == 'reports' %}current{% endif %}" href="">
+                <a class="menu__link {% if page == 'reports' or page == 'report-list' %}current{% endif %}" href="/report-list.php">
                     <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconReports"></use></svg></span>
                     <span class="menu__text">Звіти</span>
                 </a>
                 <ul class="child-menu">
-                    <li class="child-menu__item"><a class="child-menu__link" href="/o/1/reports">Доступні</a></li>
-                    <li class="child-menu__item"><a class="child-menu__link " href="/o/1/report/2/view">Звіт</a></li>
-                    <li class="child-menu__item"><a class="child-menu__link " href="/o/1/report/5/view">Report</a></li>
-                </ul>
-            </li>
-            <li class="menu__item has-child">
-                <a class="menu__link " href="">
-                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconReports"></use></svg></span>
-                    <span class="menu__text">Звіти-схеми</span>
-                </a>
-                <ul class="child-menu">
-                    <li class="child-menu__item"><a class="child-menu__link" href="/o/1/schema-reports">Доступні</a></li>
-                    <li class="child-menu__item"><a class="child-menu__link " href="/o/1/schema-report/2/view">На розгляді</a></li>
-                    <li class="child-menu__item"><a class="child-menu__link " href="/o/1/schema-report/3/view">Чернетки</a></li>
-                    <li class="child-menu__item"><a class="child-menu__link " href="/o/1/schema-report/4/view">Скасовані</a></li>
-
+                    <li class="child-menu__item"><a class="child-menu__link" href="/report-list.php">Доступні</a></li>
+                    <li class="child-menu__item"><a class="child-menu__link " href="/report-edit.php">Звіт</a></li>
                 </ul>
             </li>
             <li class="menu__item">
-                <a class="menu__link {% if page == 'services' %}current{% endif %}" href="">
+                <a class="menu__link {% if page == 'services' %}current{% endif %}" href="/service-list.php">
                     <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconServices"></use></svg></span>
                     <span class="menu__text">Сервіси</span>
                 </a>

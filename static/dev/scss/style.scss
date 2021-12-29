@@ -12,6 +12,7 @@
 @use 'modules/form/select';
 
 @use 'modules/notify';
+@use 'modules/popup';
 @use 'modules/asem-tooltip';
 @use 'modules/navigations';
 @use 'modules/breadcrumb';
@@ -24,19 +25,21 @@
 @use 'modules/welcome';
 
 @use 'components/page-landing';
+
 @use 'components/page-login';
 
 @use 'components/block/list' as *;
 @use 'components/block/analysis';
 
 @use 'components/organisation/common';
-@use 'components/organisation/list';
+@use 'components/organisation/list' as *;
 @use 'components/organisation/main';
 @use 'components/organisation/parameters';
 @use 'components/organisation/contacts';
 
-@use 'components/organisation/admin/common' as *;
-@use 'components/organisation/admin/menu';
-@use 'components/organisation/admin/services';
-@use 'components/organisation/admin/reports';
-@use 'components/organisation/admin/scheme';
+@use 'components/service/list' as *;
+
+@use 'components/report/list' as *;
+@use 'components/report/edit' as *;
+
+@use 'components/scheme/scheme';

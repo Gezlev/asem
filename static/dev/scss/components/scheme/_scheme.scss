@@ -1,4 +1,4 @@
-.org-admin--scheme {
+.scheme {
   position: relative;
 
   &__refresh {
@@ -258,7 +258,7 @@
     vertical-align: top;
 
     span:before {
-      background-color: var(--font-d);
+      background-color: #304156;
     }
   }
   .input-switcher + span {
@@ -266,6 +266,10 @@
     margin-top: 4px;
     color: var(--font-d);
   }
+}
+
+.darktheme #admin-scheme-edit .input-switcher span:before {
+  background-color: var(--blue);
 }
 
 #admin-scheme-attach {

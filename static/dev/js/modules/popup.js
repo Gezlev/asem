@@ -1,5 +1,5 @@
 const Popup = (() => {
-    let wrapper = document.querySelector('.org-admin--popup');
+    let wrapper = document.querySelector('.popup');
 
     const showPopup = popup => {
         wrapper && wrapper.classList.add('visible');
@@ -20,7 +20,7 @@ const Popup = (() => {
             return false
         }, {passive: true});
 
-        let closeBtn = popup.querySelector('.org-admin--popup__close');
+        let closeBtn = popup.querySelector('.popup__close');
         closeBtn && closeBtn.addEventListener('click', () => hidePopup(popup), {passive: true});
     };
 

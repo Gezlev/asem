@@ -3,8 +3,11 @@
 
 // SCRIPTS
 
-//import Select from "./modules/select";
-//document.querySelectorAll('.select').forEach( el => Select.init(el));
+import Select from "./modules/select";
+document.querySelectorAll('.select').forEach( el => Select.init(el));
+
+import ColorPicker from "./modules/color-picker";
+document.querySelectorAll('.input-color').forEach( el => ColorPicker.init(el));
 
 import Popup from "./modules/popup";
 document.querySelectorAll('.popup-btn').forEach( el => Popup.init(el));
@@ -33,6 +36,11 @@ Contacts();
 import Landing from "./components/page-landing";
 Landing();
 
-import {AdminServices, AdminScheme} from "./components/organization/admin";
-AdminServices();
-AdminScheme();
+import Scheme from "./components/page-scheme";
+Scheme();
+
+import Services from "./components/page-services";
+Services();
+
+import Reports from "./components/page-reports";
+Reports();
