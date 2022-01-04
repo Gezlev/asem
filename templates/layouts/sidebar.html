@@ -41,6 +41,16 @@
                     <li class="child-menu__item"><a class="child-menu__link " href="/report-edit.php">Звіт</a></li>
                 </ul>
             </li>
+            <li class="menu__item has-child">
+                <a class="menu__link {% if page == 'scheme' or page == 'scheme-edit' %}current{% endif %}" href="/scheme-energo.php">
+                    <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconReports"></use></svg></span>
+                    <span class="menu__text">Схеми</span>
+                </a>
+                <ul class="child-menu">
+                    <li class="child-menu__item"><a class="child-menu__link" href="/scheme-energo.php">Енергетична схема</a></li>
+                    <li class="child-menu__item"><a class="child-menu__link " href="/scheme-edit.php">Доступні cхеми</a></li>
+                </ul>
+            </li>
             <li class="menu__item">
                 <a class="menu__link {% if page == 'services' %}current{% endif %}" href="/service-list.php">
                     <span class="menu__icon"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#menuIconServices"></use></svg></span>

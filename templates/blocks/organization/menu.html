@@ -1,7 +1,7 @@
 <ul class="org--menu">
   <li class="org--menu__item {% if page == 'org-main' %}current{% endif %}"><a href="/organization-main.php">Основне</a></li>
   <li class="org--menu__item {% if page == 'org-parameters' %}current{% endif %}"><a href="/organization-parameters.php">Параметри</a></li>
-  <li class="org--menu__item"><a href="">Схема</a></li>
+  <li class="org--menu__item {% if page == 'scheme' %}current{% endif %}"><a href="/scheme-energo.php">Схема</a></li>
   <li class="org--menu__item {% if page == 'org-contacts' %}current{% endif %}"><a href="/organization-contacts.php">Контакти</a></li>
-  <li class="org--menu__item {% if page == 'services' or page == 'scheme' or page == 'reports' %}current{% endif %}"><a href="/service-list.php"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconAdmin"></use></svg> Адмін</a></li>
+  <li class="org--menu__item {% if page == 'services' or page == 'reports' %}current{% endif %}"><a href="/service-list.php"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconAdmin"></use></svg> Адмін</a></li>
 </ul>

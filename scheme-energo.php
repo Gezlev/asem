@@ -8,8 +8,8 @@ require_once 'vendor/autoload.php';
 $loader = new \Twig\Loader\FilesystemLoader('templates/');
 $twig = new \Twig\Environment($loader);
 
-echo $twig->render('pages/scheme/scheme.html', [
-    'title' => 'Схема | Адмін | ASEM',
+echo $twig->render('pages/scheme/energo.html', [
+    'title' => 'Енергетична схема | Адмін | ASEM',
     'page' => 'scheme'
 ]);
 

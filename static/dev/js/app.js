@@ -36,8 +36,11 @@ Contacts();
 import Landing from "./components/page-landing";
 Landing();
 
-import Scheme from "./components/page-scheme";
+import Scheme from "./components/scheme/energo";
 Scheme();
+
+import SchemeEdit from "./components/scheme/edit";
+SchemeEdit();
 
 import Services from "./components/page-services";
 Services();

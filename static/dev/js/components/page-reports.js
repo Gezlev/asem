@@ -1,5 +1,3 @@
-import SortItems from "../modules/sortable";
-
 const Reports = () => {
 
     let container = document.querySelector('.report-edit');

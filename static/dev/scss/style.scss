@@ -42,4 +42,5 @@
 @use 'components/report/list' as *;
 @use 'components/report/edit' as *;
 
-@use 'components/scheme/scheme';
+@use 'components/scheme/energo';
+@use 'components/scheme/edit' as *;
