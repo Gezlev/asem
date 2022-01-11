@@ -1,16 +1,19 @@
 .org--main {
     position: relative;
-    display: flex;
+    display: block;
     box-sizing: border-box;
+
+    @media (min-width: 1280px) {
+        display: flex;
+    }
 
     .white-box + .white-box {
         margin-top: 24px;
     }
 
     &__content {
-        flex: 1 1 auto;
+        flex: 0 0 100%;
         padding-top: 36px;
-        padding-right: 32px;
         box-sizing: border-box;
 
         .white-box {
@@ -20,14 +23,22 @@
         .title {
             font-size: 17px;
         }
+
+        @media (min-width: 1280px) AND (max-width: 1365px) {
+            flex: 0 0 calc(100% - 320px);
+            max-width: calc(100% - 320px);
+            padding-right: 20px;
+        }
+
+        @media (min-width: 1366px) {
+            flex: 1 1 auto;
+            padding-right: 32px;
+        }
     }
 
     &__sidebar {
-        flex: 0 0 352px;
         padding-top: 32px;
-        padding-left: 32px;
         box-sizing: border-box;
-        border-left: 1px solid var(--bg-1);
 
         .white-box {
             padding: 0;
@@ -35,6 +46,33 @@
             .title {
                 padding: 20px 24px 16px;
             }
+        }
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 32px;
+
+            .white-box {
+                &:first-of-type {
+                    grid-column: 1/1 span;
+                    grid-row: 1/2 span;
+                }
+            }
+        }
+
+        @media (min-width: 1280px) {
+            border-left: 1px solid var(--bg-1);
+        }
+
+        @media (min-width: 1280px) AND (max-width: 1365px) {
+            flex: 0 0 320px;
+            padding-left: 20px;
+        }
+
+        @media (min-width: 1366px) {
+            flex: 0 0 352px;
+            padding-left: 32px;
         }
     }
 
@@ -234,6 +272,23 @@
     }
     &__sidebar &__gallery {
         padding-bottom: 36px;
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+            grid-column: 2/1 span;
+            grid-row: 1/1 span;
+
+            &.white-box {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__schedule {
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+            grid-column: 2/1 span;
+            grid-row: 2/1 span;
+        }
     }
 }
 

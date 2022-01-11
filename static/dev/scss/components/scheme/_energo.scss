@@ -35,6 +35,14 @@
       width: 1px;
       height: calc(100% + 32px);
       background-color: var(--bg-1);
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        left: 27%;
+      }
+
+      @media (min-width: 1280px) {
+        left: 25%;
+      }
     }
   }
 
@@ -45,6 +53,18 @@
     padding: 32px 32px 0 0;
     margin: 0;
     box-sizing: border-box;
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      flex: 0 0 27%;
+      max-width: 27%;
+      padding: 32px 24px 0 0;
+    }
+
+    @media (min-width: 1280px) {
+      flex: 0 0 25%;
+      max-width: 25%;
+      padding: 32px 32px 0 0;
+    }
   }
 
   &__tab {
@@ -105,6 +125,14 @@
     flex: 1 1 auto;
     padding: 32px 0 0 32px;
     box-sizing: border-box;
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      padding: 32px 0 0 24px;
+    }
+
+    @media (min-width: 1280px) {
+      padding: 32px 0 0 32px;
+    }
   }
 
   &__item {
@@ -153,6 +181,16 @@
     padding-right: 16px;
     box-sizing: border-box;
 
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+
+    @media (min-width: 1280px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
     &:after {
       content: '';
       display: block;
@@ -182,6 +220,16 @@
     max-width: calc(50% - 48px);
     padding-right: 16px;
     box-sizing: border-box;
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      flex: 0 0 calc(55% - 48px);
+      max-width: calc(55% - 48px);
+    }
+
+    @media (min-width: 1280px) {
+      flex: 0 0 calc(50% - 48px);
+      max-width: calc(50% - 48px);
+    }
 
     span {
       svg {

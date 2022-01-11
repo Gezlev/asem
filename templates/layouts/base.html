@@ -21,7 +21,7 @@
 	{% block container %}
 		<script>(b=>{let t=localStorage.getItem('theme');t&&(t==='dark')&&b.classList.add('darktheme');})(document.body);</script>
 		<div class="site--wrapper">
-			<script>(()=>{let s=localStorage.getItem("sidebar"),w=document.querySelector(".site--wrapper");w&&s&&"collapsed"===s&&w.classList.add("collapsed");})();</script>
+			<script>(()=>{let s=localStorage.getItem("sidebar"),w=document.querySelector(".site--wrapper");window.innerWidth>1024?w&&s&&"collapsed"===s&&w.classList.add("collapsed"):w.classList.add("collapsed");})();</script>
 
 			{% include 'layouts/sidebar.html' %}
 

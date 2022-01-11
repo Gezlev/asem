@@ -1,19 +1,22 @@
 const SidebarMenu = () => {
     let body = document.body;
 
-    document.querySelectorAll('.has-child .menu__link').forEach( item => {
+    //document.querySelectorAll('.has-child .menu__link').forEach( item => {
+    document.querySelectorAll('.has-child').forEach( item => {
         item.addEventListener('click', evt => {
-            evt.preventDefault();
+            //evt.preventDefault();
             let expanded = document.querySelector('.sidebar .menu__item.expanded');
-            expanded && expanded.classList.remove('expanded');
-            item.parentNode.classList.toggle('expanded');
+            expanded && item !== expanded && expanded.classList.remove('expanded');
+            //item.parentNode.classList.toggle('expanded');
+            item.classList.toggle('expanded');
         })
     }, {passive: true});
 
     let sidebar = localStorage.getItem('sidebar');
     let siteWrapper = document.querySelector('.site--wrapper');
     let sidebarExpand = document.querySelector('.sidebar--expand');
-    if (siteWrapper && sidebar && sidebar === 'collapsed') {
+    let sidebarShow = document.querySelector('.site--header__menu');
+    if (siteWrapper && sidebar && sidebar === 'collapsed' && window.innerWidth > 1024) {
         siteWrapper.classList.add('collapsed');
     }
     sidebarExpand && sidebarExpand.addEventListener('click', () => {
@@ -24,6 +27,9 @@ const SidebarMenu = () => {
             siteWrapper.classList.add('collapsed');
             localStorage.setItem('sidebar', 'collapsed');
         }
+    });
+    sidebarShow && sidebarShow.addEventListener('click', () => {
+        siteWrapper.classList.remove('collapsed');
     });
 
     let theme = localStorage.getItem('theme');

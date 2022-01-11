@@ -1,5 +1,9 @@
 .scheme-edit {
 
+  @media (min-width: 768px) AND (max-width: 1279px) {
+    padding-right: 24px;
+  }
+
   &--header {
     display: flex;
     align-items: center;
@@ -53,7 +57,6 @@
 
     &__formbox {
       flex: 1 1 auto;
-      display: grid;
       grid-column-gap: 32px;
       grid-template-columns: repeat(2, 1fr);
       box-sizing: border-box;
@@ -61,6 +64,15 @@
 
       form {
         display: contents;
+      }
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        display: block;
+        flex: 0 0 calc(100% - 332px);
+      }
+
+      @media (min-width: 1280px) {
+        display: grid;
       }
     }
 
@@ -127,6 +139,10 @@
 
     &__org {
       flex: 0 0 352px;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 332px;
+      }
     }
 
     .org--header {
@@ -156,16 +172,27 @@
       max-width: 25%;
       padding-right: 20px;
       box-sizing: border-box;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 230px;
+        max-width: 230px;
+        padding-right: 8px;
+      }
     }
 
     &__desc {
       flex: 0 0 212px;
       padding-right: 20px;
       box-sizing: border-box;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 100px;
+        padding-right: 8px;
+      }
     }
 
     &__name {
-      flex: 0 0 calc(100% - 25% - 212px - 60px - 120px - 100px);
+      flex: 0 0 calc(100% - 230px - 100px - 40px - 100px - 84px);
     }
 
     &__average {
@@ -173,16 +200,29 @@
       display: flex;
       justify-content: flex-end;
       text-align: right;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 40px;
+      }
     }
 
     &__coords {
       flex: 0 0 120px;
       padding-left: 20px;
       box-sizing: border-box;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 100px;
+        padding-left: 12px;
+      }
     }
 
     &__btns {
       flex: 0 0 100px;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 84px;
+      }
     }
 
   }
@@ -191,6 +231,10 @@
 
     &__type {
       padding-left: 24px;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        padding-left: 12px;
+      }
     }
 
     &__name,
@@ -203,12 +247,21 @@
         display: flex;
         max-width: 140px;
         margin-left: -80px;
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+          max-width: 80px;
+          margin-left: -40px;
+        }
       }
     }
 
     &__coords {
       justify-content: flex-end;
       text-align: right;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        padding-right: 16px;
+      }
     }
 
   }
@@ -236,6 +289,18 @@
 
     &__type {
       padding-left: 12px;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        padding-left: 4px;
+
+        .select__header span {
+          max-width: 110px;
+          margin-right: 4px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
     }
 
     &__average {
@@ -246,6 +311,12 @@
         display: block;
         width: 15px;
         height: 15px;
+      }
+    }
+
+    &__coords {
+      input {
+        padding: 8px;
       }
     }
 
@@ -316,6 +387,10 @@
         fill: var(--green-d);
       }
     }
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      padding-right: 6px;
+    }
   }
 
   .scheme__cancel {
@@ -373,6 +448,10 @@
     small {
       padding-top: 1px;
     }
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      padding: 12px 20px 8px 8px;
+    }
   }
 
   .select__opt {
@@ -418,6 +497,13 @@
       background-color: transparent;
     }
 
+    input {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
     .select__header {
       &:after {
         display: none;
@@ -449,8 +535,15 @@
 }
 
 .scheme--placement {
-  display: flex;
   padding-top: 40px;
+
+  @media (min-width: 768px) AND (max-width: 1279px) {
+    display: block;
+  }
+
+  @media (min-width: 1280px) {
+    display: flex;
+  }
 
   &__container {
     position: relative;
@@ -485,6 +578,14 @@
         left: 0;
       }
     }
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      padding-top: 62.5%;
+    }
+
+    @media (min-width: 1280px) {
+      padding-top: calc(0.6666 * 62.5%);
+    }
   }
 
   &__labels {
@@ -492,6 +593,11 @@
     padding: 0 0 0 32px;
     margin: 0 0 32px;
     box-sizing: border-box;
+
+    @media (min-width: 768px) AND (max-width: 1279px) {
+      padding-left: 0;
+      margin: 32px 0 0;
+    }
   }
 
   &__label {

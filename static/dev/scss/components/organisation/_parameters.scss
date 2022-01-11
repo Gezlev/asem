@@ -5,6 +5,10 @@
 
   &__col {
     width: calc(50% - 16px);
+
+    @media (min-width: 1280px) AND (max-width: 1365px) {
+      width: calc(50% - 10px);
+    }
   }
 
   & &__item {

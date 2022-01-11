@@ -1,9 +1,12 @@
 .blocks--header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin-bottom: 24px;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
 .blocks--filters {
@@ -43,10 +46,15 @@
 .search-box {
   position: relative;
   z-index: 10;
-  flex: 0 0 calc(100% - 225px);
   display: flex;
   height: 42px;
+  margin-bottom: 20px;
   background-color: var(--white-inverse);
+
+  @media (min-width: 1280px) {
+    flex: 0 0 calc(100% - 225px);
+    margin-bottom: 0;
+  }
 
   .select {
     height: 42px;
@@ -150,8 +158,10 @@
 
     &--header {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      height: auto;
 
       &__filters {
         display: flex;
@@ -184,6 +194,22 @@
       .input-switcher span:before {
         background-color: var(--font-d);
       }
+
+      .title {
+        flex: 0 0 100%;
+        margin: 0 0 8px;
+      }
+
+      @media (min-width: 1280px) {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 48px;
+
+        .title {
+          flex: 0 0 auto;
+          margin: 0;
+        }
+      }
     }
 
     &--filters {
@@ -191,9 +217,14 @@
         flex: 0 0 56px;
         padding-left: 12px;
         box-sizing: border-box;
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+          flex: 0 0 44px;
+        }
       }
       &__block {
         flex: 0 0 18%;
+        max-width: 18%;
       }
       &__org {
         flex: 0 0 28%;
@@ -201,6 +232,10 @@
       }
       &__address {
         flex: 0 0 calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+          flex: 0 0 calc(100% - 44px - 18% - 28% - 5% - 88px - 60px + 12px);
+        }
       }
       &__build {
         flex: 0 0 5%;
@@ -214,6 +249,12 @@
         padding-left: 32px;
         padding-right: 32px;
         box-sizing: border-box;
+
+        @media (min-width: 768px) AND (max-width: 1279px) {
+          flex: 0 0 88px;
+          padding-left: 16px;
+          padding-right: 24px;
+        }
       }
       &__empty {
         flex: 0 0 60px;
@@ -241,6 +282,10 @@
       flex: 0 0 56px;
       padding-left: 12px;
       box-sizing: border-box;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 44px;
+      }
     }
 
     &__block,
@@ -250,6 +295,10 @@
 
     &__block {
       flex: 0 0 18%;
+      max-width: 18%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &__org {
@@ -300,6 +349,10 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 calc(100% - 44px - 18% - 28% - 5% - 88px - 60px + 12px);
+      }
     }
 
     &__build {
@@ -322,6 +375,12 @@
         width: 15px;
         height: 15px;
         fill: #FFFFFF;
+      }
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+        flex: 0 0 88px;
+        padding-left: 16px;
+        padding-right: 24px;
       }
     }
 

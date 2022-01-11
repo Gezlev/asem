@@ -12,6 +12,9 @@ document.querySelectorAll('.input-color').forEach( el => ColorPicker.init(el));
 import Popup from "./modules/popup";
 document.querySelectorAll('.popup-btn').forEach( el => Popup.init(el));
 
+import ListMenu from "./modules/list-menu";
+document.querySelectorAll('.list--menu').forEach( el => ListMenu.init(el));
+
 import vNotify from "./modules/notify";
 window.vNotify = vNotify;
 

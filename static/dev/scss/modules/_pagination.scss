@@ -1,18 +1,30 @@
 .pagination {
   position: relative;
-  height: 24px;
-  margin: 28px 0 0;
+  height: 60px;
+  margin: 20px 0 0;
+
+  @media (min-width: 768px) {
+    height: 24px;
+    margin: 28px 0 0;
+  }
 
   &__info {
-    position: absolute;
-    left: 0;
-    top: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 24px;
+    margin-bottom: 8px;
     line-height: 1;
     font-size: 12px;
     color: var(--font-l);
+
+    @media (min-width: 768px) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-bottom: 0;
+      justify-content: left;
+    }
   }
 
   &__list {

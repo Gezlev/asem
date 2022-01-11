@@ -55,9 +55,12 @@
 }
 
 .org--tags {
-  display: flex;
-  flex-wrap: wrap;
   margin: 36px 0 0;
+
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   &__title {
     height: 28px;
@@ -65,6 +68,35 @@
     padding: 1px 0 0 ;
     box-sizing: border-box;
     color: var(--font-d);
+  }
+
+  &__wrapper {
+    display: block;
+    width: calc(100% + 64px);
+    height: 40px;
+    margin-left: -32px;
+    overflow: hidden;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    height: 70px;
+    max-width: 100%;
+    padding: 0 32px;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+
+  &__wrapper,
+  &__items {
+
+    @media (min-width: 1280px) {
+      display: contents;
+      width: 100%;
+      height: initial;
+      padding: 0;
+    }
   }
 
   &__item {
@@ -79,6 +111,7 @@
     font-weight: 500;
     color: var(--font-r);
     text-decoration: none;
+    white-space: nowrap;
     border-radius: 6px;
     background-color: var(--bg-1);
     transition: color .3s ease-out;

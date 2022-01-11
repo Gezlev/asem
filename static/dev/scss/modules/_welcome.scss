@@ -1,13 +1,28 @@
 .welcome {
   position: relative;
-  padding: 48px 60px;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 48px 32px 36px;
   box-sizing: border-box;
   border-radius: 12px;
   background-color: #304156;
   background-repeat: no-repeat;
-  background-position: calc(100% + 100px) 52%;
-  background-size: 650px 610px;
+  background-position: calc(100% + 260px) calc(100% + 60px);
+  background-size: 400px 375px;
   background-image: url(/static/build/img/asem-pattern.svg);
+
+  @media (min-width: 768px) {
+    width: 100%;
+    margin: 0;
+    padding: 48px 60px;
+    background-position: calc(100% + 100px) 52%;
+    background-size: 650px 610px;
+  }
+
+  @media (min-width: 1024px) AND (max-width: 1279px) {
+    background-position: calc(100% + 280px) 52%;
+  }
 
   &__title {
     padding: 0;
@@ -21,17 +36,26 @@
     line-height: 24px;
     font-size: 15px;
     color: rgba(#FFF, .5);
+
+    @media (min-width: 1024px) AND (max-width: 1279px) {
+      max-width: 360px;
+    }
   }
 
   &__close {
     position: absolute;
-    top: 10px;
-    right: 8px;
+    top: 12px;
+    right: 12px;
     width: 36px;
     height: 36px;
     border-radius: 50%;
     background: #FFF;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+      top: 10px;
+      right: 8px;
+    }
 
     &:before,
     &:after {
