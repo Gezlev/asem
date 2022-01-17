@@ -17,7 +17,11 @@
         box-sizing: border-box;
 
         .white-box {
-            padding: 32px 24px;
+            padding: 32px 16px;
+
+            @media (min-width: 768px) {
+                padding: 32px 24px;
+            }
         }
 
         .title {
@@ -83,17 +87,28 @@
     }
 
     &__general {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 32px;
-        grid-row-gap: 24px;
+
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 32px;
+            grid-row-gap: 24px;
+        }
 
         .title {
-            grid-column: 2 span;
+            margin-bottom: 24px;
+
+            @media (min-width: 768px) {
+                grid-column: 2 span;
+                margin-bottom: 24px;
+            }
         }
 
         .org--params__item {
-            margin-bottom: 24px;
+
+            @media (min-width: 768px) {
+                margin-bottom: 24px;
+            }
         }
 
         .org--params__row {
@@ -296,6 +311,7 @@
 
     &__header {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         margin: 0 0 24px;
 
@@ -305,24 +321,41 @@
     }
 
     &__info {
-        display: flex;
-        justify-content: space-between;
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__temp {
-        flex: 1 1 220px;
-        max-width: 240px;
-        min-width: 216px;
-        padding-right: 24px;
-        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--bg-1);
+
+        @media (min-width: 360px) {
+            grid-template-columns: 200px 1fr;
+        }
+
+        @media (min-width: 768px) {
+            display: block;
+            flex: 1 1 220px;
+            max-width: 240px;
+            min-width: 216px;
+            padding-right: 24px;
+            padding-bottom: 0;
+            box-sizing: border-box;
+            border-bottom: 0;
+        }
     }
 
     &__value {
+        grid-column: 1/1 span;
         display: flex;
         align-items: flex-start;
         margin: 0 0 12px;
         line-height: 64px;
-        font-size: 62px;
+        font-size: 40px;
         font-weight: 700;
         color: var(--font-d);
 
@@ -330,13 +363,26 @@
             display: block;
             margin-left: 4px;
             line-height: 36px;
-            font-size: 32px;
+            font-size: 24px;
+        }
+
+        @media (min-width: 360px) {
+            line-height: 64px;
+            font-size: 62px;
+
+            small {
+                margin-left: 4px;
+                line-height: 36px;
+                font-size: 32px;
+            }
         }
     }
 
     &__icon {}
 
     &__desc {
+        grid-column: 1/1 span;
+        grid-row: 2/1 span;
         display: flex;
         margin-bottom: 28px;
         line-height: 18px;
@@ -355,11 +401,8 @@
     }
 
     &__middle {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        padding-top: 20px;
-        border-top: 1px solid var(--bg-1);
+        grid-column: 2/1 span;
+        grid-row: 1/2 span;
 
         > span {
             flex: 0 0 100%;
@@ -371,12 +414,24 @@
             font-weight: 500;
             color: var(--font-r);
         }
+
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            border-top: 1px solid var(--bg-1);
+        }
     }
 
     &__plot {
-        height: 28px;
+        height: 34px;
         flex: 1 1 auto;
-        margin-right: 8px;
+
+        @media (min-width: 768px) {
+            height: 28px;
+            margin-right: 8px;
+        }
     }
 
     &__diff {
@@ -401,11 +456,14 @@
     }
 
     &__params {
-        display: flex;
         margin-top: 28px;
         border-radius: 8px;
         box-sizing: border-box;
         border: 1px solid var(--bg-1);
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
     }
 
     &__params .source-icon {
@@ -483,7 +541,12 @@
 
     &__itp,
     &__eclass {
-        border-left: 1px solid var(--bg-1);
+        border-top: 1px solid var(--bg-1);
+
+        @media (min-width: 768px) {
+            border-top: 0;
+            border-left: 1px solid var(--bg-1);
+        }
     }
 
     &__eclass {
@@ -596,28 +659,39 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        padding-left: 24px;
+
+        @media (min-width: 768px) {
+            padding-left: 24px;
+        }
     }
 
     &__bar {
         flex: 1 1 auto;
+        height: 245px;
+
+        @media (min-width: 768px) {
+            height: initial;
+        }
     }
 
     &__chartlabels {
         display: flex;
         justify-content: flex-end;
+        padding-top: 30px;
+
+        @media (min-width: 768px) {
+            padding-top: 0;
+        }
     }
     &__chartlabel {
-        display: flex;
-        align-items: flex-start;
+        position: relative;
+        flex: 0 0 50%;
+        padding-left: 16px;
         line-height: 18px;
         font-size: 12px;
         font-weight: 500;
         color: var(--font-d);
-
-        &:first-of-type {
-            margin-right: 40px;
-        }
+        box-sizing: border-box;
 
         strong,
         b {
@@ -625,6 +699,9 @@
         }
 
         span {
+            position: absolute;
+            left: 0;
+            top: 0;
             display: block;
             margin-top: 3px;
             width: 10px;
@@ -635,13 +712,33 @@
         }
 
         &:first-of-type {
+            padding-right: 40px;
             span {
                 background-color: var(--green);
             }
         }
+
         &:last-of-type {
             span {
                 background-color: #c6dfff;
+            }
+        }
+
+        @media (min-width: 768px) {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: flex-start;
+            padding-left: 0;
+            padding-right: 0;
+
+            &:first-of-type {
+                margin-right: 40px;
+            }
+
+            span {
+                position: initial;
+                left: initial;
+                top: initial;
             }
         }
     }

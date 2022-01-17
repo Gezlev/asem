@@ -26,8 +26,6 @@ const ListMenu = (() => {
 
     }, {passive: true});
 
-    console.log('List Menu Active!');
-
     return {
         init: item => initMenu(item)
     }

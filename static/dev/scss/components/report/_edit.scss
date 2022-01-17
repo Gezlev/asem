@@ -179,6 +179,24 @@
       padding-left: 16px;
       box-sizing: border-box;
     }
+    &__graph {
+      .status-icon {
+        padding-left: 1px;
+        margin-left: 4px;
+        box-sizing: border-box;
+        font-size: 10px;
+        color: var(--white-inverse);
+        border-radius: 50%;
+        background-color: var(--font-d);
+      }
+      .tooltip {
+
+        .asem-tooltip {
+          text-transform: lowercase;
+          white-space: nowrap;
+        }
+      }
+    }
   }
 
   .list {
@@ -223,6 +241,20 @@
     }
 
     &__graph {
+      .tooltip {
+        display: block;
+        height: 18px;
+        width: initial;
+
+        .asem-tooltip {
+          white-space: nowrap;
+
+          &:before {
+            right: 13px;
+          }
+        }
+      }
+
       label {
         margin-left: 4px;
       }
@@ -247,6 +279,21 @@
         width: 24px;
         height: 24px;
         fill: var(--font-r);
+      }
+
+      .tooltip {
+        display: block;
+        width: initial;
+        height: 24px;
+        white-space: nowrap;
+
+        .asem-tooltip {
+          white-space: nowrap;
+
+          &:before {
+            right: 16px;
+          }
+        }
       }
     }
 
@@ -386,8 +433,8 @@
   }
 
   .list__item {
-    position: relative;
-    z-index: 1;
+    //position: relative;
+    //z-index: 1;
 
     input {
       height: 36px;

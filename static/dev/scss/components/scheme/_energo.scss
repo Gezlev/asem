@@ -2,9 +2,6 @@
   position: relative;
 
   &__refresh {
-    position: absolute;
-    top: 48px;
-    right: 32px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -12,6 +9,12 @@
     font-size: 14px;
     font-weight: 500;
     color: var(--font-d);
+
+    @media (min-width: 768px) {
+      position: absolute;
+      top: 40px;
+      right: 32px;
+    }
 
     svg {
       display: inline-block;
@@ -23,18 +26,24 @@
   }
 
   &__wrapper {
-    display: flex;
-    position: relative;
+
+    @media (min-width: 768px) {
+      display: flex;
+      position: relative;
+    }
 
     &:before {
-      content: '';
-      position: absolute;
-      left: 25%;
-      top: 0;
-      display: block;
-      width: 1px;
-      height: calc(100% + 32px);
-      background-color: var(--bg-1);
+
+      @media (min-width: 768px) {
+        content: '';
+        position: absolute;
+        left: 25%;
+        top: 0;
+        display: block;
+        width: 1px;
+        height: calc(100% + 32px);
+        background-color: var(--bg-1);
+      }
 
       @media (min-width: 768px) AND (max-width: 1279px) {
         left: 27%;

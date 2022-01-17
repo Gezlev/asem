@@ -1,9 +1,10 @@
+import AsemTooltip from "../modules/tooltip";
 const Reports = () => {
 
     let container = document.querySelector('.report-edit');
     if (!container) return;
 
-    //container.querySelectorAll('.tooltip').forEach(el => AsemTooltip.init(el));
+    container.querySelectorAll('.tooltip').forEach(el => AsemTooltip.init(el));
 
     container.querySelectorAll('.report-edit__change').forEach(el => {
         el.addEventListener('click', () => {

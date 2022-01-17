@@ -1,10 +1,22 @@
 .org--contacts {
-  margin: 36px 0 0;
+  padding: 24px 16px;
+  margin-right: -16px;
+  margin-left: -16px;
+
+  @media (min-width: 768px) {
+    margin: 36px 0 0;
+    padding: 32px 16px;
+  }
 
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    width: 200px;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: initial;
+    }
   }
 
   &__invite {
@@ -12,6 +24,7 @@
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
+    margin-top: 16px;
     border-radius: 4px;
     color: var(--white-inverse);
     line-height: 16px;
@@ -24,6 +37,10 @@
     &:hover {
       color: #FFF;
       background-color: var(--green-d);
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 0;
     }
   }
 
