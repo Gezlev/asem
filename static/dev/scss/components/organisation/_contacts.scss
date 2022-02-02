@@ -112,6 +112,16 @@
         padding: 10px;
         text-align: left;
 
+        a {
+          color: var(--font-d);
+          text-decoration: none;
+          transition: color .3s ease-out;
+
+          &:hover {
+            color: var(--blue);
+          }
+        }
+
         &:first-of-type {
           padding-left: 12px;
           padding-right: 4px;

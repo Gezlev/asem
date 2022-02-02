@@ -4,18 +4,13 @@
   .list {
 
     &__org {
-      flex: 0 0 28%;
-      max-width: 28%;
+      flex: 0 0 calc(28% + 40px);
+      max-width: calc(28% + 40px);
       display: flex;
       align-items: center;
       padding-left: 12px;
       padding-right: 12px;
       box-sizing: border-box;
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 calc(28% + 40px);
-        max-width: calc(28% + 40px);
-      }
 
       @media (min-width: 1280px) {
         flex: 0 0 28%;
@@ -36,12 +31,8 @@
     }
 
     &__status {
-      flex: 0 0 160px;
+      flex: 0 0 140px;
       justify-content: flex-end;
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 140px;
-      }
 
       @media (min-width: 1280px) {
         flex: 0 0 160px;
@@ -49,28 +40,36 @@
     }
 
     &--menu {
-      flex: 0 0 88px;
+      flex: 0 0 68px;
       display: flex;
       justify-content: flex-end;
       padding-right: 16px;
       box-sizing: border-box;
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 68px;
-      }
 
       @media (min-width: 1280px) {
         flex: 0 0 88px;
       }
     }
   }
+
+  .list__container {
+    overflow-x: auto;
+
+    @media (min-width: 768px) {
+      overflow-x: initial;
+    }
+  }
+
   .list--filters {
+    min-width: 580px;
     padding: 28px 0 12px;
+    box-sizing: border-box;
   }
 
   .list {
 
     &__item {
+      min-width: 580px;
 
       &:nth-of-type(even) {
         background-color: var(--bg);

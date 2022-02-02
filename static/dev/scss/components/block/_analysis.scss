@@ -87,9 +87,12 @@
   }
 
   &--filters {
-    display: flex;
     flex: 0 0 66%;
     margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
 
     @media (min-width: 1280px) {
       margin-bottom: 0;
@@ -142,9 +145,15 @@
 
     .select,
     .btn {
-      flex: 0 0 calc(25% - 12px);
-      max-width: calc(25% - 12px);
-      margin-left: 12px;
+      max-width: 100%;
+      margin-top: 24px;
+
+      @media (min-width: 768px) {
+        flex: 0 0 calc(25% - 12px);
+        max-width: calc(25% - 12px);
+        margin-top: 0;
+        margin-left: 12px;
+      }
     }
 
     .select {

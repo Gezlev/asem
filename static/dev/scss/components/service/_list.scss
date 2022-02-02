@@ -4,13 +4,9 @@
   .list {
 
     &__type {
-      flex: 0 0 28%;
+      flex: 0 0 252px;
       display: flex;
       box-sizing: border-box;
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 252px;
-      }
 
       @media (min-width: 1280px) {
         flex: 0 0 28%;
@@ -25,11 +21,7 @@
     }
 
     &__desc {
-      flex: 0 0 33%;
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 calc(100% - 252px - 22% - 50px - 80px);
-      }
+      flex: 0 0 calc(100% - 252px - 22% - 50px - 80px);
 
       @media (min-width: 1280px) {
         flex: 0 0 33%;
@@ -37,14 +29,10 @@
     }
 
     &__tariff {
-      flex: 0 0 calc(100% - 28% - 22% - 33% - 88px);
+      flex: 0 0 50px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 50px;
-      }
 
       @media (min-width: 1280px) {
         flex: 0 0 calc(100% - 28% - 22% - 33% - 88px);
@@ -52,20 +40,15 @@
     }
 
     &__btns {
-      flex: 0 0 88px;
+      flex: 0 0 80px;
       padding-left: 16px;
-      padding-right: 16px;
+      padding-right: 8px;
       box-sizing: border-box;
 
       svg {
         display: block;
         width: 24px;
         height: 24px;
-      }
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        flex: 0 0 80px;
-        padding-right: 8px;
       }
 
       @media (min-width: 1280px) {
@@ -75,8 +58,17 @@
     }
   }
 
+  .list__container {
+    overflow-x: auto;
+
+    @media (min-width: 768px) {
+      overflow-x: initial;
+    }
+  }
   .list--filters {
+    min-width: 580px;
     padding: 28px 0 12px;
+    box-sizing: border-box;
 
     &__type {
       padding-left: 16px;
@@ -94,6 +86,7 @@
   }
 
   .list__item {
+    min-width: 580px;
     height: 50px;
     padding: 4px 0;
 
@@ -106,7 +99,7 @@
 
     input {
       height: 36px;
-      width: calc(100% - 20px);
+      width: calc(100% - 6px);
       padding: 10px 12px 6px;
       font-size: 14px;
       font-weight: 300;
@@ -116,10 +109,6 @@
       &:focus {
         border-color: var(--blue);
         background-color: var(--white-inverse);
-      }
-
-      @media (min-width: 768px) AND (max-width: 1279px) {
-        width: calc(100% - 6px);
       }
 
       @media (min-width: 1280px) {
@@ -140,11 +129,7 @@
   }
 
   .list__type {
-    padding-left: 4px;
-
-    @media (min-width: 768px) AND (max-width: 1279px) {
-      padding-left: 0;
-    }
+    padding-left: 0;
 
     @media (min-width: 1280px) {
       padding-left: 4px;
@@ -244,15 +229,12 @@
   }
 
   .select {
-    min-width: calc(100% - 40px);
-
-    @media (min-width: 768px) AND (max-width: 1279px) {
-      min-width: 246px;
-      max-width: 246px;
-    }
+    min-width: 246px;
+    max-width: 246px;
 
     @media (min-width: 1280px) {
       min-width: calc(100% - 40px);
+      max-width: initial;
     }
   }
 
