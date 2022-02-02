@@ -249,3 +249,9 @@
     </div>
 
 {% endblock %}
+
+{% block footerScripts %}
+    <script>
+        document.querySelectorAll('.list__item .select').forEach( el => Select.init(el));
+    </script>
+{% endblock %}

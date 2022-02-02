@@ -242,6 +242,7 @@
 
 {% block footerScripts %}
     <script>
+
         const BarChart = () => {
             let currentsBarDom = document.querySelector('.org--currents__bar');
             if (!currentsBarDom ) return;
@@ -327,5 +328,6 @@
             currentsBar.setOption(barOptions);
         };
         BarChart();
+        Select.init('.org--currents__header .select');
     </script>
 {% endblock %}

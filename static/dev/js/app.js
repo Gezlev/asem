@@ -4,7 +4,8 @@
 // SCRIPTS
 
 import Select from "./modules/select";
-document.querySelectorAll('.select').forEach( el => Select.init(el));
+window.Select = Select();
+//document.querySelectorAll('.select').forEach( el => Select.init(el));
 
 import ColorPicker from "./modules/color-picker";
 document.querySelectorAll('.input-color').forEach( el => ColorPicker.init(el));

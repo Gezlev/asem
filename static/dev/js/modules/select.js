@@ -1,4 +1,4 @@
-const Select = (() => {
+const Select = () => {
 
     const closeAll = slct => {
         document.querySelectorAll('.select').forEach(el => {
@@ -25,29 +25,29 @@ const Select = (() => {
         slctInp.dispatchEvent(new Event('change', {bubbles: true}));
     }
 
-    window.addEventListener('click', evnt => {
-        let target = evnt.target;
-        let slctHeader = target.closest('.select__header');
-        let slctOpt = target.closest('.select__opt');
-
-        if (slctHeader) {
-            closeAll(slctHeader.parentNode);
-        } else if (slctOpt) {
-            chooseOpt(slctOpt);
-            closeAll();
-        } else {
-            closeAll();
-        }
-    }, {passive: true});
-
     return {
         init: el => {
             let slct  = typeof el === 'string' || el instanceof String ? document.querySelector(el) : el;
             let selected = slct.querySelector('.selected') || slct.querySelector('.select__opt');
             chooseOpt(selected);
             slct.style.width = `${ 16 + slct.querySelector('.select__opt').clientWidth }px`;
+
+            window.addEventListener('click', evnt => {
+                let target = evnt.target;
+                let slctHeader = target.closest('.select__header');
+                let slctOpt = target.closest('.select__opt');
+
+                if (slct.contains(target) && slctHeader) {
+                    closeAll(slctHeader.parentNode);
+                } else if (slct.contains(target) && slctOpt) {
+                    chooseOpt(slctOpt);
+                    closeAll();
+                } else {
+                    closeAll();
+                }
+            }, {passive: true});
         }
     }
-})();
+};
 
 export default Select;
