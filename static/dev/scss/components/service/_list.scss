@@ -22,20 +22,24 @@
 
     &__desc {
       flex: 0 0 calc(100% - 252px - 22% - 50px - 80px);
+      max-width: calc(100% - 252px - 22% - 50px - 80px);
 
       @media (min-width: 1280px) {
         flex: 0 0 33%;
+        max-width: 33%;
       }
     }
 
     &__tariff {
       flex: 0 0 50px;
+      max-width: 50px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
 
       @media (min-width: 1280px) {
         flex: 0 0 calc(100% - 28% - 22% - 33% - 88px);
+        max-width: calc(100% - 28% - 22% - 33% - 88px);
       }
     }
 

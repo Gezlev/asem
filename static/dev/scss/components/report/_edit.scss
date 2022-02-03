@@ -68,6 +68,7 @@
       @media (min-width: 768px) AND (max-width: 1279px) {
         display: block;
         flex: 0 0 calc(100% - 332px);
+        max-width: calc(100% - 332px);
       }
       @media (min-width: 1280px) {
         padding-right: 20px;
@@ -208,11 +209,13 @@
 
     &__name {
       flex: 0 0 calc(100% - 32px - 200px - 132px - 56px - 100px - 72px);
+      max-width: calc(100% - 32px - 200px - 132px - 56px - 100px - 72px);
       padding-right: 8px;
       box-sizing: border-box;
 
       @media (min-width: 1280px) {
         flex: 0 0 calc(100% - 40px - 25% - 23% - 100px - 100px - 88px);
+        max-width: calc(100% - 40px - 25% - 23% - 100px - 100px - 88px);
         padding-right: 16px;
       }
     }

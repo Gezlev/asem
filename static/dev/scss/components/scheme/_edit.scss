@@ -83,6 +83,7 @@
       @media (min-width: 768px) AND (max-width: 1279px) {
         display: block;
         flex: 0 0 calc(100% - 332px);
+        max-width: calc(100% - 332px);
       }
 
       @media (min-width: 1280px) {
@@ -232,28 +233,34 @@
 
     &__desc {
       flex: 0 0 180px;
+      max-width: 180px;
       box-sizing: border-box;
       padding-right: 8px;
 
       @media (min-width: 768px) AND (max-width: 1279px) {
         flex: 0 0 100px;
+        max-width: 100px;
       }
 
       @media (min-width: 1280px) {
         flex: 0 0 212px;
+        max-width: 212px;
         padding-right: 20px;
       }
     }
 
     &__name {
       flex: 0 0 calc(100% - 200px - 180px - 40px - 100px - 84px);
+      max-width: calc(100% - 200px - 180px - 40px - 100px - 84px);
 
       @media (min-width: 768px) AND (max-width: 1279px) {
         flex: 0 0 calc(100% - 28% - 100px - 40px - 100px - 84px);
+        max-width: calc(100% - 28% - 100px - 40px - 100px - 84px);
       }
 
       @media (min-width: 1280px) {
         flex: 0 0 calc(100% - 25% - 212px - 60px - 120px - 100px);
+        max-width: calc(100% - 25% - 212px - 60px - 120px - 100px);
       }
     }
 

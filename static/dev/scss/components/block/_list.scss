@@ -57,6 +57,7 @@
 
   @media (min-width: 1280px) {
     flex: 0 0 calc(100% - 225px);
+    max-width: calc(100% - 225px);
     margin-bottom: 0;
   }
 
@@ -92,6 +93,7 @@
 
   &__input {
     flex: 0 0 calc(43% - 132px);
+    max-width: calc(43% - 132px);
 
     input {
       display: block;
@@ -327,13 +329,16 @@
       }
       &__address {
         flex: 0 0 calc(100% - 44px - 18% - 180px - 5% - 88px - 48px);
+        max-width: calc(100% - 44px - 18% - 180px - 5% - 88px - 48px);
 
         @media (min-width: 768px) AND (max-width: 1279px) {
           flex: 0 0 calc(100% - 44px - 18% - 28% - 5% - 88px - 60px + 12px);
+          max-width: calc(100% - 44px - 18% - 28% - 5% - 88px - 60px + 12px);
         }
 
         @media (min-width: 1280px) {
           flex: 0 0 calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
+          max-width: calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
         }
       }
       &__build {
@@ -429,6 +434,7 @@
 
       span {
         flex: 0 0 calc(100% - 52px);
+        max-width: calc(100% - 52px);
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -458,6 +464,7 @@
 
     &__address {
       flex: 0 0 calc(100% - 44px - 18% - 180px - 5% - 88px - 48px);
+      max-width: calc(100% - 44px - 18% - 180px - 5% - 88px - 48px);
       padding-right: 8px;
       box-sizing: border-box;
       overflow: hidden;
@@ -466,10 +473,12 @@
 
       @media (min-width: 768px) AND (max-width: 1279px) {
         flex: 0 0 calc(100% - 44px - 18% - 28% - 5% - 88px - 60px + 12px);
+        max-width: calc(100% - 44px - 18% - 28% - 5% - 88px - 60px + 12px);
       }
 
       @media (min-width: 1280px) {
         flex: 0 0 calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
+        max-width: calc(100% - 56px - 18% - 28% - 5% - 128px - 60px);
       }
     }
 
