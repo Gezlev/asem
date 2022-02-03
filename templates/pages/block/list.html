@@ -330,3 +330,9 @@
     </div>
 
 {% endblock %}
+
+{% block footerScripts %}
+    <script>
+        document.querySelectorAll('.select').forEach( el => Select.init(el));
+    </script>
+{% endblock %}
