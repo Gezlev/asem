@@ -77,7 +77,7 @@
 
       @media (min-width: 768px) {
         order: initial;
-        padding-right: 32px;
+        padding-right: 20px;
       }
 
       @media (min-width: 768px) AND (max-width: 1279px) {
@@ -87,6 +87,7 @@
 
       @media (min-width: 1280px) {
         display: grid;
+        padding-right: 32px;
       }
     }
 
@@ -121,7 +122,7 @@
     }
 
     .btn {
-      flex: 0 0 160px;
+      flex: 0 0 120px;
       margin-right: 12px;
       font-size: 14px;
       color: var(--white-inverse);
@@ -141,6 +142,10 @@
           border-color: var(--blue);
         }
       }
+
+      @media (min-width: 1280px) {
+        flex: 0 0 160px;
+      }
     }
 
     label {
@@ -155,8 +160,11 @@
       margin-bottom: 24px;
 
       @media (min-width: 768px) {
-        flex: 0 0 352px;
+        flex: 0 0 312px;
         margin-bottom: initial;
+      }
+      @media (min-width: 1280px) {
+        flex: 0 0 352px;
       }
     }
 
