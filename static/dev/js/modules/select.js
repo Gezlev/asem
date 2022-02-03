@@ -27,12 +27,13 @@ const Select = () => {
 
     return {
         init: el => {
+            console.log(el);
             let slct  = typeof el === 'string' || el instanceof String ? document.querySelector(el) : el;
             let selected = slct.querySelector('.selected') || slct.querySelector('.select__opt');
             chooseOpt(selected);
             slct.style.width = `${ 16 + slct.querySelector('.select__opt').clientWidth }px`;
 
-            window.addEventListener('click', evnt => {
+            el.addEventListener('click', evnt => {
                 let target = evnt.target;
                 let slctHeader = target.closest('.select__header');
                 let slctOpt = target.closest('.select__opt');

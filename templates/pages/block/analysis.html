@@ -56,7 +56,9 @@
             </div>
         </header>
 
-        <div class="block-analysis--chart"></div>
+        <div class="block-analysis--chart__wrapper">
+            <div class="block-analysis--chart"></div>
+        </div>
 
         <ul class="block-analysis--chart__labels">
             <li class="block-analysis--chart__label"><span style="color: #fadf33;" class="emptyCircle"></span> p</li>
@@ -304,7 +306,7 @@
                 top: 20,
                 left: 165,
                 right: 40,
-                bottom: 20,
+                bottom: 80,
                 containLabel: true,
                 tooltip: {
                     show: true
@@ -314,7 +316,18 @@
                 show: true
             },
             legend: {
-                show: false
+                //show: false
+                height: 40,
+                bottom: 'bottom',
+                padding: [16, 0],
+                itemGap: 24,
+                icon: 'circle',
+                itemHeight: 8,
+                align: 'left',
+                textStyle: {
+                    fontSize: 14,
+                    overflow: 'truncate'
+                }
             },
             xAxis: [
                 {
@@ -672,30 +685,6 @@
 
         option && chartDom && myChart.setOption(option);
 
-
-
-        const AnalysisTable = () => {
-
-            let perPage = document.querySelector('.block-analysis--table__perpage .select');
-            if (!perPage) return;
-
-            let perPageList = [];
-            perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(el.dataset.value));
-
-            let dataTable = new JSTable("#analysis-table", {
-                searchable: false,
-                perPageSelect: perPageList
-            });
-
-            let dataTableSelect = document.querySelector('.dt-selector');
-
-            let perPageInp = perPage.querySelector('input');
-            perPageInp && perPageInp.addEventListener('change', evnt => {
-                dataTableSelect.value = perPageInp.value;
-                dataTableSelect.dispatchEvent(new Event('change', {bubbles: true}));
-                //dataTable.update();
-            }, {passive: true});
-        }
-        AnalysisTable();
+        document.querySelectorAll('.select').forEach( el => Select.init(el));
     </script>
 {% endblock %}

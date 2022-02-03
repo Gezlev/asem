@@ -224,5 +224,9 @@
   }
   .list__container {
     overflow-x: auto;
+
+    @media (min-width: 768px) {
+      overflow-x: initial;
+    }
   }
 }
