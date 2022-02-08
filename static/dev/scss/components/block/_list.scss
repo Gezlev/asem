@@ -191,6 +191,20 @@
     }
   }
 
+  .list__container .list__item {
+
+    &:nth-of-type(even) {
+      background-color: var(--bg);
+
+      &:hover {
+        background-color: var(--green-sl);
+      }
+    }
+    &:last-of-type {
+      border-bottom: 1px solid var(--bg-1);
+    }
+  }
+
   .list {
 
     &--header {
@@ -402,17 +416,6 @@
 
     &__item {
       position: relative;
-
-      &:nth-of-type(even) {
-        background-color: var(--bg);
-
-        &:hover {
-          background-color: var(--green-sl);
-        }
-      }
-      &:last-of-type {
-        border-bottom: 1px solid var(--bg-1);
-      }
     }
 
     &__checkbox {
@@ -554,6 +557,86 @@
 
     &--menu__list {
       right: 12px;
+    }
+  }
+
+  .hierarchy .list__item {
+
+    &_parent {
+      background-color: var(--bg);
+      border-bottom: 1px solid #969fa9;
+    }
+  }
+  .hierarchy .list__item:not(.list__item_parent) {
+    .list__org {
+      padding-left: 12px;
+      position: relative;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        background-color: #969fa9;
+      }
+
+      &:before {
+        top: calc(-50% - 24px);
+        left: 0;
+        height: calc(100% + 24px);
+        width: 1px;
+      }
+      &:after {
+        top: 50%;
+        left: 0;
+        height: 1px;
+        width: 6px;
+      }
+    }
+
+    &:last-of-type {
+      border-bottom: 1px solid var(--bg-1);
+
+      .list__org {
+
+        &:before {
+          height: calc(50% + 12px);
+        }
+      }
+    }
+  }
+  .hierarchy .list__item_parent + .list__item {
+    border-top: 0;
+  }
+  .hierarchy .list__item_parent + .list__item:not(.list__item_parent) {
+
+    .list__org {
+
+      &:before {
+        top: -12px;
+        height: calc(50% + 12px);
+      }
+    }
+  }
+
+  .hierarchy .list__item {
+
+    &:nth-of-type(even) {
+      background-color: transparent;
+
+      &:hover {
+        background-color: var(--green-sl);
+      }
+    }
+  }
+
+  .hierarchy .list__item.list__item_parent {
+    background-color: var(--bg);
+
+    &:hover {
+      background-color: var(--green-sl);
+    }
+    &:last-of-type {
+      border-bottom: 1px solid var(--bg-1);
     }
   }
 

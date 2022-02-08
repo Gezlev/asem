@@ -27,7 +27,6 @@ const Select = () => {
 
     return {
         init: el => {
-            console.log(el);
             let slct  = typeof el === 'string' || el instanceof String ? document.querySelector(el) : el;
             let selected = slct.querySelector('.selected') || slct.querySelector('.select__opt');
             chooseOpt(selected);

@@ -67,8 +67,8 @@
                     <input type="hidden" value="" name="" />
                 </div>
                 <span>Ієрархія:</span>
-                <label for="loginremember" class="input-switcher">
-                    <input type="checkbox" id="loginremember" name="loginremember" />
+                <label for="isHierarchy" class="input-switcher">
+                    <input type="checkbox" id="isHierarchy" name="isHierarchy" />
                     <span><small></small></span>
                 </label>
             </div>
@@ -91,7 +91,7 @@
                 <div class="list--filters__empty"></div>
             </div>
 
-            <div class="list__item">
+            <div class="list__item list__item_parent">
                 <div class="list__checkbox">
                     <label for="blocks-item-1" class="input-checkbox">
                         <input type="checkbox" id="blocks-item-1" name="blocks-item-1">
@@ -169,7 +169,7 @@
                 </div>
             </div>
 
-            <div class="list__item">
+            <div class="list__item list__item_parent">
                 <div class="list__checkbox">
                     <label for="blocks-item-2" class="input-checkbox">
                         <input type="checkbox" id="blocks-item-2" name="blocks-item-1">
@@ -273,7 +273,33 @@
                 </div>
             </div>
 
-            <div class="list__item">
+            <div class="list__item list__item_parent">
+                <div class="list__checkbox">
+                    <label for="blocks-item-2" class="input-checkbox">
+                        <input type="checkbox" id="blocks-item-2" name="blocks-item-1">
+                        <span><small></small></span>
+                    </label>
+                </div>
+                <div class="list__org">
+                    <div class="list__img"><img src="static/build/img/organizations/org3.webp" decoding="async" loading="lazy" alt="" /></div>
+                    <span>ОСББ «Aртемівский»</span>
+                </div>
+                <div class="list__address">Київ, вул. Підвисоцького Професора, 3-А</div>
+                <div class="list__block">кв. 96</div>
+                <div class="list__build"></div>
+                <div class="list__asem"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#statusCheck"></use></svg></div>
+                <div class="list--menu">
+                    <div class="list--menu__btn"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconEllipsis"></use></svg></div>
+                    <ul class="list--menu__list">
+                        <li class="list--menu__item"><a href="/block-analysis.php">Деталі</a></li>
+                        <li class="list--menu__item"><a href="">В сравнение</a></li>
+                        <li class="list--menu__item"><a href="">Редагувати</a></li>
+                        <li class="list--menu__item list--menu__item_del"><a href="">Видалити</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="list__item list__item_parent">
                 <div class="list__checkbox">
                     <label for="blocks-item-2" class="input-checkbox">
                         <input type="checkbox" id="blocks-item-2" name="blocks-item-1">
@@ -334,5 +360,12 @@
 {% block footerScripts %}
     <script>
         document.querySelectorAll('.select').forEach( el => Select.init(el));
+
+        let hierarchySwitcher = document.querySelector('#isHierarchy');
+        let container = document.querySelector('.list_blocks .list__container');
+
+        hierarchySwitcher.addEventListener('change', () => {
+            container.classList.toggle('hierarchy');
+        }, false);
     </script>
 {% endblock %}
