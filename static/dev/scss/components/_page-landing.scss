@@ -196,6 +196,7 @@
 
     @media (min-width: 768px) {
       max-height: 600px;
+      height: 100vh;
       padding-top: 100px;
       padding-bottom: 100px;
     }
@@ -356,11 +357,14 @@
       @media (min-width: 768px) {
         position: absolute;
         top: 120px;
-        right: calc(350px - 100vw);
+        right: - 50vw;
         height: 400px;
         width: initial;
         margin-top: 0;
         margin-left: 0;
+      }
+      @media (min-width: 992px) {
+        right: -350px;
       }
       @media (min-width: 1280px) {
         top: 180px;

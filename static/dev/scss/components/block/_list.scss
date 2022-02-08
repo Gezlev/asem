@@ -92,8 +92,6 @@
   }
 
   &__input {
-    flex: 0 0 calc(43% - 132px);
-    max-width: calc(43% - 132px);
 
     input {
       display: block;
@@ -109,6 +107,8 @@
     }
 
     @media (min-width: 768px) {
+      flex: 0 0 calc(43% - 132px);
+      max-width: calc(43% - 132px);
       input {
         border: 1px solid var(--bg-1);
         border-radius: 4px 0 0 4px;
@@ -197,8 +197,7 @@
       height: auto;
 
       &__filters {
-        display: flex;
-        align-items: center;
+        position: relative;
         flex-wrap: wrap;
 
         > span {
@@ -208,26 +207,46 @@
 
           &:first-of-type {
             flex: 100%;
+            display: inline-block;
+            height: 32px;
+            margin-top: 4px;
             margin-bottom: 8px;
             margin-right: 12px;
+            vertical-align: top;
 
-            @media (min-width: 768px) {
-              flex: initial;
+            @media (max-width: 400px) {
+              display: block;
               margin-bottom: 0;
             }
+            @media (min-width: 768px) {
+              flex: initial;
+              display: block;
+              height: initial;
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+          }
+
+          + .select {
+
           }
         }
 
         @media (min-width: 768px) {
+          position: initial;
+          display: flex;
+          align-items: center;
           flex-wrap: nowrap;
         }
       }
 
       .select {
+        display: inline-block;
         margin-bottom: 12px;
         font-size: 14px;
 
         @media (min-width: 768px) {
+          display: block;
           margin-bottom: 0;
         }
       }
@@ -251,8 +270,18 @@
         }
       }
 
-      .input-switcher span:before {
-        background-color: var(--font-d);
+      .input-switcher {
+        position: absolute;
+        bottom: 2px;
+        left: 66px;
+
+        span:before {
+          background-color: var(--font-d);
+        }
+
+        @media (min-width: 768px) {
+          position: initial;
+        }
       }
 
       .title {

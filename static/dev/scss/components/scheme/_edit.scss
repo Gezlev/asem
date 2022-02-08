@@ -108,6 +108,20 @@
         padding: 13px 20px 13px 12px;
         background-color: var(--white-inverse);
       }
+
+      .select__header {
+        img {
+          display: none;
+        }
+      }
+      .select__opt {
+        img {
+          max-height: 22px;
+          height: auto;
+          width: auto;
+          margin-right: 8px;
+        }
+      }
     }
 
     &__desc {
