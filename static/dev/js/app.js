@@ -51,3 +51,6 @@ Services();
 
 import Reports from "./components/page-reports";
 Reports();
+
+import Benchmark from "./components/page-benchmark";
+Benchmark();

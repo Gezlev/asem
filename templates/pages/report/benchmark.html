@@ -1,0 +1,668 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    <div class="block-analysis--header">
+        <h1 class="block-analysis--header__title">Загальний звіт</h1>
+        <a href="/block-list.php" class="block-analysis--header__back"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#arrowBack"></use></svg></a>
+    </div>
+
+    <div class="block-analysis--top">
+        <div class="block-analysis--filters">
+            <div class="block-analysis--filters__range">
+                <input type="text" name="start">
+                <span>—</span>
+                <input type="text" name="end">
+                <svg><use xlink:href="/static/build/svg/symbol/sprite.svg#rangeIcon"></use></svg>
+            </div>
+
+            <div class="select">
+                <div class="select__header"></div>
+                <ul class="select__opts">
+                    <li class="select__opt" data-value="12">12 годин</li>
+                    <li class="select__opt" data-value="24">24 години</li>
+                    <li class="select__opt" data-value="48">48 годин</li>
+                </ul>
+                <input type="hidden" value="" name="" />
+            </div>
+
+            <div class="btn">Розрахувати</div>
+        </div>
+    </div>
+
+    <div class="white-box benchmark--container">
+        <header class="benchmark--container__header">
+
+            <div class="benchmark--perpage">
+                <span>Відображати по:</span>
+                <div class="select">
+                    <div class="select__header"></div>
+                    <ul class="select__opts">
+                        <li class="select__opt" data-value="2">2</li>
+                        <li class="select__opt" data-value="3">3</li>
+                        <li class="select__opt" data-value="10">10</li>
+                    </ul>
+                    <input type="hidden" value="" name="benchtable__perpage" />
+                </div>
+            </div>
+
+            <div class="benchmark--exports">
+                <span>Експорт:</span>
+                <div class="benchmark--exports__item export-exel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconExel"></use></svg></div>
+                <div href="" class="benchmark--exports__item export-pdf"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPdf"></use></svg></div>
+                <div href="" class="benchmark--exports__item export-csv"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCsv"></use></svg></div>
+                <div href="" class="benchmark--exports__item export-copy"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCopy"></use></svg></div>
+                <div href="" class="benchmark--exports__item export-print"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPrint"></use></svg></div>
+            </div>
+        </header>
+
+        <div class="benchmark--databox">
+            <div class="benchmark--table">
+                <table id="bench-table" class="dt-table">
+                    <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Тепло <span>Гкал</span></th>
+                        <th>Споживання ЕЕ <span>кВтм*год</span></th>
+                        <th>Питомне споживання Т <span>Гкал/м<sup>2</sup></span></th>
+                        <th>ХВ <span>м<sup>3</sup></span></th>
+                        <th>Зовн Т <span>°С</span></th>
+                        <th>Внутр Т <span>°С</span></th>
+                        <th>СО<sub>2</sub> <span>ppm</span></th>
+                        <th>P <span>кВт</span></th>
+                        <th>Вартість тепла <span>грн</span></th>
+                        <th>Вартість води <span>грн</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>OSBB ZHK Perovskiy</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>ОСББ Мотор</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Українська міська рада</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Українська СЗШО І-ІІІ ступенів №1</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Українська СЗШО І-ІІІ ступенів №2</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Дошкільний навчальний заклад (ясла-садок) «Сонечко»</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Дошкільний навчальний заклад «Хоровод»</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Зал боротьби</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Спортивний комплекс «Енергетик»</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Палац культури «Енергетик»</td>
+                        <td>14.060</td>
+                        <td>-125.000</td>
+                        <td>0.003</td>
+                        <td>2.800</td>
+                        <td>8.010</td>
+                        <td>32.923</td>
+                        <td>454.324</td>
+                        <td>120.507</td>
+                        <td>10 685.600</td>
+                        <td>1 350.216</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th>В середньому:</th>
+                        <th>4.052</th>
+                        <th>1 223.267</th>
+                        <th>0.002</th>
+                        <th>21.800</th>
+                        <th>1.460</th>
+                        <th>9.291</th>
+                        <th>45.432</th>
+                        <th>17.078</th>
+                        <th>5 817.404</th>
+                        <th>135.022</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <h3 class="benchmark--graph__title">Витрати тепла, Гкал</h3>
+        <div class="benchmark--graph" id="benchmarkTeplo"></div>
+
+        <h3 class="benchmark--graph__title">Споживання електроенергії, кВтм*год</h3>
+        <div class="benchmark--graph" id="benchmarkEE"></div>
+    </h3>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+    <script>
+        let analysedPeriod = document.querySelector('.block-analysis--filters .select');
+        analysedPeriod && Select.init(analysedPeriod);
+
+        let perPage = document.querySelector('.benchmark--perpage .select');
+        let perPageList = [];
+        perPage && Select.init(perPage);
+        perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(+el.dataset.value));
+
+        const dtable = $('#bench-table').DataTable({
+            searching: false,
+            lengthMenu: perPageList,
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+            language: {
+                paginate: { next: '>', previous: '<'},
+                info: 'з _START_ по _END_ із _TOTAL_ записів(a)'
+            }
+        });
+
+        let perPageInp = perPage.querySelector('input[name=benchtable__perpage]');
+        perPageInp && perPageInp.addEventListener('change', evnt => dtable.page.len( perPageInp.value ).draw(), {passive: true});
+
+        $('.export-exel').click( () => dtable.buttons('.buttons-excel').trigger() );
+        $('.export-pdf').click( () => dtable.buttons('.buttons-pdf').trigger() );
+        $('.export-csv').click( () => dtable.buttons('.buttons-csv').trigger() );
+        $('.export-copy').click( () => dtable.buttons('.buttons-copy').trigger() );
+        $('.export-print').click( () => dtable.buttons('.buttons-print').trigger() );
+    </script>
+
+    <script>
+        const dataset = {
+            orgs: ["OSBB ZHK Perovskiy","ОСББ Мотор","Українська міська рада","Українська СЗШО І-ІІІ ступенів №1","Українська СЗШО І-ІІІ ступенів №2","Дошкільний навчальний заклад (ясла-садок) «Сонечко»","Дошкільний навчальний заклад «Хоровод»","Зал боротьби","Спортивний комплекс «Енергетик»»","Палац культури «Енергетик»", "СЗОШ №11","СЗОШ №12","СЗОШ №13","СЗОШ №14","СЗОШ №15","СЗОШ №16","СЗОШ №17","СЗОШ №18","СЗОШ №19","СЗОШ №20"],
+            val: [14.34, 12.1, 3.08, 6.35, 23.37, 2, 11.2, 16.32, 1.24, 9.89, 14.34, 12.1, 3.08, 6.35, 23.37, 2, 11.2, 16.32, 1.24, 9.89],
+        }
+
+        const benchmarkTeploDom = document.querySelector('#benchmarkTeplo');
+        const benchmarkTeploChart = benchmarkTeploDom ? echarts.init(benchmarkTeploDom) : false;
+        const benchmarkTeploOptions = {
+            dataZoom: [
+                {
+                    type: 'slider',
+                    id: 'dataZoomX',
+                    show: true,
+                    rangeMode: 'value',
+                    start: 0,
+                    end: 10,
+                    fillerColor: 'rgba(103,153,50,0.1)',
+                    borderColor: 'rgba(150,150,150,0.5)',
+                    backgroundColor: 'rgba(255,255,255,0)',
+                    dataBackground: {
+                        opacity: 0,
+                        areaStyle: {
+                            color: 'rgba(255,255,255,0)',
+                        },
+                        lineStyle: {
+                            color: '#8cd31a',
+                            dashOffset: 0
+                        }
+                    },
+                    selectedDataBackground: {
+                        areaStyle: {
+                            color: 'rgba(255,255,255,0)',
+                        },
+                    },
+                    minValueSpan: 8,
+                    moveHandleSize: 12,
+                    moveHandleStyle: {
+                        color: '#679932'
+                    },
+                    emphasis: {
+                        moveHandleStyle: {
+                            color: '#8cd31a'
+                        },
+                    },
+                    labelFormatter: (value, valueStr) => ''
+                }
+            ],
+            tooltip: {
+                trigger: 'axis',
+                renderMode: 'html',
+                axisPointer: {
+                    type: 'line'
+                },
+                className: 'block-analysis--chart__tooltip',
+                appendToBody: true,
+                formatter: params => {
+                    let tooltip = '<strong>' + params[0]['axisValueLabel'] + '</strong>';
+                    params.forEach( el => {
+                        let className = el.seriesType === 'line' ? ' class="emptyCircle"' : '';
+                        let color = el.seriesType === 'line' ? el.borderColor : el.color;
+                        tooltip += '<div><span style="color:' + color + '"' + className + '></span> ' + el.value + '</div>';
+                    });
+                    return tooltip;
+                }
+            },
+            grid: {
+                top: 10,
+                left: 0,
+                right: 20,
+                bottom: 60,
+                containLabel: true,
+                tooltip: {
+                    show: true
+                }
+            },
+            toolbox: {
+                show: true
+            },
+            xAxis: {
+                type: 'category',
+                data: dataset.orgs,
+                silent: false,
+                scale: true,
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(150,150,150,0.7)',
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    interval: 0,
+                    width: 140,
+                    overflow: 'truncate',
+                    color: '#909097'
+                }
+            },
+            yAxis: {
+                type: 'value',
+                boundaryGap: false,
+                axisLabel: {
+                    color: '#909097'
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: 'rgba(150,150,150,0.7)',
+                        type: [1, 4],
+                        dashOffset: 5
+                    }
+                }
+            },
+            series: [
+                {
+                    data: dataset.val,
+                    type: 'bar',
+                    barWidth: 24,
+                    color: '#679932',
+                    itemStyle: {
+                        borderRadius: [2,2,0,0]
+                    }
+                }
+            ]
+        };
+        benchmarkTeploOptions && benchmarkTeploDom && benchmarkTeploChart.setOption(benchmarkTeploOptions);
+
+
+
+        const benchmarkEeDom = document.querySelector('#benchmarkEE');
+        const benchmarkEeChart = benchmarkEeDom ? echarts.init(benchmarkEeDom) : false;
+        const benchmarkEeOptions = {
+            tooltip: {
+                trigger: 'axis',
+                renderMode: 'html',
+                axisPointer: {
+                    type: 'line'
+                },
+                className: 'block-analysis--chart__tooltip',
+                appendToBody: true,
+                formatter: params => {
+                    let tooltip = '<strong>' + params[0]['axisValueLabel'] + '</strong>';
+                    params.forEach( el => {
+                        let className = el.seriesType === 'line' ? ' class="emptyCircle"' : '';
+                        let color = el.seriesType === 'line' ? el.borderColor : el.color;
+                        tooltip += '<div><span style="color:' + color + '"' + className + '></span> ' + el.seriesName + ' — '+ el.value + '</div>';
+                    });
+                    return tooltip;
+                }
+            },
+            legend: {
+                //show: false
+                height: 40,
+                bottom: 'bottom',
+                padding: [12, 0],
+                itemGap: 16,
+                icon: 'circle',
+                itemHeight: 8,
+                align: 'left',
+                textStyle: {
+                    width: 180,
+                    fontSize: 12,
+                    overflow: 'truncate',
+                    color: '#909097'
+                }
+            },
+            grid: {
+                top: 10,
+                left: 0,
+                right: 20,
+                bottom: 80,
+                containLabel: true
+            },
+            toolbox: {
+                show: false
+            },
+            xAxis: {
+                type: 'category',
+                data: ['2021/11/11', '12-11-2021', '13-11-2021', '14-11-2021', '15-11-2021', '16-11-2021', '17-11-2021', '18-11-2021', '19-11-2021', '20-11-2021', '21-11-2021', '22-11-2021', '23-11-2021', '24-11-2021'],
+                boundaryGap: false,
+                axisLine: {
+                    lineStyle: {
+                        color: 'rgba(150,150,150,0.5)',
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    interval: 0,
+                    width: 140,
+                    overflow: 'truncate',
+                    color: '#909097',
+                    formatter: function (value, valueStr) {
+                        let date = new Date(valueStr);
+                        //return echarts.format.formatTime('dd.MM.yyyy', date, false);
+                        return echarts.format.formatTime('dd.MM', date, false);
+                    }
+                }
+            },
+            yAxis: {
+                type: 'value',
+                boundaryGap: false,
+                axisLine: {
+                    show: false
+                },
+                axisLabel: {
+                    color: '#909097',
+                    formatter: value => (1 * value + '  ')
+                },
+                axisTick: {
+                    show: false,
+                },
+                splitLine: {
+                    show: true,
+                    lineStyle: {
+                        color: 'rgba(150,150,150,0.7)',
+                        type: [1, 4],
+                        dashOffset: 5
+                    }
+                }
+            },
+            series: [
+                {
+                    name: 'OSBB ZHK Perovskiy',
+                    type: 'line',
+                    stack: 'Total',
+                    data: [189, 154, 170, 186, 190, 178, 165, 158, 152, 157, 171, 175, 162, 140],
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#8cd31a',
+                            width: 3,
+                        }
+                    },
+                    itemStyle: {
+                        color: '#FFFFFF',
+                        borderWidth: 3,
+                        borderColor: '#8cd31a',
+                    },
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    emphasis: {
+                        itemStyle: {
+                            color: '#8cd31a',
+                            borderWidth: 4,
+                            borderColor: '#FFFFFF',
+                            shadowColor: 'rgba(0, 0, 0, 0.25)',
+                            shadowBlur: 10,
+                            shadowOffsetY: 4,
+                        },
+                    },
+                },
+                {
+                    name: 'ОСББ Мотор',
+                    type: 'line',
+                    stack: 'Total',
+                    data: [53, 46, 49, 59, 78, 52, 49, 52, 48, 53, 52, 46, 47, 49],
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#ff974a',
+                            width: 3,
+                        }
+                    },
+                    itemStyle: {
+                        color: '#FFFFFF',
+                        borderWidth: 3,
+                        borderColor: '#ff974a',
+                    },
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    emphasis: {
+                        itemStyle: {
+                            color: '#ff974a',
+                            borderWidth: 4,
+                            borderColor: '#FFFFFF',
+                            shadowColor: 'rgba(0, 0, 0, 0.25)',
+                            shadowBlur: 10,
+                            shadowOffsetY: 4,
+                        },
+                    },
+                },
+                {
+                    name: 'Українська міська рада',
+                    type: 'line',
+                    stack: 'Total',
+                    data: [150, 232, 201, 154, 190, 330, 410, 150, 232, 201, 154, 190, 330, 410],
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#ff4a7a',
+                            width: 3,
+                        }
+                    },
+                    itemStyle: {
+                        color: '#FFFFFF',
+                        borderWidth: 3,
+                        borderColor: '#ff4a7a',
+                    },
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    emphasis: {
+                        itemStyle: {
+                            color: '#ff4a7a',
+                            borderWidth: 4,
+                            borderColor: '#FFFFFF',
+                            shadowColor: 'rgba(0, 0, 0, 0.25)',
+                            shadowBlur: 10,
+                            shadowOffsetY: 4,
+                        },
+                    },
+                },
+                {
+                    name: 'Українська СЗШО І-ІІІ ступенів №1',
+                    type: 'line',
+                    stack: 'Total',
+                    data: [129, 154, 170, 146, 130, 118, 115, 118, 122, 127, 131, 155, 162, 140],
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#4694ff',
+                            width: 3,
+                        }
+                    },
+                    itemStyle: {
+                        color: '#FFFFFF',
+                        borderWidth: 3,
+                        borderColor: '#4694ff',
+                    },
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    emphasis: {
+                        itemStyle: {
+                            color: '#4694ff',
+                            borderWidth: 4,
+                            borderColor: '#FFFFFF',
+                            shadowColor: 'rgba(0, 0, 0, 0.25)',
+                            shadowBlur: 10,
+                            shadowOffsetY: 4,
+                        },
+                    },
+                },
+                {
+                    name: 'Дошкільний навчальний заклад (ясла-садок) «Сонечко»',
+                    type: 'line',
+                    stack: 'Total',
+                    data: [150, 232, 201, 154, 190, 330, 410, 150, 232, 201, 154, 190, 330, 410],
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#679932',
+                            width: 3,
+                        }
+                    },
+                    itemStyle: {
+                        color: '#FFFFFF',
+                        borderWidth: 3,
+                        borderColor: '#679932',
+                    },
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    emphasis: {
+                        itemStyle: {
+                            color: '#679932',
+                            borderWidth: 4,
+                            borderColor: '#FFFFFF',
+                            shadowColor: 'rgba(0, 0, 0, 0.25)',
+                            shadowBlur: 10,
+                            shadowOffsetY: 4,
+                        },
+                    },
+                }
+            ]
+        };
+        benchmarkEeOptions && benchmarkEeDom && benchmarkEeChart.setOption(benchmarkEeOptions);
+
+
+    </script>
+{% endblock %}

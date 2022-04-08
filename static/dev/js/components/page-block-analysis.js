@@ -8,9 +8,9 @@ const BlockAnalysis = () => {
     }) : false;
 
     const AnalysisTable = () => {
-
+        let aTable = document.querySelector('#analysis-table');
         let perPage = document.querySelector('.block-analysis--table__perpage .select');
-        if (!perPage) return;
+        if (!perPage || !aTable) return;
 
         let perPageList = [];
         perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(el.dataset.value));
