@@ -135,21 +135,7 @@
 #benchmark-table-detail,
 .benchmark--table {
 
-  .dt-table > thead > tr:first-child > th {
-    color: var(--font-r);
-
-    span {
-      opacity: 0.8;
-      color: var(--font-l);
-    }
-  }
-
-  .dt-table > thead > tr + tr > th {
-    font-weight: 400;
-  }
-
   .dt-table > tbody > tr > td, .dt-table > thead > tr > th {
-    padding-right: 20px;
 
     &:first-of-type {
       text-align: left;
@@ -179,7 +165,6 @@
     background-color: var(--green-sl);
 
     th {
-      padding-right: 20px;
       font-weight: 300;
       color: var(--font-d);
       text-align: right;

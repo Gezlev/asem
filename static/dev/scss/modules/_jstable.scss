@@ -188,6 +188,14 @@
   width: 100%;
   border-spacing: 0;
 
+  &--wrapper {
+    position: relative;
+
+    .dataTables_length {
+      display: none;
+    }
+  }
+
   & > tbody, > tfoot, > thead {
     & > tr {
       & > td, & > th {
@@ -198,9 +206,19 @@
 
   > thead {
     & > tr {
+
+      & > td, & > th {
+        padding: 12px 10px;
+        white-space: nowrap;
+        outline: none!important;
+      }
+    }
+  }
+  > thead:first-child {
+    & > tr {
       &:first-child {
         & > th, & > td {
-          padding: 12px 10px;
+          padding: 12px 20px 12px 10px;
           text-align: right;
           white-space: normal;
           max-width: 80px;
@@ -271,15 +289,16 @@
 
   & > thead > tr {
 
+    &:last-child {
+      background-color: var(--green-sl);
+    }
+
     + tr {
       > td,
       > th {
         border-top: 1px solid var(--bg-1);
       }
 
-      &:last-child {
-        background-color: var(--green-sl);
-      }
     }
 
     & > th, & > td {
@@ -299,9 +318,8 @@
     }
   }
 
-  & > thead > tr:first-of-type {
-
-
+  & > thead:first-child > tr {
+    background-color: transparent;
   }
 
   & > tfoot  > tr{
@@ -338,7 +356,7 @@
 
 
       &::before {
-        bottom: 15px;
+        bottom: 18px;
         border-bottom: 1px solid var(--font-d);
         border-left: 1px solid var(--font-d);
         transform: rotate(-45deg);
@@ -346,7 +364,7 @@
       }
 
       &::after {
-        bottom: 12px;
+        bottom: 15px;
         border-bottom: 1px solid var(--font-d);
         border-right: 1px solid var(--font-d);
         transform: rotate(-135deg);

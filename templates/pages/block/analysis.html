@@ -71,7 +71,7 @@
         </ul>
 
         <div class="block-analysis--databox">
-            <div class="block-analysis--table">
+            <div class="dt-table--wrapper block-analysis--table">
 
                 <div class="block-analysis--table__perpage">
                     <span>Відображати по:</span>
@@ -104,6 +104,8 @@
                         <th>V2</th>
                         <th>p</th>
                     </tr>
+                    </thead>
+                    <thead>
                     <tr>
                         <th><span>Всього:</span></th>
                         <th>—</th>
@@ -238,40 +240,46 @@
                 </table>
             </div>
         </div>
-{#        <script src="https://www.haegi.org/jstable/js/jstable.min.js" type="text/javascript"></script>#}
-{#        <script>let myTable = new JSTable("#analysis-table");</script>#}
-
-<!--        <div class="pagination">-->
-<!--            <div class="pagination__info">10 записів(a) із 5435</div>-->
-<!--            <ul class="pagination__list">-->
-<!--                <li class="pagination__item">-->
-<!--                    <a class="pagination__prev" href=""></a>-->
-<!--                </li>-->
-<!--                <li class="pagination__item">-->
-<!--                    <a class="pagination__link" href="">1</a>-->
-<!--                </li>-->
-<!--                <li class="pagination__item current">-->
-<!--                    <a class="pagination__link" href="">2</a>-->
-<!--                </li>-->
-<!--                <li class="pagination__item">-->
-<!--                    <a class="pagination__link" href="">3</a>-->
-<!--                </li>-->
-<!--                <li class="pagination__item pagination__item_ellipsis">-->
-<!--                    &hellip;-->
-<!--                </li>-->
-<!--                <li class="pagination__item">-->
-<!--                    <a class="pagination__link" href="">58</a>-->
-<!--                </li>-->
-<!--                <li class="pagination__item">-->
-<!--                    <a class="pagination__next" href=""></a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
     </div>
 
 {% endblock %}
 
 {% block footerScripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+    <script>
+
+        let perPage = document.querySelector('.block-analysis--table__perpage .select');
+        let perPageList = [];
+        perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(+el.dataset.value));
+
+        const dtable = $('#analysis-table').DataTable({
+            searching: false,
+            lengthMenu: perPageList,
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+            language: {
+                paginate: { next: '>', previous: '<'},
+                info: 'з _START_ по _END_ із _TOTAL_ записів(a)'
+            }
+        });
+
+        let perPageInp = perPage.querySelector('input[name=batable__perpage]');
+        perPageInp && perPageInp.addEventListener('change', evnt => dtable.page.len( perPageInp.value ).draw(), {passive: true});
+
+        $('.export-exel').click( () => dtable.buttons('.buttons-excel').trigger() );
+        $('.export-pdf').click( () => dtable.buttons('.buttons-pdf').trigger() );
+        $('.export-csv').click( () => dtable.buttons('.buttons-csv').trigger() );
+        $('.export-copy').click( () => dtable.buttons('.buttons-copy').trigger() );
+        $('.export-print').click( () => dtable.buttons('.buttons-print').trigger() );
+    </script>
+
     <script>
         const dataset = {
             dates: ["11-11-2021","12-11-2021","13-11-2021","14-11-2021","15-11-2021","16-11-2021","17-11-2021"],

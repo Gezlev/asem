@@ -38,9 +38,9 @@
                 <div class="select">
                     <div class="select__header"></div>
                     <ul class="select__opts">
-                        <li class="select__opt" data-value="2">2</li>
-                        <li class="select__opt" data-value="3">3</li>
-                        <li class="select__opt" data-value="10">10</li>
+                        <li class="select__opt" data-value="5">5</li>
+                        <li class="select__opt" data-value="15">15</li>
+                        <li class="select__opt" data-value="25">25</li>
                     </ul>
                     <input type="hidden" value="" name="benchtable__perpage" />
                 </div>
@@ -57,7 +57,7 @@
         </header>
 
         <div class="benchmark--databox">
-            <div class="benchmark--table">
+            <div class="dt-table--wrapper benchmark--table">
                 <table id="bench-table" class="dt-table">
                     <thead>
                     <tr>
@@ -72,6 +72,22 @@
                         <th>P <span>кВт</span></th>
                         <th>Вартість тепла <span>грн</span></th>
                         <th>Вартість води <span>грн</span></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <thead>
+                    <tr>
+                        <th>В середньому:</th>
+                        <th>4.052</th>
+                        <th>1 223.267</th>
+                        <th>0.002</th>
+                        <th>21.800</th>
+                        <th>1.460</th>
+                        <th>9.291</th>
+                        <th>45.432</th>
+                        <th>17.078</th>
+                        <th>5 817.404</th>
+                        <th>135.022</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -217,22 +233,6 @@
                         <td><span data-id="0" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     </tbody>
-                    <tfoot>
-                    <tr>
-                        <th>В середньому:</th>
-                        <th>4.052</th>
-                        <th>1 223.267</th>
-                        <th>0.002</th>
-                        <th>21.800</th>
-                        <th>1.460</th>
-                        <th>9.291</th>
-                        <th>45.432</th>
-                        <th>17.078</th>
-                        <th>5 817.404</th>
-                        <th>135.022</th>
-                        <th></th>
-                    </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>
@@ -268,6 +268,36 @@
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
     <script>
+        let analysedPeriod = document.querySelector('.block-analysis--filters .select');
+        analysedPeriod && Select.init(analysedPeriod);
+
+        // DATATABLE
+        let perPage = document.querySelector('.benchmark--perpage .select');
+        let perPageList = [];
+        perPage && Select.init(perPage);
+        perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(+el.dataset.value));
+
+        const benchtable = $('#bench-table').DataTable({
+            searching: false,
+            lengthMenu: perPageList,
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+            language: {
+                paginate: { next: '>', previous: '<'},
+                info: 'з _START_ по _END_ із _TOTAL_ записів(a)'
+            }
+        });
+
+        let perPageInp = perPage.querySelector('input[name=benchtable__perpage]');
+        perPageInp && perPageInp.addEventListener('change', evnt => benchtable.page.len( perPageInp.value ).draw(), {passive: true});
+
+        $('.export-exel').click( () => benchtable.buttons('.buttons-excel').trigger() );
+        $('.export-pdf').click( () => benchtable.buttons('.buttons-pdf').trigger() );
+        $('.export-csv').click( () => benchtable.buttons('.buttons-csv').trigger() );
+        $('.export-copy').click( () => benchtable.buttons('.buttons-copy').trigger() );
+        $('.export-print').click( () => benchtable.buttons('.buttons-print').trigger() );
+    </script>
+
+    <script>
         const popupTableDataset = [
             [
                 ['25/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
@@ -292,6 +322,7 @@
             ]
         ];
 
+        // POPUP DATATABLE
         const popuptable = $('#popup-table').DataTable({
             paging: false,
             searching: false,
@@ -310,41 +341,10 @@
                 {title: 'Вартість води <span>грн.</span>'}
             ]
         });
+        const setTable = num => popuptable.clear().rows.add(popupTableDataset[num]).draw();
         document.querySelectorAll('.dt-table .dt-table-more').forEach( btn => {
-            btn.addEventListener('click', () => setTable(btn.dataset.id), false);
+            btn.addEventListener('click', () => setTable(btn.dataset.id), {passive: true});
         });
-        function setTable(num) {
-            popuptable.clear().rows.add(popupTableDataset[num]).draw();
-        }
-    </script>
-
-    <script>
-        let analysedPeriod = document.querySelector('.block-analysis--filters .select');
-        analysedPeriod && Select.init(analysedPeriod);
-
-        let perPage = document.querySelector('.benchmark--perpage .select');
-        let perPageList = [];
-        perPage && Select.init(perPage);
-        perPage.querySelectorAll('.select__opt').forEach(el => perPageList.push(+el.dataset.value));
-
-        const dtable = $('#bench-table').DataTable({
-            searching: false,
-            lengthMenu: perPageList,
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
-            language: {
-                paginate: { next: '>', previous: '<'},
-                info: 'з _START_ по _END_ із _TOTAL_ записів(a)'
-            }
-        });
-
-        let perPageInp = perPage.querySelector('input[name=benchtable__perpage]');
-        perPageInp && perPageInp.addEventListener('change', evnt => dtable.page.len( perPageInp.value ).draw(), {passive: true});
-
-        $('.export-exel').click( () => dtable.buttons('.buttons-excel').trigger() );
-        $('.export-pdf').click( () => dtable.buttons('.buttons-pdf').trigger() );
-        $('.export-csv').click( () => dtable.buttons('.buttons-csv').trigger() );
-        $('.export-copy').click( () => dtable.buttons('.buttons-copy').trigger() );
-        $('.export-print').click( () => dtable.buttons('.buttons-print').trigger() );
     </script>
 
     <script>
@@ -353,6 +353,7 @@
             val: [14.34, 12.1, 3.08, 6.35, 23.37, 2, 11.2, 16.32, 1.24, 9.89, 14.34, 12.1, 3.08, 6.35, 23.37, 2, 11.2, 16.32, 1.24, 9.89],
         }
 
+        // BAR CHART
         const benchmarkTeploDom = document.querySelector('#benchmarkTeplo');
         const benchmarkTeploChart = benchmarkTeploDom ? echarts.init(benchmarkTeploDom) : false;
         const benchmarkTeploOptions = {
@@ -475,8 +476,7 @@
         };
         benchmarkTeploOptions && benchmarkTeploDom && benchmarkTeploChart.setOption(benchmarkTeploOptions);
 
-
-
+        // LINE CHART
         const benchmarkEeDom = document.querySelector('#benchmarkEE');
         const benchmarkEeChart = benchmarkEeDom ? echarts.init(benchmarkEeDom) : false;
         const benchmarkEeOptions = {
@@ -749,7 +749,5 @@
             ]
         };
         benchmarkEeOptions && benchmarkEeDom && benchmarkEeChart.setOption(benchmarkEeOptions);
-
-
     </script>
 {% endblock %}
