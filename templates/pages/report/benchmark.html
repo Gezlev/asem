@@ -88,7 +88,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="0" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>ОСББ Мотор</td>
@@ -102,7 +102,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="1" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>Українська міська рада</td>
@@ -116,7 +116,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="2" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>Українська СЗШО І-ІІІ ступенів №1</td>
@@ -130,7 +130,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="0" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>Українська СЗШО І-ІІІ ступенів №2</td>
@@ -144,10 +144,10 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="1" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
-                        <td>Дошкільний навчальний заклад (ясла-садок) «Сонечко»</td>
+                        <td>ДНЗ (ясла-садок) «Сонечко»</td>
                         <td>14.060</td>
                         <td>-125.000</td>
                         <td>0.003</td>
@@ -158,10 +158,10 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="2" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
-                        <td>Дошкільний навчальний заклад «Хоровод»</td>
+                        <td>ДНЗ «Хоровод»</td>
                         <td>14.060</td>
                         <td>-125.000</td>
                         <td>0.003</td>
@@ -172,7 +172,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="0" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>Зал боротьби</td>
@@ -186,7 +186,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="1" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>Спортивний комплекс «Енергетик»</td>
@@ -200,7 +200,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="2" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     <tr>
                         <td>Палац культури «Енергетик»</td>
@@ -214,7 +214,7 @@
                         <td>120.507</td>
                         <td>10 685.600</td>
                         <td>1 350.216</td>
-                        <td></td>
+                        <td><span data-id="0" class="dt-table-more popup-btn" data-popup="benchmark-table-detail">Деталі</span></td>
                     </tr>
                     </tbody>
                     <tfoot>
@@ -242,7 +242,18 @@
 
         <h3 class="benchmark--graph__title">Споживання електроенергії, кВтм*год</h3>
         <div class="benchmark--graph" id="benchmarkEE"></div>
-    </h3>
+    </div>
+
+
+<div class="popup">
+    <div class="popup__box" id="benchmark-table-detail">
+        <div class="popup__container">
+            <h3 class="popup__title">Деталі</h3>
+            <table id="popup-table" class="dt-table"></table>
+        </div>
+        <div class="popup__close"></div>
+    </div>
+</div>
 
 {% endblock %}
 
@@ -255,6 +266,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+    <script>
+        const popupTableDataset = [
+            [
+                ['25/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['26/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['27/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['28/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['29/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216']
+            ],
+            [
+                ['30/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['31/03/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['01/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['02/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['03/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216']
+            ],
+            [
+                ['04/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['05/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['06/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['07/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216'],
+                ['08/04/2022', '14.060', '-125.000', '0.003', '2.800', '8.010', '32.923', '454.324', '120.507', '10 685.600', '1 350.216']
+            ]
+        ];
+
+        const popuptable = $('#popup-table').DataTable({
+            paging: false,
+            searching: false,
+            info: false,
+            columns: [
+                {title: 'Дата' },
+                {title: 'Тепло <span>Гкал</span>'},
+                {title: 'Споживання ЕЕ <span>кВтм*год</span>'},
+                {title: 'Питомне споживання Т <span>Гкал/м<sup>2</sup></span>'},
+                {title: 'ХВ <span>м<sup>3</sup></span>'},
+                {title: 'зовн <span>°C</span>'},
+                {title: 'внутр <span>°C</span>'},
+                {title: 'co2 <span>ppm</span>'},
+                {title: 'p <span>кВт</span>'},
+                {title: 'Вартість тепла <span>грн.</span>'},
+                {title: 'Вартість води <span>грн.</span>'}
+            ]
+        });
+        document.querySelectorAll('.dt-table .dt-table-more').forEach( btn => {
+            btn.addEventListener('click', () => setTable(btn.dataset.id), false);
+        });
+        function setTable(num) {
+            popuptable.clear().rows.add(popupTableDataset[num]).draw();
+        }
+    </script>
 
     <script>
         let analysedPeriod = document.querySelector('.block-analysis--filters .select');
@@ -438,15 +500,14 @@
             },
             legend: {
                 //show: false
-                height: 40,
-                bottom: 'bottom',
+                bottom: 0,
                 padding: [12, 0],
                 itemGap: 16,
                 icon: 'circle',
                 itemHeight: 8,
                 align: 'left',
                 textStyle: {
-                    width: 180,
+                    width: 200,
                     fontSize: 12,
                     overflow: 'truncate',
                     color: '#909097'
@@ -464,7 +525,7 @@
             },
             xAxis: {
                 type: 'category',
-                data: ['2021/11/11', '12-11-2021', '13-11-2021', '14-11-2021', '15-11-2021', '16-11-2021', '17-11-2021', '18-11-2021', '19-11-2021', '20-11-2021', '21-11-2021', '22-11-2021', '23-11-2021', '24-11-2021'],
+                data: ['2021-11-11', '2021-11-12', '2021-11-13', '2021-11-14', '2021-11-15', '2021-11-16', '2021-11-17', '2021-11-18', '2021-11-19', '2021-11-20', '2021-11-21', '2021-11-22', '2021-11-23', '2021-11-24'],
                 boundaryGap: false,
                 axisLine: {
                     lineStyle: {
@@ -479,9 +540,8 @@
                     width: 140,
                     overflow: 'truncate',
                     color: '#909097',
-                    formatter: function (value, valueStr) {
-                        let date = new Date(valueStr);
-                        //return echarts.format.formatTime('dd.MM.yyyy', date, false);
+                    formatter: function (value) {
+                        let date = new Date(value);
                         return echarts.format.formatTime('dd.MM', date, false);
                     }
                 }
@@ -489,12 +549,15 @@
             yAxis: {
                 type: 'value',
                 boundaryGap: false,
+                scale: true,
                 axisLine: {
                     show: false
                 },
                 axisLabel: {
                     color: '#909097',
-                    formatter: value => (1 * value + '  ')
+                    formatter: value => {
+                        return (value + '  ')
+                    }
                 },
                 axisTick: {
                     show: false,
@@ -512,7 +575,6 @@
                 {
                     name: 'OSBB ZHK Perovskiy',
                     type: 'line',
-                    stack: 'Total',
                     data: [189, 154, 170, 186, 190, 178, 165, 158, 152, 157, 171, 175, 162, 140],
                     smooth: true,
                     lineStyle: {
@@ -542,7 +604,6 @@
                 {
                     name: 'ОСББ Мотор',
                     type: 'line',
-                    stack: 'Total',
                     data: [53, 46, 49, 59, 78, 52, 49, 52, 48, 53, 52, 46, 47, 49],
                     smooth: true,
                     lineStyle: {
@@ -572,8 +633,7 @@
                 {
                     name: 'Українська міська рада',
                     type: 'line',
-                    stack: 'Total',
-                    data: [150, 232, 201, 154, 190, 330, 410, 150, 232, 201, 154, 190, 330, 410],
+                    data: [310, 332, 291, 324, 300, 290, 310, 250, 332, 301, 354, 390, 330, 210],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -602,7 +662,6 @@
                 {
                     name: 'Українська СЗШО І-ІІІ ступенів №1',
                     type: 'line',
-                    stack: 'Total',
                     data: [129, 154, 170, 146, 130, 118, 115, 118, 122, 127, 131, 155, 162, 140],
                     smooth: true,
                     lineStyle: {
@@ -630,10 +689,38 @@
                     },
                 },
                 {
+                    name: 'Українська СЗШО І-ІІІ ступенів №2',
+                    type: 'line',
+                    data: [229, 154, 70, 46, 30, 18, 15, 18, 222, 227, 231, 195, 162, 140],
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#fadf33',
+                            width: 3,
+                        }
+                    },
+                    itemStyle: {
+                        color: '#FFFFFF',
+                        borderWidth: 3,
+                        borderColor: '#fadf33',
+                    },
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    emphasis: {
+                        itemStyle: {
+                            color: '#fadf33',
+                            borderWidth: 4,
+                            borderColor: '#FFFFFF',
+                            shadowColor: 'rgba(0, 0, 0, 0.25)',
+                            shadowBlur: 10,
+                            shadowOffsetY: 4,
+                        },
+                    },
+                },
+                {
                     name: 'Дошкільний навчальний заклад (ясла-садок) «Сонечко»',
                     type: 'line',
-                    stack: 'Total',
-                    data: [150, 232, 201, 154, 190, 330, 410, 150, 232, 201, 154, 190, 330, 410],
+                    data: [150, 232, 201, 154, 190, 150, 130, 150, 232, 201, 154, 190, 330, 410],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -658,7 +745,7 @@
                             shadowOffsetY: 4,
                         },
                     },
-                }
+                },
             ]
         };
         benchmarkEeOptions && benchmarkEeDom && benchmarkEeChart.setOption(benchmarkEeOptions);

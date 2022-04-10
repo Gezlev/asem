@@ -27,6 +27,7 @@
       font-weight: 500;
       color: var(--font-d);
     }
+
     .select {
       flex: 0 0 64px;
     }
@@ -107,52 +108,6 @@
     }
   }
 
-  &--table {
-
-    .dt-table>thead>tr:first-child>th {
-      color: var(--font-r);
-
-      span {
-        opacity: 0.8;
-        color: var(--font-l);
-      }
-    }
-
-    .dt-table>thead>tr+tr>th {
-      font-weight: 400;
-    }
-
-    .dt-table>tbody>tr>td, .dt-table>thead>tr>th {
-      &:first-of-type {
-        text-align: left;
-      }
-    }
-
-    table thead tr th {
-      span {
-        display: block;
-        margin-top: 4px;
-        font-size: 11px;
-        text-transform: none;
-      }
-    }
-
-    .dt-table>tfoot>tr {
-      background-color: var(--green-sl);
-
-      th {
-        font-weight: 300;
-        color: var(--font-d);
-        text-align: right;
-
-        &:first-of-type {
-          font-weight: 400;
-          text-align: left;
-        }
-      }
-    }
-  }
-
   &--graph {
     height: 400px;
     margin-top: 48px;
@@ -166,6 +121,112 @@
       margin-top: 24px;
     }
   }
+}
+
+#benchmark-table-detail {
+  width: 90%;
+  max-width: 1200px;
+
+  table {
+    width: 100%;
+  }
+}
+
+#benchmark-table-detail,
+.benchmark--table {
+
+  .dt-table > thead > tr:first-child > th {
+    color: var(--font-r);
+
+    span {
+      opacity: 0.8;
+      color: var(--font-l);
+    }
+  }
+
+  .dt-table > thead > tr + tr > th {
+    font-weight: 400;
+  }
+
+  .dt-table > tbody > tr > td, .dt-table > thead > tr > th {
+    padding-right: 20px;
+
+    &:first-of-type {
+      text-align: left;
+    }
+
+    &:last-of-type {
+      padding-right: 10px;
+
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  table thead tr th {
+
+    span {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      text-transform: none;
+    }
+  }
+
+  .dt-table > tfoot > tr {
+    background-color: var(--green-sl);
+
+    th {
+      padding-right: 20px;
+      font-weight: 300;
+      color: var(--font-d);
+      text-align: right;
+
+      &:first-of-type {
+        font-weight: 400;
+        text-align: left;
+      }
+
+      &:last-of-type {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .dt-table-more {
+    margin: -4px 0;
+  }
+}
+
+.dt-table-more {
+  display: block;
+  height: 22px;
+  padding: 7px 6px 5px;
+  box-sizing: border-box;
+  line-height: 10px;
+  font-size: 9px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--white-inverse);
+  border-radius: 4px;
+  background-color: var(--font-d);
+  cursor: pointer;
+  transition: background-color .3s ease-out, color .3s ease-out;
+
+  &:hover {
+    color: #FFF;
+    background-color: var(--green-d);
+  }
+}
+
+#benchmarkTeplo {
+  height: 300px;
+}
+#benchmarkEE {
+  height: 500px;
 }
 
 .benchmark--table {

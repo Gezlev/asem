@@ -316,6 +316,7 @@
     vertical-align: bottom;
     text-align: left;
 
+    &.sorting,
     &.dt-sorter {
       position: relative;
       cursor: pointer;
@@ -357,6 +358,7 @@
         //color: var(--font-d);
       }
 
+      &.sorting_asc,
       &.asc {
         &::before {
           opacity: 1;
@@ -366,6 +368,7 @@
         }
       }
 
+      &.sorting_desc,
       &.desc {
         &::before {
           opacity: 0;
