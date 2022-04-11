@@ -184,22 +184,20 @@
 
 
 .dt-table {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;
   width: 100%;
   border-spacing: 0;
 
   thead,
   tfoot,
   tbody {
-    display: table;
-    width: 100%;
-    min-width: 100%;
   }
 
   &--wrapper {
     position: relative;
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 30px;
 
     .dataTables_length {
       display: none;
@@ -414,4 +412,98 @@
 .hidden{
   display:none!important;
   opacity:0!important;
+}
+
+.dataTables_info {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding-top: 24px;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--font-l);
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+    position: absolute;
+    bottom: 36px;
+    left: 0;
+  }
+}
+.dataTables_paginate {
+  display: flex;
+  margin: 24px 0 0;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
+  > span {
+    display: flex;
+  }
+}
+.paginate_button {
+  flex: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-left: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color .3s ease-out;
+  border-radius: 6px;
+
+
+  &:hover {
+    background-color: var(--bg-1);
+  }
+
+  &.current {
+    cursor: default;
+    color: var(--bg);
+    background-color: var(--font-d);
+  }
+
+  &.previous,
+  &.next {
+    position: relative;
+    font-size: 0;
+    line-height: 1;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-bottom: 1px solid var(--font-r);
+    }
+  }
+
+  &.previous:before {
+    left: 50%;
+    margin-left: -3px;
+    border-left: 1px solid var(--font-r);
+    transform-origin: 0 0;
+    transform: rotate(45deg) translate3d(2px, -5px, 0);
+  }
+
+  &.next:before {
+    left: initial;
+    right: 50%;
+    margin-left: 0;
+    margin-right: -3px;
+    border-left: 0;
+    border-right: 1px solid var(--font-r);
+    transform-origin: center;
+    transform: rotate(-45deg) translate3d(0,-1px,0);
+  }
 }
