@@ -446,3 +446,10 @@
     color: rgba(#304156, 0.8)!important;
   }
 }
+
+
+#analysis-table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}

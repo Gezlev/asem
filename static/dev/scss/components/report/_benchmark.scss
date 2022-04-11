@@ -216,7 +216,37 @@
 
 .benchmark--table {
   position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+
+  &__title {
+    display: block;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (min-width: 1280px) {
+      max-width: 160px;
+    }
+  }
+
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    //min-width: 978px;
+  }
 }
+.collapsed .benchmark--table__title {
+  max-width: 160px;
+
+  @media (min-width: 1280px) {
+    max-width: 220px;
+  }
+}
+
+
 .dataTables_info {
   position: absolute;
   bottom: 6px;
