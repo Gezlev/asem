@@ -244,17 +244,18 @@
         <div class="benchmark--graph" id="benchmarkEE"></div>
     </div>
 
+{% endblock %}
 
-<div class="popup">
-    <div class="popup__box" id="benchmark-table-detail">
-        <div class="popup__container">
-            <h3 class="popup__title">Деталі</h3>
-            <table id="popup-table" class="dt-table"></table>
+{% block popups %}
+    <div class="popup">
+        <div class="popup__box" id="benchmark-table-detail">
+            <div class="popup__container">
+                <h3 class="popup__title">Деталі</h3>
+                <table id="popup-table" class="dt-table"></table>
+            </div>
+            <div class="popup__close"></div>
         </div>
-        <div class="popup__close"></div>
     </div>
-</div>
-
 {% endblock %}
 
 {% block footerScripts %}
@@ -507,7 +508,7 @@
                 itemHeight: 8,
                 align: 'left',
                 textStyle: {
-                    width: 200,
+                    //width: 200,
                     fontSize: 12,
                     overflow: 'truncate',
                     color: '#909097'

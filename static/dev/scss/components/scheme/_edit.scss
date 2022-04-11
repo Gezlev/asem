@@ -535,12 +535,18 @@
     span,
     small {
       height: 16px;
+      line-height: 16px;
       box-sizing: border-box;
     }
 
     span {
       flex: 1 1 auto;
       min-width: 50%;
+      max-width: 100%;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     small {
@@ -589,6 +595,7 @@
     }
 
     small {
+      line-height: 16px;
       box-sizing: border-box;
     }
   }

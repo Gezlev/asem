@@ -292,19 +292,24 @@
 }
 
 #admin-scheme-edit {
+  max-width: 100%;
+
   .fieldsboxes {
-    display: flex;
     position: relative;
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      display: block;
-      width: 1px;
-      height: 100%;
-      background-color: var(--bg-1);
+    @media (min-width: 768px) {
+      display: flex;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: var(--bg-1);
+      }
     }
   }
   .fieldsbox {
@@ -312,11 +317,20 @@
     padding-bottom: 12px;
     box-sizing: border-box;
 
-    &:first-of-type {
-      padding-right: 40px;
+    @media (min-width: 768px) {
+      &:first-of-type {
+        padding-right: 40px;
+      }
+      &:last-of-type {
+        padding-left: 40px;
+      }
     }
-    &:last-of-type {
-      padding-left: 40px;
+  }
+  .fieldsbox + .fieldsbox {
+    margin-top: 12px;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
     }
   }
   .fieldset,
@@ -325,6 +339,7 @@
   }
   .select {
     min-width: 100%;
+    max-width: 100%;
   }
   .input-switcher {
     display: inline-block;

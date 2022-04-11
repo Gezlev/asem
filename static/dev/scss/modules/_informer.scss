@@ -4,6 +4,30 @@
   justify-content: flex-end;
 }
 
+.lang {
+  display: flex;
+  a, span {
+    display: flex;
+    margin-left: 8px;
+    align-items: center;
+    color: var(--font-r);
+    text-decoration: none;
+    transition: color .3s ease-out;
+
+    &:hover {
+      color: var(--font-d);
+    }
+    &.active {
+      font-weight: 400;
+      color: var(--font-d);
+    }
+  }
+  a + span,
+  span + a,
+  a + a {
+  }
+}
+
 .search,
 .messages {
   flex: 0 0 40px;
