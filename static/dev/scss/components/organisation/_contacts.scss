@@ -57,7 +57,7 @@
       display: none;
     }
 
-    .dt-table > thead > tr > th {
+    .dt-table > thead > tr:first-child > th {
       text-align: left;
       user-select: none;
 
@@ -81,7 +81,7 @@
         &:before,
         &:after {
           right: initial;
-          left: 52px;
+          left: 58px;
         }
       }
 
@@ -89,11 +89,13 @@
         &:before,
         &:after {
           right: initial;
-          left: 58px;
+          left: 40px;
         }
       }
 
       &:nth-of-type(6) {
+        text-align: right;
+
         &:before,
         &:after {
           right: initial;
@@ -164,6 +166,8 @@
 
         &:nth-of-type(6) {
           max-width: 132px;
+          text-align: right;
+
           a {
             display: block;
             white-space: nowrap;
@@ -215,5 +219,35 @@
   span {
     position: relative;
     display: inline-block;
+  }
+
+  &__delete {
+    display: block;
+    padding-right: 8px;
+    box-sizing: border-box;
+    text-align: right;
+    //float: right;
+    svg {
+      display: block;
+      width: 20px!important;
+      height: 20px!important;
+      margin: -2px 0 -3px;
+      fill: var(--font-l);
+    }
+
+    &:hover svg {
+      fill: var(--font-d);
+    }
+  }
+}
+
+#contacts-table {
+  >thead:first-child>tr:first-child>td,
+  >thead:first-child>tr:first-child>th {
+    //text-align: left;
+
+    &:last-child {
+      text-align: right;
+    }
   }
 }

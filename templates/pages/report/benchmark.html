@@ -32,6 +32,10 @@
 
     <div class="white-box benchmark--container">
         <header class="benchmark--container__header">
+            <div class="benchmark--container__title">
+                <h2 class="title">Просто звіт</h2>
+                <p class="subtitle">Бенчмаркінг по організаціям</p>
+            </div>
 
             <div class="benchmark--perpage">
                 <span>Відображати по:</span>
@@ -250,7 +254,17 @@
     <div class="popup">
         <div class="popup__box" id="benchmark-table-detail">
             <div class="popup__container">
-                <h3 class="popup__title">Деталі</h3>
+                <div class="popup__header">
+                    <h3 class="popup__title">Деталі</h3>
+                    <div class="benchmark--exports">
+                        <span>Експорт:</span>
+                        <div class="benchmark--exports__item export-exel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconExel"></use></svg></div>
+                        <div href="" class="benchmark--exports__item export-pdf"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPdf"></use></svg></div>
+                        <div href="" class="benchmark--exports__item export-csv"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCsv"></use></svg></div>
+                        <div href="" class="benchmark--exports__item export-copy"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconCopy"></use></svg></div>
+                        <div href="" class="benchmark--exports__item export-print"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconPrint"></use></svg></div>
+                    </div>
+                </div>
                 <table id="popup-table" class="dt-table"></table>
             </div>
             <div class="popup__close"></div>
@@ -291,11 +305,11 @@
         let perPageInp = perPage.querySelector('input[name=benchtable__perpage]');
         perPageInp && perPageInp.addEventListener('change', evnt => benchtable.page.len( perPageInp.value ).draw(), {passive: true});
 
-        $('.export-exel').click( () => benchtable.buttons('.buttons-excel').trigger() );
-        $('.export-pdf').click( () => benchtable.buttons('.buttons-pdf').trigger() );
-        $('.export-csv').click( () => benchtable.buttons('.buttons-csv').trigger() );
-        $('.export-copy').click( () => benchtable.buttons('.buttons-copy').trigger() );
-        $('.export-print').click( () => benchtable.buttons('.buttons-print').trigger() );
+        $('.benchmark--container__header .export-exel').click( () => benchtable.buttons('.buttons-excel').trigger() );
+        $('.benchmark--container__header .export-pdf').click( () => benchtable.buttons('.buttons-pdf').trigger() );
+        $('.benchmark--container__header .export-csv').click( () => benchtable.buttons('.buttons-csv').trigger() );
+        $('.benchmark--container__header .export-copy').click( () => benchtable.buttons('.buttons-copy').trigger() );
+        $('.benchmark--container__header .export-print').click( () => benchtable.buttons('.buttons-print').trigger() );
     </script>
 
     <script>
@@ -340,9 +354,18 @@
                 {title: 'p <span>кВт</span>'},
                 {title: 'Вартість тепла <span>грн.</span>'},
                 {title: 'Вартість води <span>грн.</span>'}
-            ]
+            ],
+            buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
         });
+
+        $('#benchmark-table-detail .export-exel').click( () => {popuptable.buttons('.buttons-excel').trigger(); console.log('hi') });
+        $('#benchmark-table-detail .export-pdf').click( () => popuptable.buttons('.buttons-pdf').trigger() );
+        $('#benchmark-table-detail .export-csv').click( () => popuptable.buttons('.buttons-csv').trigger() );
+        $('#benchmark-table-detail .export-copy').click( () => popuptable.buttons('.buttons-copy').trigger() );
+        $('#benchmark-table-detail .export-print').click( () => popuptable.buttons('.buttons-print').trigger() );
+
         const setTable = num => popuptable.clear().rows.add(popupTableDataset[num]).draw();
+
         document.querySelectorAll('.dt-table .dt-table-more').forEach( btn => {
             btn.addEventListener('click', () => setTable(btn.dataset.id), {passive: true});
         });
@@ -526,7 +549,7 @@
             },
             xAxis: {
                 type: 'category',
-                data: ['2021-11-11', '2021-11-12', '2021-11-13', '2021-11-14', '2021-11-15', '2021-11-16', '2021-11-17', '2021-11-18', '2021-11-19', '2021-11-20', '2021-11-21', '2021-11-22', '2021-11-23', '2021-11-24'],
+                data: ['2021-11-11', '2021-11-12', '2021-11-13', '2021-11-14', '2021-11-15', '2021-11-16', '2021-11-17', '2021-11-18', '2021-11-19', '2021-11-20', '2021-11-21', '2021-11-22', '2021-11-23', '2021-11-24', '2021-11-25', '2021-11-26', '2021-11-27', '2021-11-28', '2021-11-29', '2021-11-30', '2021-12-01', '2021-12-02', '2021-12-03', '2021-12-04', '2021-12-05', '2021-12-06', '2021-12-07', '2021-12-08'],
                 boundaryGap: false,
                 axisLine: {
                     lineStyle: {
@@ -537,7 +560,7 @@
                     show: false
                 },
                 axisLabel: {
-                    interval: 0,
+                    interval: 'auto',
                     width: 140,
                     overflow: 'truncate',
                     color: '#909097',
@@ -576,7 +599,7 @@
                 {
                     name: 'OSBB ZHK Perovskiy',
                     type: 'line',
-                    data: [189, 154, 170, 186, 190, 178, 165, 158, 152, 157, 171, 175, 162, 140],
+                    data: [189, 154, 170, 186, 190, 178, 165, 158, 152, 157, 171, 175, 162, 140, 189, 154, 170, 186, 190, 178, 165, 158, 152, 157, 171, 175, 162, 140],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -605,7 +628,7 @@
                 {
                     name: 'ОСББ Мотор',
                     type: 'line',
-                    data: [53, 46, 49, 59, 78, 52, 49, 52, 48, 53, 52, 46, 47, 49],
+                    data: [53, 46, 49, 59, 78, 52, 49, 52, 48, 53, 52, 46, 47, 49, 53, 46, 49, 59, 78, 52, 49, 52, 48, 53, 52, 46, 47, 49],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -634,7 +657,7 @@
                 {
                     name: 'Українська міська рада',
                     type: 'line',
-                    data: [310, 332, 291, 324, 300, 290, 310, 250, 332, 301, 354, 390, 330, 210],
+                    data: [310, 332, 291, 324, 300, 290, 310, 250, 332, 301, 354, 390, 330, 210, 310, 332, 291, 324, 300, 290, 310, 250, 332, 301, 354, 390, 330, 210],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -663,7 +686,7 @@
                 {
                     name: 'Українська СЗШО І-ІІІ ступенів №1',
                     type: 'line',
-                    data: [129, 154, 170, 146, 130, 118, 115, 118, 122, 127, 131, 155, 162, 140],
+                    data: [129, 154, 170, 146, 130, 118, 115, 118, 122, 127, 131, 155, 162, 140, 129, 154, 170, 146, 130, 118, 115, 118, 122, 127, 131, 155, 162, 140],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -692,7 +715,7 @@
                 {
                     name: 'Українська СЗШО І-ІІІ ступенів №2',
                     type: 'line',
-                    data: [229, 154, 70, 46, 30, 18, 15, 18, 222, 227, 231, 195, 162, 140],
+                    data: [229, 154, 70, 46, 30, 18, 15, 18, 222, 227, 231, 195, 162, 140, 229, 154, 70, 46, 30, 18, 15, 18, 222, 227, 231, 195, 162, 140],
                     smooth: true,
                     lineStyle: {
                         normal: {
@@ -721,7 +744,7 @@
                 {
                     name: 'Дошкільний навчальний заклад (ясла-садок) «Сонечко»',
                     type: 'line',
-                    data: [150, 232, 201, 154, 190, 150, 130, 150, 232, 201, 154, 190, 330, 410],
+                    data: [150, 232, 201, 154, 190, 150, 130, 150, 232, 201, 154, 190, 330, 410, 150, 232, 201, 154, 190, 150, 130, 150, 232, 201, 154, 190, 330, 410],
                     smooth: true,
                     lineStyle: {
                         normal: {
