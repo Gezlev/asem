@@ -168,8 +168,17 @@
   .popup__header {
     padding-top: 20px;
   }
+  .popup__title {
+    flex: 1 1 auto;
+  }
+  .popup__container {
+    max-height: calc(100vh - 48px);
+  }
   .dataTables_wrapper {
     max-width: 100%;
     overflow-x: auto;
+  }
+  .dataTables_length {
+    display: none;
   }
 }

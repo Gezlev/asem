@@ -256,6 +256,20 @@
             <div class="popup__container">
                 <div class="popup__header">
                     <h3 class="popup__title">Деталі</h3>
+
+                    <div class="benchmark--perpage">
+                        <span>Відображати по:</span>
+                        <div class="select">
+                            <div class="select__header"></div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="5">5</li>
+                                <li class="select__opt" data-value="15">15</li>
+                                <li class="select__opt" data-value="25">25</li>
+                            </ul>
+                            <input type="hidden" value="" name="benchtable__perpage" />
+                        </div>
+                    </div>
+
                     <div class="benchmark--exports">
                         <span>Експорт:</span>
                         <div class="benchmark--exports__item export-exel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#iconExel"></use></svg></div>
@@ -338,8 +352,12 @@
         ];
 
         // POPUP DATATABLE
+        let popupPerPage = document.querySelector('#benchmark-table-detail .benchmark--perpage .select');
+        let popupPerPageList = [];
+        popupPerPage && Select.init(popupPerPage);
+        popupPerPage.querySelectorAll('.select__opt').forEach(el => popupPerPageList.push(+el.dataset.value));
+
         const popuptable = $('#popup-table').DataTable({
-            paging: false,
             searching: false,
             info: false,
             columns: [
@@ -356,7 +374,15 @@
                 {title: 'Вартість води <span>грн.</span>'}
             ],
             buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+            lengthMenu: perPageList,
+            language: {
+                paginate: { next: '>', previous: '<'},
+                info: 'з _START_ по _END_ із _TOTAL_ записів(a)'
+            }
         });
+
+        let popupPerPageInp = popupPerPage.querySelector('input[name=benchtable__perpage]');
+        popupPerPageInp && popupPerPageInp.addEventListener('change', evnt => popuptable.page.len( popupPerPageInp.value ).draw(), {passive: true});
 
         $('#benchmark-table-detail .export-exel').click( () => {popuptable.buttons('.buttons-excel').trigger(); console.log('hi') });
         $('#benchmark-table-detail .export-pdf').click( () => popuptable.buttons('.buttons-pdf').trigger() );
