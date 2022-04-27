@@ -1,0 +1,42 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="white-box admin--image">
+        {% include 'blocks/organization/admin-menu.html' %}
+
+        <form method="POST">
+
+            <div class="admin__fieldset">
+                <div class="admin__label">Зображення</div>
+                <input id="csrf_token" name="csrf_token" type="hidden" value="IjZjNGE4YmM2M2JmOGE2YzJmYzkyM2YyODBkNmQ4MDkyMjM4MzkwODQi.YmkNiA.L86izq4Lbd4JmcK_OTk6QzJxopc">
+                <div class="select">
+                    <div class="select__header"></div>
+                    <ul class="select__opts">
+                        <li class="select__opt selected" data-value="17"><img src="static/build/img/org-image-zapisati2.png" alt="image" height="24"> Записати2.png</li>
+                        <li class="select__opt" data-value="18"><img src="static/build/img/org-image-shema.png" alt="image" height="24"> схема.png</li>
+                        <li class="select__opt" data-value="19"><img src="static/build/img/org-image-bms1.png" alt="image" height="24"> BMS1.png</li>
+                        <li class="select__opt" data-value="20"><img src="static/build/img/org-image-bms1_1.png" alt="image" height="24"> bms1 1.png</li>
+                    </ul>
+                    <input type="hidden" id="img_id" name="img_id" required="" value="17">
+                </div>
+            </div>
+
+            <button class="btn btn_green" type="submit">Зберегти</button>
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script>
+        document.querySelectorAll('.select').forEach( el => Select.init(el));
+    </script>
+{% endblock %}

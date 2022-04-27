@@ -1,0 +1,153 @@
+.admin {
+  &__fieldset {
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    padding-bottom: 4px;
+    box-sizing: border-box;
+    color: var(--font-r);
+
+    small {
+      font-size: 12px;
+      color: var(--font-l);
+    }
+  }
+}
+
+.admin--address {
+  .org--adminmenu__wraper {
+    margin-bottom: 24px;
+  }
+
+  .vs__selected {
+    position: absolute;
+    left: 12px;
+    height: 42px;
+    margin: 0;
+    padding: 0;
+    line-height: 42px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--font-d);
+  }
+  .vs--open .vs__selected {
+    display: none;
+  }
+  .vs__dropdown-toggle {
+    padding: 0;
+    border: 1px solid var(--bg-1);
+    border-radius: 4px;
+  }
+  .vs__dropdown-menu {
+    border: 1px solid var(--bg-1);
+  }
+  .vs__search,
+  .vs__search:focus {
+    height: 42px;
+    padding: 8px 12px;
+    margin: 0;
+    line-height: 26px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--font-d);
+  }
+
+  .vs__clear {
+    position: relative;
+    display: block;
+    height: 16px;
+    width: 16px;
+    margin-right: 6px;
+    opacity: 1;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 12px;
+      margin-top: -7px;
+      background-color: var(--font-d);
+      transition: background-color .3s ease-out;
+
+      &:first-of-type {
+        transform: rotate(45deg);
+      }
+      &:last-of-type {
+        transform: rotate(-45deg);}
+    }
+
+    &:hover span {
+      background-color: var(--red);
+    }
+  }
+  .vs__open-indicator {
+    width: 6px;
+    height: 6px;
+    margin-right: 4px;
+    border-bottom: 1px solid var(--font-r);
+    border-right: 1px solid var(--font-r);
+    transform: translate3d(0,-2px,0) rotate(45deg);
+  }
+
+  .vs--open .vs__open-indicator {
+    transform: rotate(-135deg);
+  }
+
+  &__street {
+    display: flex;
+
+    .select {
+      flex: 0 0 88px;
+      margin-right: 12px;
+    }
+    .select__header {
+      height: 42px;
+      padding: 13px 20px 13px 12px;
+    }
+    > input {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__bld {
+    max-width: calc(50% - 12px);
+  }
+
+  &__coords {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+
+    > div {
+      flex: 0 0 calc(50% - 12px);
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+
+    .input-switcher span:before {
+      background-color: var(--font-d);
+    }
+
+    label + label {
+      display: block;
+      height: 32px;
+      margin-left: 8px;
+      font-size: 12px;
+      color: var(--font-l);
+    }
+  }
+
+  .btn {
+    font-size: 14px;
+    width: 200px;
+    margin: 24px auto 0;
+  }
+}
+
+.darktheme .admin--address__checkbox .input-switcher span:before {
+  background-color: var(--green);
+}

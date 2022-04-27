@@ -433,7 +433,7 @@
                             color: 'rgba(255,255,255,0)',
                         },
                     },
-                    minValueSpan: 8,
+                    minValueSpan: parseInt((-60 + document.querySelector('.benchmark--container').clientWidth)  / 140),
                     moveHandleSize: 12,
                     moveHandleStyle: {
                         color: '#679932'
@@ -491,8 +491,9 @@
                     show: false
                 },
                 axisLabel: {
+                    //interval: 'auto',
                     interval: 0,
-                    width: 140,
+                    width: (window.innerWidth < 576) ? 100 : 150,
                     overflow: 'truncate',
                     color: '#909097'
                 }
@@ -524,7 +525,10 @@
                 }
             ]
         };
-        benchmarkTeploOptions && benchmarkTeploDom && benchmarkTeploChart.setOption(benchmarkTeploOptions);
+        if (benchmarkTeploOptions && benchmarkTeploDom) {
+            benchmarkTeploChart.setOption(benchmarkTeploOptions);
+            window.addEventListener('resize', () => benchmarkTeploChart.resize(), {passive: true});
+        }
 
         // LINE CHART
         const benchmarkEeDom = document.querySelector('#benchmarkEE');
@@ -567,7 +571,7 @@
                 top: 10,
                 left: 0,
                 right: 20,
-                bottom: 80,
+                bottom: (window.innerWidth < 359) ? 10 * dataset.orgs.length : 80,
                 containLabel: true
             },
             toolbox: {
@@ -798,6 +802,9 @@
                 },
             ]
         };
-        benchmarkEeOptions && benchmarkEeDom && benchmarkEeChart.setOption(benchmarkEeOptions);
+        if (benchmarkEeOptions && benchmarkEeDom) {
+            benchmarkEeChart.setOption(benchmarkEeOptions);
+            window.addEventListener('resize', () => benchmarkEeChart.resize(), {passive: true});
+        }
     </script>
 {% endblock %}

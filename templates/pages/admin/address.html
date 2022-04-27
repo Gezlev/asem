@@ -1,0 +1,102 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="white-box admin--address">
+        {% include 'blocks/organization/admin-menu.html' %}
+
+        <form method="POST" id="address" data-parsley-validate="" enctype="multipart/form-data">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="IjBmNWRiNTA3MDllM2EyNTU5ZjFkNGFlODBkMjI5YzZkNmM2NzNkNzki.YmVFOA.B-W1e9cb26yqAdoxhixIEqrGVRQ">
+
+            <div class="admin__fieldset">
+                <div class="admin__label">Населений пункт <small>(почніть вводити назву)</small></div>
+                <div id="app">
+                    <input type="hidden" id="city_id" name="city_id" value="10474">
+                    <div dir="auto" class="v-select vs--single vs--searchable {#vs--open#}">
+                        <div id="vs1__combobox" role="combobox" aria-expanded="false" aria-owns="vs1__listbox" aria-label="Search for option" class="vs__dropdown-toggle">
+                            <div class="vs__selected-options">
+                                <span class="vs__selected">Київ</span>
+                                <input aria-autocomplete="list" aria-labelledby="vs1__combobox" aria-controls="vs1__listbox" type="search" autocomplete="off" class="vs__search">
+                            </div>
+                            <div class="vs__actions">
+                                <button type="button" title="Clear Selected" aria-label="Clear Selected" class="vs__clear" style="">
+{#                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg>#}
+                                    <span></span>
+                                    <span></span>
+                                </button>
+{#                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" role="presentation" class="vs__open-indicator"><path d="M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"></path></svg>#}
+                                <div class="vs__open-indicator"></div>
+                                <div class="vs__spinner" style="display: none;">Loading...</div>
+                            </div>
+                        </div>
+                        <ul id="vs1__listbox" role="listbox" class="" style="display: none; visibility: hidden;"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin__fieldset">
+                    <div class="admin__label">Вулиця</div>
+                    <div class="admin--address__street">
+                        <div class="select">
+                            <div class="select__header">бул.</div>
+                            <ul class="select__opts">
+                                <li class="select__opt" data-value="1">вул.</li>
+                                <li class="select__opt selected" data-value="2">бул.</li>
+                                <li class="select__opt" data-value="3">пл.</li>
+                                <li class="select__opt" data-value="4">пров.</li>
+                                <li class="select__opt" data-value="5">шосе</li>
+                                <li class="select__opt" data-value="6">майдан</li>
+                                <li class="select__opt" data-value="7">просп.</li>
+                                <li class="select__opt" data-value="8">кв.</li>
+                            </ul>
+                            <input type="hidden" id="street_type" name="street_type" required="" value="2">
+                        </div>
+
+                        <input id="street" name="street" required="" type="text" value="Перова">
+                    </div>
+            </div>
+
+            <div class="admin__fieldset admin--address__bld">
+                <div class="admin__label">Номер будівлі</div>
+                <input id="address" name="address" required="" type="text" value="10-А">
+            </div>
+
+            <div class="admin--address__coords">
+                <div class="admin__fieldset">
+                    <div class="admin__label">Широта</div>
+                    <input id="latitude" name="latitude" type="text" value="50.4715315">
+                </div>
+
+                <div class="admin__fieldset">
+                    <div class="admin__label">Довгота</div>
+                    <input id="longitude" name="longitude" type="text" value="30.5988781">
+                </div>
+            </div>
+
+            <div class="admin--address__checkbox">
+                <label class="input-switcher">
+                    <input id="get_coordinates" name="get_coordinates" type="checkbox" value="y">
+                    <span><small></small></span>
+                </label>
+                <label for="get_coordinates">Визначити автоматично</label>
+            </div>
+
+            <button type="submit" class="btn btn_green">Зберегти</button>
+
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script>
+        document.querySelectorAll('.select').forEach( el => Select.init(el));
+    </script>
+{% endblock %}

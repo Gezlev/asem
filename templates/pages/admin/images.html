@@ -1,0 +1,53 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="white-box admin--image">
+        {% include 'blocks/organization/admin-menu.html' %}
+
+        <h1 class="title">Завантажити файли</h1>
+        <form id="dropzone" action="/o/2/admin/upload-image" class="dropzone dz-clickable"><div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+
+        <hr>
+
+        <h2 class="title">Завантажені файли:</h2>
+        <ul class="admin--image__list">
+            <li>
+                <img src="static/build/img/org-image-zapisati2.png" alt="image" style="height: 100px; display: block;">
+                <p>Записати2.png</p>
+                <button><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg> Видалити</button>
+            </li>
+
+            <li>
+                <img src="static/build/img/org-image-shema.png" alt="image" style="height: 100px; display: block;">
+                <p>схема.png</p>
+                <button><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg> Видалити</button>
+            </li>
+
+            <li>
+                <img src="static/build/img/org-image-bms1.png" alt="image" style="height: 100px; display: block;">
+                <p>BMS1.png</p>
+                <button><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg> Видалити</button>
+            </li>
+
+            <li>
+                <img src="static/build/img/org-image-bms1_1.png" alt="image" style="height: 100px; display: block;">
+                <p>bms1 1.png</p>
+                <button><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg> Видалити</button>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script>
+        document.querySelectorAll('.select').forEach( el => Select.init(el));
+    </script>
+{% endblock %}
