@@ -8,7 +8,7 @@
     </div>
 
     <div class="block-analysis--top">
-        <div class="block-analysis--filters">
+        <div class="block-analysis--filters benchmark--filters">
             <div class="block-analysis--filters__range">
                 <input type="text" name="start">
                 <span>—</span>
@@ -24,6 +24,14 @@
                     <li class="select__opt" data-value="48">48 годин</li>
                 </ul>
                 <input type="hidden" value="" name="" />
+            </div>
+
+            <div class="benchmark--switcher">
+                <label for="benchmarkSwitcher" class="input-switcher">
+                    <input type="checkbox" id="benchmarkSwitcher" name="benchmarkSwitcher">
+                    <span><small></small></span>
+                </label>
+                <div class="benchmark--switcher__text">показати блоки</div>
             </div>
 
             <div class="btn">Розрахувати</div>
