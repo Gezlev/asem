@@ -1,0 +1,90 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="white-box admin--basiclevel">
+        {% include 'blocks/organization/admin-menu.html' %}
+
+        <form action="" method="POST" class="form" role="form">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="ImVjMzEwZjZmNGNhNzQ5Y2EwNGRiMzEwNzJjNTFlY2VmYTIxMTY2YjQi.YmlVHA.bHL8wG3UY1Mva--mVqjMjCJFc8s">
+
+
+            <div class="fieldset">
+                <label for="specific_heat_consumption" class="control-label">Питоме споживання опалення, Гкал/Δ°C·день</label>
+                <input id="specific_heat_consumption" name="specific_heat_consumption" required="" type="text" value="0.17">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_ventilation_consumption" class="control-label">Питоме споживання на вентиляцію, Гкал/Δ°C·год</label>
+                <input id="specific_ventilation_consumption" name="specific_ventilation_consumption" required="" type="text" value="0.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_hw_consumption_gcal" class="control-label">Питоме споживання ГВ, Гкал/день</label>
+                <input id="specific_hw_consumption_gcal" name="specific_hw_consumption_gcal" required="" type="text" value="0.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_weekend_hw_consumption_gcal" class="control-label">Питоме споживання ГВ за вихідний, Гкал/день</label>
+                <input id="specific_weekend_hw_consumption_gcal" name="specific_weekend_hw_consumption_gcal" required="" type="text" value="0.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_hw_consumption" class="control-label">Питоме споживання ГВ, м³/день</label>
+                <input id="specific_hw_consumption" name="specific_hw_consumption" required="" type="text" value="0.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_weekend_hw_consumption" class="control-label">Питоме споживання ГВ за вихідний, м³/день</label>
+                <input id="specific_weekend_hw_consumption" name="specific_weekend_hw_consumption" required="" type="text" value="0.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_cw_consumption" class="control-label">Питоме споживання ХВ, м³/день</label>
+                <input id="specific_cw_consumption" name="specific_cw_consumption" required="" type="text" value="20.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_weekend_cw_consumption" class="control-label">Питоме споживання ХВ за вихідний, м³/день</label>
+                <input id="specific_weekend_cw_consumption" name="specific_weekend_cw_consumption" required="" type="text" value="0.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_ee_consumption" class="control-label">Питоме споживання ЕЕ, кВт·год/день</label>
+                <input id="specific_ee_consumption" name="specific_ee_consumption" required="" type="text" value="1500.00">
+
+            </div>
+
+            <div class="fieldset">
+                <label for="specific_weekend_ee_consumption" class="control-label">Питоме споживання ЕЕ за вихідний, кВт·год/день</label>
+                <input id="specific_weekend_ee_consumption" name="specific_weekend_ee_consumption" required="" type="text" value="0.00">
+
+            </div>
+
+
+            <button class="btn btn_green" type="submit">Зберегти</button>
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script>
+        document.querySelectorAll('.select').forEach( el => Select.init(el));
+    </script>
+{% endblock %}

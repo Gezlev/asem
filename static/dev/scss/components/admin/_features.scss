@@ -1,0 +1,226 @@
+.admin--features {
+
+  .org--adminmenu__wraper {
+    margin-bottom: 24px;
+  }
+
+
+  .list--filters,
+  .list {
+
+    &__name,
+    &__btns {
+      padding-left: 12px;
+      box-sizing: border-box;
+    }
+
+    &__name {
+      flex: 0 0 calc(100% - 70px - 68px);
+      max-width: calc(100% - 70px - 68px);
+      overflow: hidden;
+
+      @media (min-width: 400px) {
+        flex: 0 0 calc(100% - 100px - 80px);
+        max-width: calc(100% - 100px - 80px);
+      }
+      @media (min-width: 768px) {
+        flex: 0 0 55%;
+        max-width: 55%;
+      }
+      @media (min-width: 1280px) {
+        flex: 0 0 60%;
+        max-width: 60%;
+      }
+    }
+
+    &__value {
+      flex: 0 0 70px;
+
+      @media (min-width: 400px) {
+        flex: 0 0 100px;
+      }
+      @media (min-width: 768px) {
+        flex: 0 0 calc(35% - 80px);
+      }
+      @media (min-width: 1280px) {
+        flex: 0 0 calc(40% - 80px);
+      }
+    }
+
+    &__btns {
+      flex: 0 0 68px;
+      padding-right: 12px;
+
+      @media (min-width: 400px) {
+        flex: 0 0 80px;
+      }
+    }
+  }
+
+
+  .list__name {
+    line-height: 1.1;
+  }
+
+  .list--filters {
+    &__value {
+      padding-left: 6px;
+
+      @media (min-width: 400px) {
+        padding-left: 12px;
+      }
+    }
+  }
+
+  .list__item {
+    height: 50px;
+    padding: 4px 0;
+
+    &:hover {
+      background-color: initial;
+    }
+
+    &:nth-of-type(even) {
+      background-color: var(--bg);
+    }
+
+    .list__controls,
+    .list__updates {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      svg {
+        display: block;
+      }
+    }
+
+    .list__controls {
+      display: none;
+      fill: var(--font-r);
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .list__updates {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    input {
+      height: 36px;
+      width: 100%;
+      padding: 10px 6px 6px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--font-d);
+      background-color: var(--blue-sl);
+
+      &:focus {
+        border-color: var(--blue);
+        background-color: var(--white-inverse);
+      }
+
+      @media (min-width: 400px) {
+        padding: 10px 12px 6px;
+      }
+      @media (min-width: 1280px) {
+        width: calc(100% - 20px);
+      }
+    }
+  }
+
+  & &__del {
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: var(--red);
+      }
+    }
+  }
+
+  & &__change {
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        fill: var(--blue);
+      }
+    }
+  }
+
+  & &__save {
+    cursor: pointer;
+
+    svg {
+      fill: var(--green);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--green-d);
+      }
+    }
+  }
+
+  & &__cancel {
+    cursor: pointer;
+    margin-left: 4px;
+    margin-right: 2px;
+
+    svg {
+      fill: var(--font-d);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--red);
+      }
+    }
+  }
+
+
+  .list__item.readonly {
+
+    input {
+      pointer-events: none;
+    }
+
+    input {
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    input {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      @media (min-width: 768px) AND (max-width: 1279px) {
+      }
+
+      @media (min-width: 1280px) {
+      }
+    }
+
+    .list__controls {
+      display: flex;
+    }
+
+    .list__updates {
+      display: none;
+    }
+
+    .list__desc {
+      input {
+        color: var(--font-r);
+      }
+    }
+  }
+}

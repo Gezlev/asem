@@ -1,0 +1,208 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+
+    {% include 'blocks/organization/head.html' %}
+
+    {% include 'blocks/organization/tags.html' %}
+
+    {% include 'blocks/organization/menu.html' %}
+
+    <div class="white-box admin--features">
+        {% include 'blocks/organization/admin-menu.html' %}
+        
+        <div class="list__container">
+
+            <div class="list--filters">
+                <div class="list--filters__name">Назва</div>
+                <div class="list--filters__value">Значення</div>
+                <div class="list--filters__btns"></div>
+            </div>
+            
+            <div class="list__item readonly">
+                <div class="list__name">Загальна площа м²</div>
+                <div class="list__value"><input type="text" name="" value="21737.0" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Опалювальна площа м²</div>
+                <div class="list__value"><input type="text" name="" value="19398.0" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Загальний об'єм м³</div>
+                <div class="list__value"><input type="text" name="" value="—"/></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Опалювальний об'єм м³</div>
+                <div class="list__value"><input type="text" name="" value="—" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Кількість мешканців</div>
+                <div class="list__value"><input type="text" name="" value="1200" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Кількість відвідувачів</div>
+                <div class="list__value"><input type="text" name="" value="30" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Рік побудови</div>
+                <div class="list__value"><input type="text" name="" value="2011" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Постійно присутні</div>
+                <div class="list__value"><input type="text" name="" value="—" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Годин роботи на добу</div>
+                <div class="list__value"><input type="text" name="" value="—" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Поверхів</div>
+                <div class="list__value"><input type="text" name="" value="—" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list__item readonly">
+                <div class="list__name">Клас енергоефективності</div>
+                <div class="list__value"><input type="text" name="" value="E" /></div>
+                <div class="list__btns">
+                    <div class="list__controls">
+                        <div class="admin--features__del"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editTrash"></use></svg></div>
+                        <div class="admin--features__change"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editChange"></use></svg></div>
+                    </div>
+                    <div class="list__updates">
+                        <div class="admin--features__save"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editSave"></use></svg></div>
+                        <div class="admin--features__cancel"><svg><use xlink:href="/static/build/svg/symbol/sprite.svg#editCancel"></use></svg></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footerScripts %}
+    <script>
+
+        document.querySelectorAll('.admin--features__change').forEach(el => {
+            el.addEventListener('click', () => {
+                el.closest('.list__item').classList.remove('readonly');
+            });
+        });
+        document.querySelectorAll('.admin--features__cancel').forEach(el => {
+            el.addEventListener('click', () => {
+                el.closest('.list__item').classList.add('readonly');
+            });
+        });
+
+    </script>
+{% endblock %}

@@ -1,0 +1,27 @@
+.admin--dashboard {
+
+  .org--adminmenu__wraper {
+    margin-bottom: 24px;
+  }
+
+  .fieldset {
+    margin-bottom: 16px;
+  }
+
+  .control-label {
+    padding-bottom: 4px;
+    box-sizing: border-box;
+    color: var(--font-r);
+
+    small {
+      font-size: 12px;
+      color: var(--font-l);
+    }
+  }
+  
+  .btn {
+    font-size: 14px;
+    width: 200px;
+    margin: 24px auto 0;
+  }
+}
